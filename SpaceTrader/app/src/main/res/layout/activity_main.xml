@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:text="Welcome to Space Trader!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/enterInfo"
+        android:text="Enter Your Information Below."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="97dp"
+        android:layout_below="@id/welcome"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/onceFinished"
+        android:text="Once you're finished, press PLAY to begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="65dp"
+        android:layout_below="@id/enterInfo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/playerNameStatic"
+        android:text="Player Name:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/onceFinished"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/enterNameHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerNameStatic"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="5dp"
+        android:text="Enter Name Here" />
+
+    <TextView
+        android:id="@+id/skillPoints"
+        android:text="Skill Points:"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterNameHere"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <Spinner
+        android:id="@+id/spinnerDifficulty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterNameHere"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/skillPoints" />
+
+    <TextView
+        android:id="@+id/totalSkillPoints"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterNameHere"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="270dp"
+        android:layout_toRightOf='@+id/skillPoints'
+        android:background="@null"
+        android:ems="10"
+        android:inputType="number"
+        android:text="16" />
+
+    <TextView
+        android:id="@+id/skillPointsMustTotal"
+        android:text="You must use EXACTLY 16 skill points or else you cannot play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/skillPoints"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+    <TextView
+        android:id="@+id/pilotStatic"
+        android:text="Pilot:"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/skillPointsMustTotal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/pilotMinus"
+        android:textSize="25sp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skillPointsMustTotal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/pilotStatic"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/pilotSkill"
+        android:textSize="125px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skillPointsMustTotal"
+        android:layout_toRightOf="@+id/pilotMinus"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/pilotPlus"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skillPointsMustTotal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/pilotMinus"
+        android:text="+"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/fighterStatic"
+        android:text="Fighter:"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pilotStatic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+    <Button
+        android:id="@+id/fighterMinus"
+        android:textSize="25sp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pilotMinus"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/pilotStatic"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/fighterSkill"
+        android:textSize="125px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pilotSkill"
+        android:layout_toRightOf="@+id/fighterMinus"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/fighterPlus"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pilotPlus"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/fighterMinus"
+        android:text="+"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/traderStatic"
+        android:text="Trader:"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fighterStatic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/traderMinus"
+        android:textSize="25sp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fighterMinus"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/traderStatic"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/traderSkill"
+        android:textSize="125px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fighterSkill"
+        android:layout_toRightOf="@+id/traderMinus"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/traderPlus"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fighterPlus"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/traderMinus"
+        android:text="+"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/engineerStatic"
+        android:text="Engineer:"
+        android:textSize="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/traderStatic"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/engineerMinus"
+        android:textSize="25sp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/traderMinus"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/engineerStatic"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/engineerSkill"
+        android:textSize="125px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/traderSkill"
+        android:layout_toRightOf="@+id/traderMinus"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/engineerPlus"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/traderPlus"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/engineerMinus"
+        android:text="+"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="175dp"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="539dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onPlayPressed"
+        android:text="PLAY" />
+
+</RelativeLayout>
