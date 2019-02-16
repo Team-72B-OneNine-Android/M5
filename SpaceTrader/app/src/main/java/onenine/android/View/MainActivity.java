@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import onenine.android.R;
+import onenine.android.entity.GameDifficulty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,12 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Creates difficulties
-        String[] difficulties = {"Choose Your Difficulty", "Easy", "Medium", "Hard"};
-
         //Creates the spinner for difficulties
-        Spinner difficultySpinner = findViewById(R.id.spinnerDifficulty);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, difficulties);
+        Spinner difficultySpinner = findViewById(R.id.gameDifficulty);
+        ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
 
