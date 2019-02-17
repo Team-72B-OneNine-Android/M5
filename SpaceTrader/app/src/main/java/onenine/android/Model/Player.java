@@ -8,6 +8,7 @@ public class Player {
     private int traderPoints;
     private int engineerPoints;
     private int credits = 1000;
+    private String ship;
 
     public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints) {
         this.name = name;
@@ -15,6 +16,8 @@ public class Player {
         this.fighterPoints = fighterPoints;
         this.traderPoints = traderPoints;
         this.engineerPoints = engineerPoints;
+        this.ship = "Gnat";
+
     }
 
     public String getName() {
@@ -55,5 +58,13 @@ public class Player {
 
     public void setEngineerPoints(int points) {
         this.engineerPoints = points;
+    }
+
+    public String getShip() {
+        return this.ship;
+    }
+
+    public void setShip(String shipType) {
+        this.ship = shipType;
     }
 }
