@@ -4,6 +4,10 @@ public class Game {
 
     private GameDifficulty difficulty;
 
+    public Game(GameDifficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
     public GameDifficulty getDifficulty() {
         return this.difficulty;
     }
