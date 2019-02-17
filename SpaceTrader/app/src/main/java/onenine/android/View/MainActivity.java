@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import onenine.android.R;
-import onenine.android.entity.GameDifficulty;
+import onenine.android.Model.GameDifficulty;
 
 public class MainActivity extends AppCompatActivity {
 

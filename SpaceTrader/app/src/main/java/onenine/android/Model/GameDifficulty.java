@@ -1,4 +1,4 @@
-package onenine.android.entity;
+package onenine.android.Model;
 
 public enum GameDifficulty {
     BEGINNER,
