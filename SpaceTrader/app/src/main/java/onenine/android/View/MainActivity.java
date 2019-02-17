@@ -1,8 +1,9 @@
 package onenine.android.View;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -10,11 +11,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import onenine.android.R;
+import onenine.android.ViewModel.MainActivityViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
+    private MainActivityViewModel vm;
     TextView pilotSkill;
     TextView fighterSkill;
     TextView traderSkill;
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setContentView(R.layout.activity_main);
+        vm = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
         pilotSkill = findViewById(R.id.pilotSkill);
         fighterSkill = findViewById(R.id.fighterSkill);
