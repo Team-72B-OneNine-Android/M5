@@ -57,20 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayPressed(View view) {
         //
-        player = new Player("", 0, 0, 0, 0);
-        player.setName(playerName.getText().toString());
-        player.setPilotPoints(Integer.parseInt(pilotSkill.getText().toString()));
-        player.setFighterPoints(Integer.parseInt(fighterSkill.getText().toString()));
-        player.setTraderPoints(Integer.parseInt(traderSkill.getText().toString()));
-        player.setEngineerPoints(Integer.parseInt(engineerSkill.getText().toString()));
-        Log.d("Player", "Player Information" + "\n" + player.toString());
-        //
-        Intent intent = new Intent(this, HomeScreenActivity.class);
-        EditText name = findViewById(R.id.enterNameHere);
-        String user = name.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, user);
-        startActivity(intent);
-        finish();
+        if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
+            player = new Player("", 0, 0, 0, 0);
+            player.setName(playerName.getText().toString());
+            player.setPilotPoints(Integer.parseInt(pilotSkill.getText().toString()));
+            player.setFighterPoints(Integer.parseInt(fighterSkill.getText().toString()));
+            player.setTraderPoints(Integer.parseInt(traderSkill.getText().toString()));
+            player.setEngineerPoints(Integer.parseInt(engineerSkill.getText().toString()));
+            Log.d("Player", "Player Information" + "\n" + player.toString());
+            //
+            Intent intent = new Intent(this, HomeScreenActivity.class);
+            EditText name = findViewById(R.id.enterNameHere);
+            String user = name.getText().toString();
+            intent.putExtra(EXTRA_MESSAGE, user);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void onPilotIncrementPressed(View view) {
