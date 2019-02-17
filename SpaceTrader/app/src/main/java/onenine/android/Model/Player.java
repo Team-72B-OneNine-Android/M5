@@ -29,7 +29,7 @@ public class Player {
     }
 
     public int getPilotPoints() {
-        return this.pilotPoints;
+        return pilotPoints;
     }
 
     public void setPilotPoints(int points) {
@@ -37,7 +37,7 @@ public class Player {
     }
 
     public int getFighterPoints() {
-        return this.fighterPoints;
+        return fighterPoints;
     }
 
     public void setFigterPoints(int points) {
@@ -45,7 +45,7 @@ public class Player {
     }
 
     public int getTraderPoints() {
-        return this.traderPoints;
+        return traderPoints;
     }
 
     public void setTraderPoints(int points) {
@@ -53,7 +53,7 @@ public class Player {
     }
 
     public int getEngineerPoints() {
-        return this.engineerPoints;
+        return engineerPoints;
     }
 
     public void setEngineerPoints(int points) {
