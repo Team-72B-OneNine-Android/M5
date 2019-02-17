@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import onenine.android.Model.GameDifficulty;
+import onenine.android.Model.Player;
 import onenine.android.R;
 import onenine.android.ViewModel.MainActivityViewModel;
 
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
     private MainActivityViewModel vm;
+    private Player player = new Player("", 0, 0, 0, 0);
+    TextView playerName;
     TextView pilotSkill;
     TextView fighterSkill;
     TextView traderSkill;
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         vm = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
+        playerName = findViewById(R.id.enterNameHere);
         pilotSkill = findViewById(R.id.pilotSkill);
         fighterSkill = findViewById(R.id.fighterSkill);
         traderSkill = findViewById(R.id.traderSkill);
@@ -51,11 +56,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPlayPressed(View view) {
+        //
+        player = new Player("", 0, 0, 0, 0);
+        player.setName(playerName.getText().toString());
+        player.setPilotPoints(Integer.parseInt(pilotSkill.getText().toString()));
+        player.setFighterPoints(Integer.parseInt(fighterSkill.getText().toString()));
+        player.setTraderPoints(Integer.parseInt(traderSkill.getText().toString()));
+        player.setEngineerPoints(Integer.parseInt(engineerSkill.getText().toString()));
+        Log.d("Player", "Player Information" + "\n" + player.toString());
+        //
         Intent intent = new Intent(this, HomeScreenActivity.class);
         EditText name = findViewById(R.id.enterNameHere);
         String user = name.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, user);
         startActivity(intent);
+        finish();
     }
 
     public void onPilotIncrementPressed(View view) {

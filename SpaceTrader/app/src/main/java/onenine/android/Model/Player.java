@@ -40,7 +40,7 @@ public class Player {
         return fighterPoints;
     }
 
-    public void setFigterPoints(int points) {
+    public void setFighterPoints(int points) {
         this.fighterPoints = points;
     }
 
@@ -61,10 +61,25 @@ public class Player {
     }
 
     public String getShip() {
-        return this.ship;
+        return ship;
     }
 
     public void setShip(String shipType) {
         this.ship = shipType;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    @Override
+    public String toString() {
+        return ("Name: " + name + "\n"
+                + "Pilot Skill: " + getPilotPoints() + "\n"
+                + "Fighter Skill: " + getFighterPoints() + "\n"
+                + "Trader Skill: " + getTraderPoints() + "\n"
+                + "Engineer Skill: " + getEngineerPoints() + "\n"
+                + "Ship Type: " + getShip() + "\n"
+                + "Credits: " + getCredits());
     }
 }
