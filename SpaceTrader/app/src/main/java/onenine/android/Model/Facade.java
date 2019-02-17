@@ -1,4 +1,4 @@
-package onenine.android.ViewModel;
+package onenine.android.Model;
 
 import onenine.android.Model.Game;
 
