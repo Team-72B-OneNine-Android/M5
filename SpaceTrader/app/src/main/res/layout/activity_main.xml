@@ -74,7 +74,7 @@
         android:layout_alignParentLeft="true" />
 
     <Spinner
-        android:id="@+id/gameDifficulty"
+        android:id="@+id/spinnerDifficulty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/enterNameHere"
@@ -122,7 +122,6 @@
 
     <Button
         android:id="@+id/pilotMinus"
-        android:textSize="25sp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,7 +129,9 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/pilotStatic"
-        android:text="-" />
+        android:onClick="onPilotDecrementPressed"
+        android:text="-"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/pilotSkill"
@@ -148,13 +149,14 @@
 
     <Button
         android:id="@+id/pilotPlus"
-        android:background="@android:color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillPointsMustTotal"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/pilotMinus"
+        android:background="@android:color/holo_green_light"
+        android:onClick="onPilotIncrementPressed"
         android:text="+"
         android:textSize="25sp" />
 
@@ -169,9 +171,9 @@
         android:layout_marginLeft="17dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true" />
+
     <Button
         android:id="@+id/fighterMinus"
-        android:textSize="25sp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -179,7 +181,9 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/pilotStatic"
-        android:text="-" />
+        android:onClick="onFighterDecrementPressed"
+        android:text="-"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/fighterSkill"
@@ -197,13 +201,14 @@
 
     <Button
         android:id="@+id/fighterPlus"
-        android:background="@android:color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotPlus"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/fighterMinus"
+        android:background="@android:color/holo_green_light"
+        android:onClick="onFighterIncrementPressed"
         android:text="+"
         android:textSize="25sp" />
 
@@ -221,7 +226,6 @@
 
     <Button
         android:id="@+id/traderMinus"
-        android:textSize="25sp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -229,7 +233,9 @@
         android:layout_marginLeft="33dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/traderStatic"
-        android:text="-" />
+        android:onClick="onTraderDecrementPressed"
+        android:text="-"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/traderSkill"
@@ -247,13 +253,14 @@
 
     <Button
         android:id="@+id/traderPlus"
-        android:background="@android:color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterPlus"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="71dp"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/traderMinus"
+        android:background="@android:color/holo_green_light"
+        android:onClick="onTraderIncrementPressed"
         android:text="+"
         android:textSize="25sp" />
     <TextView
@@ -270,7 +277,6 @@
 
     <Button
         android:id="@+id/engineerMinus"
-        android:textSize="25sp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -278,7 +284,9 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/engineerStatic"
-        android:text="-" />
+        android:onClick="onEngineerDecrementPressed"
+        android:text="-"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/engineerSkill"
@@ -296,13 +304,14 @@
 
     <Button
         android:id="@+id/engineerPlus"
-        android:background="@android:color/holo_green_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderPlus"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="18dp"
         android:layout_toRightOf="@+id/engineerMinus"
+        android:background="@android:color/holo_green_light"
+        android:onClick="onEngineerIncrementPressed"
         android:text="+"
         android:textSize="25sp" />
 
