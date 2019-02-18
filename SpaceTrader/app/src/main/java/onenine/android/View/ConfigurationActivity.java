@@ -16,7 +16,7 @@ import onenine.android.Model.Player;
 import onenine.android.R;
 import onenine.android.ViewModel.MainActivityViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class ConfigurationActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_configure);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_configure);
         vm = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
         playerName = findViewById(R.id.enterNameHere);
