@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
     private MainActivityViewModel vm;
-    private Player player = new Player("", 0, 0, 0, 0);
     TextView playerName;
     TextView pilotSkill;
     TextView fighterSkill;
     TextView traderSkill;
     TextView engineerSkill;
     TextView totalSkillPoints;
+    Spinner difficultySpinner;
+    Button playButton;
     int skillsUsed = 16;
 
     @Override
@@ -44,28 +46,25 @@ public class MainActivity extends AppCompatActivity {
         traderSkill = findViewById(R.id.traderSkill);
         engineerSkill = findViewById(R.id.engineerSkill);
         totalSkillPoints = findViewById(R.id.totalSkillPoints);
-
-
+        playButton = findViewById(R.id.play);
+        playButton.setEnabled(false);
 
         //Creates the spinner for difficulties
-        Spinner difficultySpinner = findViewById(R.id.spinnerDifficulty);
+        difficultySpinner = findViewById(R.id.spinnerDifficulty);
         ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
 
+
     }
 
     public void onPlayPressed(View view) {
-        //
         if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
-            player = new Player("", 0, 0, 0, 0);
-            player.setName(playerName.getText().toString());
-            player.setPilotPoints(Integer.parseInt(pilotSkill.getText().toString()));
-            player.setFighterPoints(Integer.parseInt(fighterSkill.getText().toString()));
-            player.setTraderPoints(Integer.parseInt(traderSkill.getText().toString()));
-            player.setEngineerPoints(Integer.parseInt(engineerSkill.getText().toString()));
-            Log.d("Player", "Player Information" + "\n" + player.toString());
-            //
+            vm.onConfig(playerName.getText().toString(), Integer.parseInt(pilotSkill.getText().toString()),
+                    Integer.parseInt(fighterSkill.getText().toString()),
+                    Integer.parseInt(traderSkill.getText().toString()),
+                    Integer.parseInt(engineerSkill.getText().toString()), (GameDifficulty) difficultySpinner.getSelectedItem());
+
             Intent intent = new Intent(this, HomeScreenActivity.class);
             EditText name = findViewById(R.id.enterNameHere);
             String user = name.getText().toString();
@@ -82,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             pilotSkill.setText(String.valueOf(addOne));
             skillsUsed -= 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
     public void onPilotDecrementPressed(View view) {
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             pilotSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             fighterSkill.setText(String.valueOf(addOne));
             skillsUsed -= 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -111,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             fighterSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -121,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             traderSkill.setText(String.valueOf(addOne));
             skillsUsed -= 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
             traderSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -141,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             engineerSkill.setText(String.valueOf(addOne));
             skillsUsed -= 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
         }
     }
 
@@ -151,6 +157,15 @@ public class MainActivity extends AppCompatActivity {
             engineerSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
+            enablePlayButton();
+        }
+    }
+
+    private void enablePlayButton() {
+        if (skillsUsed == 0) {
+            playButton.setEnabled(true);
+        } else {
+            playButton.setEnabled(false);
         }
     }
 }

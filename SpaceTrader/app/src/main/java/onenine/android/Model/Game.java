@@ -3,8 +3,14 @@ package onenine.android.Model;
 public class Game {
 
     private GameDifficulty difficulty;
+    private Player player;
 
-    public Game(GameDifficulty difficulty) {
+    public Game(Player p, GameDifficulty difficulty) {
+        this.player = p;
+        this.difficulty = difficulty;
+    }
+
+    public void setDifficulty(GameDifficulty difficulty) {
         this.difficulty = difficulty;
     }
 
@@ -12,7 +18,11 @@ public class Game {
         return this.difficulty;
     }
 
-//    public void setDifficulty(GameDifficulty diff) {
-//        this.difficulty = diff;
-//    }
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 }
