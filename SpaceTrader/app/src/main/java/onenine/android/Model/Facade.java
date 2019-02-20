@@ -18,13 +18,13 @@ public class Facade {
 
     }
 
-    public void setPlayer(String name, int f, int p, int t, int e) {
-        player = new Player(name, f, p, t, e);
-        Log.d("Player", "Player Information" + "\n" + player.toString());
+    public void setPlayer(String name, int p, int f, int t, int e) {
+        player = new Player(name, p, f, t, e);
     }
 
     public void setGame(GameDifficulty difficulty) {
         game = new Game(player, difficulty);
+        Log.d("Game", "Game Information" + "\n" + game.toString());
     }
 
     public Player getPlayer() {

@@ -25,4 +25,8 @@ public class Game {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public String toString() {
+        return player.toString() + "\n" + "Game Difficulty: " + difficulty.toString();
+    }
 }
