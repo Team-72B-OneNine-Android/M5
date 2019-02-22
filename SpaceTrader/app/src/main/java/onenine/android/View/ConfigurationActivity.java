@@ -14,13 +14,13 @@ import android.widget.TextView;
 import onenine.android.Model.GameDifficulty;
 import onenine.android.Model.Player;
 import onenine.android.R;
-import onenine.android.ViewModel.MainActivityViewModel;
+import onenine.android.ViewModel.ConfigurationActivityViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
-    private MainActivityViewModel vm;
+    private ConfigurationActivityViewModel vm;
     private Player player = new Player("", 0, 0, 0, 0);
     TextView playerName;
     TextView pilotSkill;
@@ -36,7 +36,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configure);
 
         setContentView(R.layout.activity_configure);
-        vm = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        vm = ViewModelProviders.of(this).get(ConfigurationActivityViewModel.class);
 
         playerName = findViewById(R.id.enterNameHere);
         pilotSkill = findViewById(R.id.pilotSkill);

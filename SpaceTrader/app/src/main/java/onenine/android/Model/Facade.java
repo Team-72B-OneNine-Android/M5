@@ -1,14 +1,12 @@
 package onenine.android.Model;
 
-import android.arch.lifecycle.ViewModelProviders;
-
-import onenine.android.ViewModel.MainActivityViewModel;
+import onenine.android.ViewModel.ConfigurationActivityViewModel;
 
 public class Facade {
 
     private Game game;
     private Player player;
-    private MainActivityViewModel vm;
+    private ConfigurationActivityViewModel vm;
 
     public Facade() {
 
