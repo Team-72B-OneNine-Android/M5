@@ -22,16 +22,16 @@ public class SolarSystem {
     }
     public List<Planet> generatePlanets() {
         initializeAmountOfPlanets();
-        while (!planets.contains(null)) {
             for(Planet values : planets) {
-                int x = getRandomX();
-                int y = getRandomY();
-                String tempCoordinates = Integer.toString(x) + Integer.toString(y);
-                if (!planets.contains(values.getType()) && !tempCoordinates.equals(values.getCoordinateString())) {
-                    planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                while(values.getType() == null) {
+                    int x = getRandomX();
+                    int y = getRandomY();
+                    String tempCoordinates = Integer.toString(x) + Integer.toString(y);
+                    if (!planets.contains(values.getType()) && !tempCoordinates.equals(values.getCoordinateString())) {
+                        planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                    }
                 }
             }
-        }
         return planets;
     }
 
