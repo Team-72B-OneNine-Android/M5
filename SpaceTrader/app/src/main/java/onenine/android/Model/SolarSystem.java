@@ -22,13 +22,15 @@ public class SolarSystem {
     }
     public List<Planet> generatePlanets() {
         initializeAmountOfPlanets();
+        boolean firstPlanet = true;
             for(Planet values : planets) {
                 while(values.getType() == null) {
                     int x = getRandomX();
                     int y = getRandomY();
                     String tempCoordinates = Integer.toString(x) + Integer.toString(y);
-                    if (!planets.contains(values.getType()) && !tempCoordinates.equals(values.getCoordinateString())) {
+                    if (!planets.contains(values.getType()) && !tempCoordinates.equals(values.getCoordinateString()) || firstPlanet) {
                         planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                        firstPlanet = false;
                     }
                 }
             }
