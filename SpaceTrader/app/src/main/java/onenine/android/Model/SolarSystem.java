@@ -20,7 +20,7 @@ public class SolarSystem {
             planets.add(null);
         }
     }
-    public List<Planet> generatePlanets() {
+    public void generatePlanets(List<Planet> planets) {
         initializeAmountOfPlanets();
         boolean firstPlanet = true;
             for(Planet values : planets) {
@@ -34,7 +34,6 @@ public class SolarSystem {
                     }
                 }
             }
-        return planets;
     }
 
     public String getRandomPlanet() {

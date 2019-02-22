@@ -11,6 +11,7 @@ public class Facade {
 
     private Game game;
     private Player player;
+    private Universe universe;
 
     private ConfigurationActivityViewModel vm;
 
@@ -32,6 +33,10 @@ public class Facade {
     public void setGame(GameDifficulty difficulty) {
         game = new Game(player, difficulty);
         Log.d("Game", "Game Information" + "\n" + game.toString());
+    }
+
+    public void setUniverse() {
+        universe = new Universe();
     }
     public String getPlayerName() {
         return player.getName();
