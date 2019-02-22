@@ -12,6 +12,7 @@ public class MainActivityViewModel extends ViewModel {
     public void onConfig(String n, int p, int f, int t, int e, GameDifficulty difficulty) {
         Facade.getInstance().setPlayer(n, p, f, t, e);
         Facade.getInstance().setGame(difficulty);
+        ////
     }
 
 }
