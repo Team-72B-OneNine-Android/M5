@@ -13,6 +13,7 @@ public class MainActivityViewModel extends ViewModel {
         Facade.getInstance().setPlayer(n, p, f, t, e);
         Facade.getInstance().setGame(difficulty);
         ////
+        ////
     }
 
 }
