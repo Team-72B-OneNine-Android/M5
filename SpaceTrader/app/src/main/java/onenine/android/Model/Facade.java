@@ -38,6 +38,9 @@ public class Facade {
     public void setUniverse() {
         universe = new Universe();
     }
+    public Universe getUniverse() {
+        return universe;
+    }
     public String getPlayerName() {
         return player.getName();
     }
