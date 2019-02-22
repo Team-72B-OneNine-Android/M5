@@ -30,7 +30,7 @@ public class Planet {
     public int getY() {
         return y;
     }
-    public String getCoordinateSum() {
+    public String getCoordinateString() {
         return (Integer.toString(getX()) + Integer.toString(getY()));
     }
 
