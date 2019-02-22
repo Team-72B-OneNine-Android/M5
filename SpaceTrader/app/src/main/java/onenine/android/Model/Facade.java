@@ -25,13 +25,16 @@ public class Facade {
 
     }
 
-    public void setPlayer(String name, int p, int f, int t, int e) {
-        player = new Player(name, p, f, t, e);
+    public void setPlayer(String name, int p, int f, int t, int e, String ship, int credits) {
+        player = new Player(name, p, f, t, e, ship, credits);
     }
 
     public void setGame(GameDifficulty difficulty) {
         game = new Game(player, difficulty);
         Log.d("Game", "Game Information" + "\n" + game.toString());
+    }
+    public String getPlayerName() {
+        return player.getName();
     }
 
     public Player getPlayer() {

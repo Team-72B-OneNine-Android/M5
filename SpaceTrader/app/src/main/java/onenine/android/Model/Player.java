@@ -7,16 +7,16 @@ public class Player {
     private int fighterPoints;
     private int traderPoints;
     private int engineerPoints;
-    private int credits = 1000;
+    private int credits;
     private String ship;
 
-    public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints) {
+    public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints, String ship, int credits) {
         this.name = name;
         this.pilotPoints = pilotPoints;
         this.fighterPoints = fighterPoints;
         this.traderPoints = traderPoints;
         this.engineerPoints = engineerPoints;
-        this.ship = "Gnat";
+        this.ship = ship;
 
     }
 
@@ -66,6 +66,10 @@ public class Player {
 
     public void setShip(String shipType) {
         this.ship = shipType;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 
     public int getCredits() {

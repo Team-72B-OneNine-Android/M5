@@ -48,7 +48,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         traderSkill = findViewById(R.id.traderSkill);
         engineerSkill = findViewById(R.id.engineerSkill);
         totalSkillPoints = findViewById(R.id.totalSkillPoints);
-        playButton = findViewById(R.id.play);
+        playButton = findViewById(R.id.playButton);
         playButton.setEnabled(false);
 
         //Creates the spinner for difficulties
@@ -65,8 +65,18 @@ public class ConfigurationActivity extends AppCompatActivity {
             vm.onConfig(playerName.getText().toString(), Integer.parseInt(pilotSkill.getText().toString()),
                     Integer.parseInt(fighterSkill.getText().toString()),
                     Integer.parseInt(traderSkill.getText().toString()),
-                    Integer.parseInt(engineerSkill.getText().toString()), (GameDifficulty) difficultySpinner.getSelectedItem());
-
+                    Integer.parseInt(engineerSkill.getText().toString()),
+                    "Gnat",
+                    1000,
+                    (GameDifficulty) difficultySpinner.getSelectedItem());
+            Log.d("Player", "Player Information" + "\n"
+                    +"Name: " + playerName.getText().toString() + "\n"
+                    + "Pilot Skill: " + pilotSkill.getText().toString() + "\n"
+                    + "Fighter Skill: " + fighterSkill.getText().toString() + "\n"
+                    + "Trader Skill: " + traderSkill.getText().toString() + "\n"
+                    + "Engineer Skill: " + engineerSkill.getText().toString() + "\n"
+                    + "Ship Type: Gnat" + "\n"
+                    + "Credits: 1000");
             Intent intent = new Intent(this, HomeScreenActivity.class);
             EditText name = findViewById(R.id.enterNameHere);
             String user = name.getText().toString();
@@ -93,7 +103,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             pilotSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
-            enablePlayButton();
+            disablePlayButton();
         }
     }
 
@@ -115,7 +125,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             fighterSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
-            enablePlayButton();
+            disablePlayButton();
         }
     }
 
@@ -137,7 +147,7 @@ public class ConfigurationActivity extends AppCompatActivity {
             traderSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
-            enablePlayButton();
+            disablePlayButton();
         }
     }
 
@@ -159,15 +169,16 @@ public class ConfigurationActivity extends AppCompatActivity {
             engineerSkill.setText(String.valueOf(subOne));
             skillsUsed += 1;
             totalSkillPoints.setText(String.valueOf(skillsUsed));
-            enablePlayButton();
+            disablePlayButton();
         }
     }
-
-    private void enablePlayButton() {
+    public void enablePlayButton() {
         if (skillsUsed == 0) {
             playButton.setEnabled(true);
-        } else {
-            playButton.setEnabled(false);
         }
     }
+    public void disablePlayButton() {
+        playButton.setEnabled(false);
+    }
+
 }
