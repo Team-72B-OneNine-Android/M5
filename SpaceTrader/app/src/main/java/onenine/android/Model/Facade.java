@@ -37,6 +37,7 @@ public class Facade {
 
     public void setUniverse() {
         universe = new Universe();
+        Log.d("Universe Information", "Universe Info" + "\n" + universe.toString());
     }
     public Universe getUniverse() {
         return universe;

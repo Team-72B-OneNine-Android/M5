@@ -11,30 +11,25 @@ public class SolarSystem {
     List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
     List<String> techLevelList = Arrays.asList(pa.getTechLevelStringArray());
     List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
-    List<Planet> planets  = new ArrayList<>();
     Random rand = new Random();
 
-
-    public void initializeAmountOfPlanets() {
-        for (int i = 0; i < 10; i++) {
-            planets.add(null);
-        }
-    }
     public void generatePlanets(List<Planet> planets) {
-        initializeAmountOfPlanets();
-        boolean firstPlanet = true;
-            for(Planet values : planets) {
-                while(values.getType() == null) {
-                    int x = getRandomX();
-                    int y = getRandomY();
-                    String tempCoordinates = Integer.toString(x) + Integer.toString(y);
-                    if (!planets.contains(values.getType()) && !tempCoordinates.equals(values.getCoordinateString()) || firstPlanet) {
-                        planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
-                        firstPlanet = false;
-                    }
-                }
+        List<String> planetNames = new ArrayList<>();
+        List<String> coordinateStrings = new ArrayList<>();
+        int counter = 0;
+        while (counter < 10) {
+            int x = getRandomX();
+            int y = getRandomY();
+            String randomPlanet = getRandomPlanet();
+            String tempCoordinates = Integer.toString(x) + Integer.toString(y);
+            if (!planetNames.contains(randomPlanet) && !coordinateStrings.contains(tempCoordinates)) {
+                planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                counter += 1;
             }
-    }
+        }
+
+        }
+
 
     public String getRandomPlanet() {
         return planetsList.get(rand.nextInt(planetsList.size()));

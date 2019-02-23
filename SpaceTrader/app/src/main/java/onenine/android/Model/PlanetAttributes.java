@@ -139,6 +139,7 @@ public class PlanetAttributes {
             "Hi-Tech"
     };
     String[] resources = {
+            "NOSPECIALRESOURCES",
             "MINERALRICH",
             "MINERALPOOR",
             "DESERT",

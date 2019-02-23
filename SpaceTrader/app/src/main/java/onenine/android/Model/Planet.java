@@ -33,5 +33,14 @@ public class Planet {
     public String getCoordinateString() {
         return (Integer.toString(getX()) + Integer.toString(getY()));
     }
+    @Override
+    public String toString() {
+        return ("Planet Name: " + getType() + "\n"
+                + "Tech Level: " + getTechLevel() + "\n"
+                + "Resource Type: " + getResources() + "\n"
+                + "X Coordinate: " + getX() + "\n"
+                + "Y Coordinate: " + getY() + "\n"
+                + "Coordinates: " + ("(") + getX() + (", ") + getY() + (")") + "\n");
+    }
 
 }

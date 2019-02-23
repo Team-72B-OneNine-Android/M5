@@ -69,14 +69,6 @@ public class ConfigurationActivity extends AppCompatActivity {
                     "Gnat",
                     1000,
                     (GameDifficulty) difficultySpinner.getSelectedItem());
-            Log.d("Player", "Player Information" + "\n"
-                    +"Name: " + playerName.getText().toString() + "\n"
-                    + "Pilot Skill: " + pilotSkill.getText().toString() + "\n"
-                    + "Fighter Skill: " + fighterSkill.getText().toString() + "\n"
-                    + "Trader Skill: " + traderSkill.getText().toString() + "\n"
-                    + "Engineer Skill: " + engineerSkill.getText().toString() + "\n"
-                    + "Ship Type: Gnat" + "\n"
-                    + "Credits: 1000");
             Intent intent = new Intent(this, HomeScreenActivity.class);
             EditText name = findViewById(R.id.enterNameHere);
             String user = name.getText().toString();
