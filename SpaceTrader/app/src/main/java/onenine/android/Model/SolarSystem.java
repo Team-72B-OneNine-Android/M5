@@ -24,6 +24,8 @@ public class SolarSystem {
             String tempCoordinates = Integer.toString(x) + Integer.toString(y);
             if (!planetNames.contains(randomPlanet) && !coordinateStrings.contains(tempCoordinates)) {
                 planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                planetNames.add(randomPlanet);
+                coordinateStrings.add(tempCoordinates);
                 counter += 1;
             }
         }
