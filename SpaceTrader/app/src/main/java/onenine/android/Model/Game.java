@@ -5,6 +5,7 @@ public class Game {
     private GameDifficulty difficulty;
     private Player player;
 
+
     public Game(Player p, GameDifficulty difficulty) {
         this.player = p;
         this.difficulty = difficulty;
