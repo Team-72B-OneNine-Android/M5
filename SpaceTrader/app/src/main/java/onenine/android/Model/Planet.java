@@ -2,12 +2,12 @@ package onenine.android.Model;
 
 public class Planet {
     private String type;
-    private String techLevel;
+    private TechLevel techLevel;
     private String resources;
     private int x;
     private int y;
 
-    public Planet(String type, String techLevel, String resources, int x, int y) {
+    public Planet(String type, TechLevel techLevel, String resources, int x, int y) {
         this.type = type;
         this.techLevel = techLevel;
         this.resources = resources;
@@ -18,8 +18,8 @@ public class Planet {
     public String getType() {
         return type;
     }
-    public String getTechLevel() {
-        return techLevel;
+    public int getTechLevel() {
+        return techLevel.ordinal();
     }
     public String getResources() {
         return resources;

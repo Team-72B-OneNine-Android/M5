@@ -8,8 +8,9 @@ import java.util.Random;
 public class SolarSystem {
 
     PlanetAttributes pa = new PlanetAttributes();
+    TechLevel techLevel;
     List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
-    List<String> techLevelList = Arrays.asList(pa.getTechLevelStringArray());
+    //List<String> techLevelList = Arrays.asList(pa.getTechLevelStringArray());
     List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
     Random rand = new Random();
 
@@ -37,8 +38,9 @@ public class SolarSystem {
         return planetsList.get(rand.nextInt(planetsList.size()));
     }
 
-    public String getRandomTechLevel() {
-        return techLevelList.get(rand.nextInt(techLevelList.size()));
+    public TechLevel getRandomTechLevel() {
+        int randomTechLevel = new Random().nextInt(TechLevel.values().length);
+        return TechLevel.values()[randomTechLevel];
     }
 
     public String getRandomResource() {

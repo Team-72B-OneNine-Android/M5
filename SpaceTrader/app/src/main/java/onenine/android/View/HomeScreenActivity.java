@@ -21,5 +21,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.welcomeUser);
         textView.setText("Welcome " + message + "!");
+        TextView textView1 = findViewById(R.id.currentPlanet);
+
     }
 }
