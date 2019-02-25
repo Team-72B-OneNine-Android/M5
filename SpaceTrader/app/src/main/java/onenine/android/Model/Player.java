@@ -17,7 +17,7 @@ public class Player {
         this.traderPoints = traderPoints;
         this.engineerPoints = engineerPoints;
         this.ship = ship;
-
+        this.credits = credits;
     }
 
     public String getName() {
