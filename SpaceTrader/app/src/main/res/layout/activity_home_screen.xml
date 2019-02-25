@@ -18,5 +18,23 @@
         android:layout_marginTop="30dp"
         android:text="TextView" />
 
+    <TextView
+        android:id="@+id/youAreOn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcomeUser"
+        android:layout_marginTop="40dp"
+        android:text="You are currently on Planet "/>
+
+    <TextView
+        android:id="@+id/currentPlanet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcomeUser"
+        android:layout_toRightOf="@+id/youAreOn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Planet"/>
+
 
 </RelativeLayout>

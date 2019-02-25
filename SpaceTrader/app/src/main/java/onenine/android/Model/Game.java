@@ -4,6 +4,7 @@ public class Game {
 
     private GameDifficulty difficulty;
     private Player player;
+    private Planet currentPlanet;
 
 
     public Game(Player p, GameDifficulty difficulty) {
@@ -25,6 +26,14 @@ public class Game {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public Planet getCurrentPlanet() {
+        return currentPlanet;
+    }
+
+    public void setCurrentPlanet(Planet currentPlanet) {
+        this.currentPlanet = currentPlanet;
     }
 
     public String toString() {
