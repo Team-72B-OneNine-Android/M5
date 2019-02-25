@@ -32,12 +32,10 @@ public class Facade {
 
     public void setGame(GameDifficulty difficulty) {
         game = new Game(player, difficulty);
+        universe = new Universe();
+        game.setCurrentPlanet(universe.getPlanet(0));
         Log.d("Game", "Game Information" + "\n" + game.toString());
-    }
-
-    public void setUniverse() {
-           universe = new Universe();
-           Log.d("Universe Information", "Universe Info" + "\n" + universe.toString());
+        Log.d("Universe Information", "Universe Info" + "\n" + universe.toString());
     }
     public Universe getUniverse() {
         return universe;

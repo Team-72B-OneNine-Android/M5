@@ -18,7 +18,10 @@ public class Planet {
     public String getType() {
         return type;
     }
-    public int getTechLevel() {
+    public TechLevel getTechLevel() {
+        return techLevel;
+    }
+    public int getTechLevelNum() {
         return techLevel.ordinal();
     }
     public String getResources() {
@@ -37,6 +40,7 @@ public class Planet {
     public String toString() {
         return ("Planet Name: " + getType() + "\n"
                 + "Tech Level: " + getTechLevel() + "\n"
+                + "Tech Level Number: " + getTechLevelNum() + "\n"
                 + "Resource Type: " + getResources() + "\n"
                 + "X Coordinate: " + getX() + "\n"
                 + "Y Coordinate: " + getY() + "\n"

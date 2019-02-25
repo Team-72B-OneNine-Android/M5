@@ -4,15 +4,18 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import onenine.android.R;
 import onenine.android.ViewModel.HomeScreenActivityViewModel;
+import android.view.View;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
     private HomeScreenActivityViewModel vm;
     TextView currentPlanet;
+    Button marketButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +32,14 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         vm = ViewModelProviders.of(this).get(HomeScreenActivityViewModel.class);
         currentPlanet = findViewById(R.id.currentPlanet);
+        updateCurrentPlanet();
 
     }
+    public void updateCurrentPlanet() {
+        currentPlanet.setText(vm.getGame().getCurrentPlanet().getType());
+    }
 
-    public void onButtonPressed() {
-        currentPlanet.setText("Hello");
+    public void onMarketButtonPressed(View view) {
+
     }
 }
