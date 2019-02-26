@@ -12,7 +12,7 @@ public enum TechLevel {
 
     private String techLevel;
 
-    private TechLevel(String techLevel) {
+    TechLevel(String techLevel) {
         this.techLevel = techLevel;
     }
 

@@ -51,14 +51,14 @@ public enum Goods {
         return getCurrentPlanetTechLevel() > this.MTLU;
     }
 
-    private double calcuclateVar() {
+    private double calculateVar() {
         int randVar = new Random().nextInt(this.var);
         return randVar/100;
     }
 
     public int getPrice() {
         int price = (int) ((this.basePrice) + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP))
-                + (this.basePrice * calcuclateVar()));
+                + (this.basePrice * calculateVar()));
         return price;
     }
 }

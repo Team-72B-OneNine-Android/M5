@@ -13,9 +13,6 @@ public class Facade {
     private Player player;
     private Universe universe;
 
-    private ConfigurationActivityViewModel vm;
-
-
 
     private static  Facade instance = new Facade();
 

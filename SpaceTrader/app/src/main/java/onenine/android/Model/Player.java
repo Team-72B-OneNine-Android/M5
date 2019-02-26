@@ -2,7 +2,6 @@ package onenine.android.Model;
 
 public class Player {
     private String name;
-//    private String difficulty; //will be an enum
     private int pilotPoints;
     private int fighterPoints;
     private int traderPoints;
