@@ -40,6 +40,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
     public void onMarketButtonPressed(View view) {
-
+        Intent market = new Intent(this, MarketPlaceActivity.class);
+        startActivity(market);
     }
 }
