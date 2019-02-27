@@ -23,8 +23,8 @@ public class Facade {
 
     }
 
-    public void setPlayer(String name, int p, int f, int t, int e, String ship, int credits) {
-        player = new Player(name, p, f, t, e, ship, credits);
+    public void setPlayer(String name, int p, int f, int t, int e, int credits) {
+        player = new Player(name, p, f, t, e, credits);
     }
 
     public void setGame(GameDifficulty difficulty) {

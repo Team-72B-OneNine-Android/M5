@@ -66,7 +66,6 @@ public class ConfigurationActivity extends AppCompatActivity {
                     Integer.parseInt(fighterSkill.getText().toString()),
                     Integer.parseInt(traderSkill.getText().toString()),
                     Integer.parseInt(engineerSkill.getText().toString()),
-                    "Gnat",
                     1000,
                     (GameDifficulty) difficultySpinner.getSelectedItem());
             Intent intent = new Intent(this, HomeScreenActivity.class);
