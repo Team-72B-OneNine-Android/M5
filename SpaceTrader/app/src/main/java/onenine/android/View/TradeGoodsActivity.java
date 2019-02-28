@@ -7,21 +7,16 @@ import android.view.View;
 
 import onenine.android.R;
 
-public class MarketPlaceActivity extends AppCompatActivity {
+public class TradeGoodsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_market_place);
+        setContentView(R.layout.activity_trade_goods);
     }
 
     public void onBackButtonPressed(View view) {
-        Intent back = new Intent(this, HomeScreenActivity.class);
+        Intent back = new Intent(this, MarketPlaceActivity.class);
         startActivity(back);
-    }
-
-    public void onTradeGoodsButtonPressed(View view) {
-        Intent tradeGoods = new Intent(this, TradeGoodsActivity.class);
-        startActivity(tradeGoods);
     }
 }
