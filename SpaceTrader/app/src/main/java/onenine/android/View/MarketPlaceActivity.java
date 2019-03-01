@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import onenine.android.R;
 
@@ -13,6 +14,11 @@ public class MarketPlaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_place);
+
+        TextView textView = findViewById(R.id.current_good);
+        textView.setText("Goods currently on the ship: ");
+
+
     }
 
     public void onBackButtonPressed(View view) {
