@@ -36,12 +36,4 @@ public class TradeGoodsActivity extends AppCompatActivity {
         startActivity(back);
     }
 
-    public void onSellClicked(View view) {
-
-    }
-
-    public void onBuyClicked() {
-
-    }
-
 }

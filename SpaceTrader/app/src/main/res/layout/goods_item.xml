@@ -39,7 +39,6 @@
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/good_number_have"
         android:background="@android:color/holo_green_light"
-        android:onClick="onBuyClicked"
         android:text="Buy"
         android:textSize="15sp" />
 
@@ -50,7 +49,6 @@
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@+id/buy_button"
-        android:onClick="onSellClicked"
         android:text="Sell"
         android:textSize="15sp" />
 

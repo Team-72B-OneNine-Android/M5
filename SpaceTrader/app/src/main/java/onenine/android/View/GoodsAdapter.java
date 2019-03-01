@@ -82,7 +82,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             goods.put(currentGood, goods.get(currentGood) + 1);
                             player.setCredits(player.getCredits() - currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() + 1);
-                            Log.d("Button", "clicked");
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
                         } else if (!ship.cargoSpaceAvailable()) {
                             Toast.makeText(itemView.getContext(), "There is no more cargo space",
@@ -107,7 +106,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             goods.put(currentGood, goods.get(currentGood) - 1);
                             player.setCredits(player.getCredits() + currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() - 1);
-                            Log.d("Button", "clicked");
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
                         } else {
                             Toast.makeText(itemView.getContext(), "There is no '" + currentGood.getName()
