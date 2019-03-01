@@ -43,11 +43,11 @@ public enum Goods {
         return Facade.getInstance().getGame().getCurrentPlanet().getTechLevelNum();
     }
 
-    public boolean canBuy(int techLevel) {
+    public boolean canBuy() {
         return getCurrentPlanetTechLevel() > this.MTLP;
     }
 
-    public boolean canSell(int techLevel) {
+    public boolean canSell() {
         return getCurrentPlanetTechLevel() > this.MTLU;
     }
 
@@ -60,5 +60,17 @@ public enum Goods {
         int price = (int) ((this.basePrice) + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP))
                 + (this.basePrice * calculateVar()));
         return price;
+    }
+
+    public String stringPrice() {
+        if (canBuy() || canSell()) {
+            return String.valueOf(getPrice());
+        } else {
+            return "--";
+        }
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

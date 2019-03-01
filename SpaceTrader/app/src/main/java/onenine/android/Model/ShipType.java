@@ -18,5 +18,9 @@ public enum ShipType {
     ShipType(int cargoSpace) {
         this.cargoSpace = cargoSpace;
     }
+
+    public int getCargoSpace() {
+        return cargoSpace;
+    }
 }
 
