@@ -49,7 +49,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         holder.numberHave.setText(String.valueOf(goods.get(goodsList[position])));
         holder.buyButton.setText("Buy");
         holder.sellButton.setText("Sell");
-        holder.goodPrice.setText(goodsList[position].stringPrice());
+        holder.goodBuyPrice.setText(goodsList[position].buyStringPrice());
+        holder.goodSellPrice.setText(goodsList[position].sellStringPrice());
 
     }
 
@@ -60,7 +61,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         private TextView numberHave;
         private Button buyButton;
         private Button sellButton;
-        private TextView goodPrice;
+        private TextView goodBuyPrice;
+        private TextView goodSellPrice;
 
         public GoodsViewHolder(@NonNull final View itemView) {
 
@@ -69,7 +71,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
             numberHave = itemView.findViewById(R.id.good_number_have);
             buyButton = itemView.findViewById(R.id.buy_button);
             sellButton = itemView.findViewById(R.id.sell_button);
-            goodPrice = itemView.findViewById(R.id.good_price);
+            goodBuyPrice = itemView.findViewById(R.id.good_buy_price);
+            goodSellPrice = itemView.findViewById(R.id.good_sell_price);
             buyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

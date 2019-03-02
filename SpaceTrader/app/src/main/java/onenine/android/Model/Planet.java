@@ -6,6 +6,7 @@ public class Planet {
     private String resources;
     private int x;
     private int y;
+    private Goods[] myGoods= Goods.values();
 
     public Planet(String type, TechLevel techLevel, String resources, int x, int y) {
         this.type = type;
@@ -36,6 +37,7 @@ public class Planet {
     public String getCoordinateString() {
         return (Integer.toString(getX()) + Integer.toString(getY()));
     }
+
     @Override
     public String toString() {
         return ("Planet Name: " + getType() + "\n"
@@ -47,4 +49,35 @@ public class Planet {
                 + "Coordinates: " + ("(") + getX() + (", ") + getY() + (")") + "\n");
     }
 
+    public String goodsProduced() {
+        String goodsProduced = "";
+        for (Goods goods : myGoods) {
+            if (goods.canBuy()) {
+                goodsProduced += goods.getName() + ", ";
+            }
+        }
+        if (goodsProduced.length() <= 0) {
+            goodsProduced = "None";
+        }
+        if (goodsProduced.charAt(goodsProduced.length() - 2) == ',') {
+            goodsProduced = goodsProduced.substring(0, goodsProduced.length() - 2);
+        }
+        return goodsProduced;
+    }
+
+    public String goodsUsed() {
+        String goodsUsed = "";
+        for (Goods goods : myGoods) {
+            if (goods.canSell()) {
+                goodsUsed += goods.getName() + ", ";
+            }
+        }
+        if (goodsUsed.length() <= 0) {
+            goodsUsed = "None";
+        }
+        if (goodsUsed.charAt(goodsUsed.length() - 2) == ',') {
+            goodsUsed = goodsUsed.substring(0, goodsUsed.length() - 2);
+        }
+        return goodsUsed;
+    }
 }

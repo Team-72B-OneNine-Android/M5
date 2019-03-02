@@ -44,11 +44,11 @@ public enum Goods {
     }
 
     public boolean canBuy() {
-        return getCurrentPlanetTechLevel() > this.MTLP;
+        return getCurrentPlanetTechLevel() >= this.MTLP;
     }
 
     public boolean canSell() {
-        return getCurrentPlanetTechLevel() > this.MTLU;
+        return getCurrentPlanetTechLevel() >= this.MTLU;
     }
 
     private double calculateVar() {
@@ -62,11 +62,19 @@ public enum Goods {
         return price;
     }
 
-    public String stringPrice() {
-        if (canBuy() || canSell()) {
+    public String buyStringPrice() {
+        if (canBuy()) {
             return String.valueOf(getPrice());
         } else {
-            return "--";
+            return "N/P";
+        }
+    }
+
+    public String sellStringPrice() {
+        if (canSell()) {
+            return String.valueOf(getPrice());
+        } else {
+            return "N/U";
         }
     }
 

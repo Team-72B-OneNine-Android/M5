@@ -1,14 +1,9 @@
 package onenine.android.Model;
 
 
-import onenine.android.ViewModel.ConfigurationActivityViewModel;
-
 import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+
 
 
 public class Facade {
@@ -17,8 +12,6 @@ public class Facade {
     private Game game;
     private Player player;
     private Universe universe;
-    private List<Goods> goods;
-
 
     private static  Facade instance = new Facade();
 

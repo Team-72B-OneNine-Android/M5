@@ -46,4 +46,21 @@ public class Ship {
     public boolean cargoSpaceAvailable() {
         return cargoUsed < shipType.getCargoSpace();
     }
+
+    public String currentGoods() {
+        String currentGoods = "";
+        for (Goods goods : tradeGoods.keySet()) {
+            if (tradeGoods.get(goods) != 0) {
+                currentGoods += goods.getName() + " = " + tradeGoods.get(goods) + ", ";
+            }
+        }
+        if (currentGoods.length() <= 0) {
+            currentGoods = "None";
+        }
+        if (currentGoods.charAt(currentGoods.length() - 2) == ',') {
+            currentGoods = currentGoods.substring(0, currentGoods.length() - 2);
+        }
+        return currentGoods;
+    }
+
 }

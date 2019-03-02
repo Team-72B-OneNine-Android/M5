@@ -10,7 +10,6 @@ public class SolarSystem {
     PlanetAttributes pa = new PlanetAttributes();
     TechLevel techLevel;
     List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
-    //List<String> techLevelList = Arrays.asList(pa.getTechLevelStringArray());
     List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
     Random rand = new Random();
 
