@@ -67,9 +67,6 @@ public class ConfigurationActivity extends AppCompatActivity {
                     1000,
                     (GameDifficulty) difficultySpinner.getSelectedItem());
             Intent intent = new Intent(this, HomeScreenActivity.class);
-            EditText name = findViewById(R.id.enterNameHere);
-            String user = name.getText().toString();
-            intent.putExtra(EXTRA_MESSAGE, user);
             startActivity(intent);
             finish();
         }

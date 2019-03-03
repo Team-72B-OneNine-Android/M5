@@ -34,6 +34,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Intent back = new Intent(this, MarketPlaceActivity.class);
         startActivity(back);
+
     }
 
 }
