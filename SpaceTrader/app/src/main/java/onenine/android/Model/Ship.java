@@ -5,11 +5,13 @@ import java.util.HashMap;
 public class Ship {
     private ShipType shipType;
     private int cargoUsed;
+    private int shipFuel;
     HashMap<Goods, Integer> tradeGoods = new HashMap<>();
 
     public Ship (ShipType st) {
         this.shipType = st;
         this.cargoUsed = 0;
+        this.shipFuel = 100;
         for (Goods good : Goods.values()) {
             this.tradeGoods.put(good, 0);
         }
@@ -29,6 +31,13 @@ public class Ship {
 
     public void setCargoUsed(int cargoUsed) {
         this.cargoUsed = cargoUsed;
+    }
+    public int getShipFuel() {
+        return shipFuel;
+    }
+
+    public void setShipFuel(int shipFuel) {
+        this.shipFuel = shipFuel;
     }
 
     public HashMap<Goods, Integer> getTradeGoods() {

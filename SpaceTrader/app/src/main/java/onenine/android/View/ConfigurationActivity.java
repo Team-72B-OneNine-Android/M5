@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,7 +16,6 @@ import onenine.android.ViewModel.ConfigurationActivityViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "onenine.android.MESSAGE";
 
 
     private ConfigurationActivityViewModel vm;

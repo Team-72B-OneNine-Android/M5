@@ -80,4 +80,11 @@ public class Planet {
         }
         return goodsUsed;
     }
+
+    /*
+    This method is used in the home screen activity class
+     */
+    public String coordinatesPretty() {
+        return ("(") + getX() + (", ") + getY() + (")");
+    }
 }

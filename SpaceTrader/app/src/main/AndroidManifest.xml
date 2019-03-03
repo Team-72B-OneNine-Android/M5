@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.TradeGoodsActivity"></activity>
+        <activity android:name=".View.SpaceStationActivity"></activity>
+        <activity android:name=".View.TradeGoodsActivity" />
         <activity android:name=".View.MarketPlaceActivity" />
         <activity android:name=".View.HomeScreenActivity" />
         <activity android:name=".View.LaunchScreenActivity" />
