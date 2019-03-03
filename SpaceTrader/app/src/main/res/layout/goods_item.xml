@@ -25,12 +25,10 @@
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/good_name"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="115dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:maxLines="1"
-        android:paddingEnd="8dp"
-        android:paddingRight="8dp" />
+        android:maxLines="1" />
 
     <Button
         android:id="@+id/buy_button"
@@ -39,6 +37,7 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/good_number_have"
         android:background="@android:color/holo_green_light"
+        android:layout_alignParentTop="true"
         android:text="Buy"
         android:textSize="15sp" />
 
@@ -50,6 +49,7 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@+id/buy_button"
         android:text="Sell"
+        android:layout_alignParentTop="true"
         android:textSize="15sp" />
 
     <TextView
@@ -58,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="18dp"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/sell_button" />
 
 
@@ -67,7 +68,7 @@
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/good_buy_price"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="355dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:maxLines="1" />

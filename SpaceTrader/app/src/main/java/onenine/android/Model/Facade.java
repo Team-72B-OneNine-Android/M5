@@ -47,7 +47,4 @@ public class Facade {
     public Game getGame() {
         return this.game;
     }
-    public HashMap<Goods, Integer> goodsMap() {
-        return getPlayer().getShip().getTradeGoods();
-    }
 }

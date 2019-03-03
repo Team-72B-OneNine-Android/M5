@@ -114,7 +114,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             + "' on the ship", Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        Toast.makeText(itemView.getContext(), "this good is not used on the" +
+                        Toast.makeText(itemView.getContext(), "this good is not used on the " +
                                 "current planet", Toast.LENGTH_LONG).show();
                     }
                 }
