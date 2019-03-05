@@ -16,6 +16,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     private SpaceStationActivityViewModel vm;
     private int fuel;
+    private double distance;
     private Planet planet0;
     private Planet planet1;
     private Planet planet2;
@@ -102,13 +103,18 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet0Pressed(View view) {
+        int fuelDecrease = 0;
         vm.getGame().setCurrentPlanet(planet0);
         updateCurrentPlanet(0);
+        fuelDecrease = calculateDistance(vm.getGame().getCurrentPlanet(), planet0);
+        vm.get
+        goToHomeScreen();
     }
 
     public void onPlanet1Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet1);
         updateCurrentPlanet(1);
+        goToHomeScreen();
     }
 
     public void onPlanet2Pressed(View view) {
@@ -119,40 +125,73 @@ public class SpaceStationActivity extends AppCompatActivity {
     public void onPlanet3Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet3);
         updateCurrentPlanet(3);
+        goToHomeScreen();
     }
 
     public void onPlanet4Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet4);
         updateCurrentPlanet(4);
+        goToHomeScreen();
     }
 
     public void onPlanet5Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet5);
         updateCurrentPlanet(5);
+        goToHomeScreen();
     }
 
     public void onPlanet6Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet6);
         updateCurrentPlanet(6);
+        goToHomeScreen();
     }
 
     public void onPlanet7Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet7);
         updateCurrentPlanet(7);
+        goToHomeScreen();
     }
 
     public void onPlanet8Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet8);
         updateCurrentPlanet(8);
+        goToHomeScreen();
     }
 
     public void onPlanet9Pressed(View view) {
         vm.getGame().setCurrentPlanet(planet9);
         updateCurrentPlanet(9);
+        goToHomeScreen();
     }
 
     public void updateCurrentPlanet(int i) {
         currentPlanet.setText("You are now on planet " + vm.getUniverse().getPlanet(i).getType());
+        goToHomeScreen();
+    }
+
+    public int calculateDistance(Planet planet1, Planet planet2) {
+        int x1 = 0;
+        int x2 = 0;
+        int y1 = 0;
+        int y2 = 0;
+        int xDiff = 0;
+        int yDiff = 0;
+        x1 = planet1.getX();
+        x2 = planet2.getX();
+        y1 = planet1.getY();
+        y2 = planet2.getY();
+        xDiff = x2 - x1;
+        yDiff = y2 - y1;
+        return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
+    }
+
+    public void decreaseFuel(int fuel, int distance) {
+
+    }
+
+    public void goToHomeScreen() {
+        Intent back = new Intent(this, HomeScreenActivity.class);
+        startActivity(back);
     }
 
 }
