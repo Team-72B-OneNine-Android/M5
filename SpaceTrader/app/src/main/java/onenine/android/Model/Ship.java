@@ -48,8 +48,8 @@ public class Ship {
         this.tradeGoods = tradeGoods;
     }
 
-    public void changeQuantity(Goods good, int newValue) {
-        this.tradeGoods.put(good, newValue);
+    public int getCargoSpace() {
+        return shipType.getCargoSpace() - cargoUsed;
     }
 
     public boolean cargoSpaceAvailable() {

@@ -1,38 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/trade_goods"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".View.MarketPlaceActivity">
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/goods_list"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_back_market"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="27dp"
-        android:onClick="onBackButtonPressed"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="@+id/goods_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/info_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:text="text1"
+            android:textSize="18dp"
+            android:layout_marginBottom="17dp"
+            />
+
+        <TextView
+            android:id="@+id/no_have"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/info_holder"
+            android:layout_marginLeft="88dp"
+            android:text="text2"
+            android:textSize="18dp"
+            />
+
+        <TextView
+            android:id="@+id/buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/no_have"
+            android:textSize="18dp"
+            android:text="text3"/>
+
+        <TextView
+            android:id="@+id/sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_toRightOf="@id/buy"
+            android:textSize="18dp"
+            android:text="text4"/>
+
+        <TextView
+            android:id="@+id/buy_price"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_toRightOf="@id/sell"
+            android:textSize="18dp"
+            android:text="text5"/>
+
+        <TextView
+            android:id="@+id/sell_price"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/buy_price"
+            android:textSize="18dp"
+            android:text="text6"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/goods_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/info_holder"/>
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="text7"
+            android:textSize="16dp"
+            android:layout_below="@id/goods_list"
+            android:layout_above="@+id/button_back_market"
+            android:layout_marginTop="-75dp"
+            />
+
+        <TextView
+            android:id="@+id/credits_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:text="text8"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/info"
+            android:layout_below="@id/goods_list"
+            android:layout_above="@+id/button_back_market"
+            android:layout_marginTop="-75dp"
+            />
+
+        <TextView
+            android:id="@+id/cargo_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:text="text9"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/credits_available"
+            android:layout_below="@id/goods_list"
+            android:layout_above="@+id/button_back_market"
+            android:layout_marginTop="-75dp"
+            />
+
+        <TextView
+            android:id="@+id/cargo_space_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:text="text8"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/cargo_space"
+            android:layout_below="@id/goods_list"
+            android:layout_above="@+id/button_back_market"
+            android:layout_marginTop="-75dp"
+            />
+
+
+        <Button
+            android:id="@+id/button_back_market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goods_list"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-48dp"
+            android:onClick="onBackButtonPressed"
+            android:text="Back" />
+    </RelativeLayout>
+</LinearLayout>
