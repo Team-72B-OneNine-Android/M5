@@ -154,9 +154,5 @@ public class SpaceStationActivity extends AppCompatActivity {
     public void updateCurrentPlanet(int i) {
         currentPlanet.setText("You are now on planet " + vm.getUniverse().getPlanet(i).getType());
     }
-    public void onSpaceStationBackButtonPressed(View view) {
-        Intent back = new Intent(this, HomeScreenActivity.class);
-        startActivity(back);
-    }
 
 }
