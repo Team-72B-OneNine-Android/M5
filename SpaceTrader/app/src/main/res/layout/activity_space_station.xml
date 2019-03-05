@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Welcome to the Space Station!"
+        android:text="Welcome to the Space Port!"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +66,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spaceStationFuel" />
 
+    <TextView
+        android:id="@+id/fuelCost0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet0"
+        app:layout_constraintEnd_toStartOf="@+id/fuelCost1"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/planet0"
         android:layout_width="wrap_content"
@@ -81,6 +96,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/whichPlanet" />
 
+    <TextView
+        android:id="@+id/fuelCost1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/planet1"
         android:layout_width="wrap_content"
@@ -92,6 +117,20 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/whichPlanet" />
+
+    <TextView
+        android:id="@+id/fuelCost2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet2"
+        app:layout_constraintEnd_toStartOf="@+id/fuelCost3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/planet2"
@@ -108,6 +147,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet0" />
 
+    <TextView
+        android:id="@+id/fuelCost3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:layout_marginBottom="2dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/planet3"
         android:layout_width="wrap_content"
@@ -119,6 +169,19 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet1" />
+
+    <TextView
+        android:id="@+id/fuelCost4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet4"
+        app:layout_constraintEnd_toStartOf="@+id/fuelCost5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/planet4"
@@ -135,6 +198,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet2" />
 
+    <TextView
+        android:id="@+id/fuelCost5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet5"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/planet5"
         android:layout_width="wrap_content"
@@ -146,6 +219,19 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet3" />
+
+    <TextView
+        android:id="@+id/fuelCost6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet6"
+        app:layout_constraintEnd_toStartOf="@+id/fuelCost7"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/planet6"
@@ -163,6 +249,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet4" />
 
+    <TextView
+        android:id="@+id/fuelCost7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet7"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/planet7"
         android:layout_width="wrap_content"
@@ -174,6 +270,19 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet5" />
+
+    <TextView
+        android:id="@+id/fuelCost8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet8"
+        app:layout_constraintEnd_toStartOf="@+id/fuelCost9"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/planet8"
@@ -189,6 +298,16 @@
         app:layout_constraintEnd_toStartOf="@+id/planet9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planet6" />
+
+    <TextView
+        android:id="@+id/fuelCost9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/planet9"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/planet9"
