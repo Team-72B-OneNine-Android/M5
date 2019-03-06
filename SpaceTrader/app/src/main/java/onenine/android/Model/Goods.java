@@ -52,7 +52,7 @@ public enum Goods {
     }
 
     private double calculateVar() {
-        int randVar = new Random().nextInt(this.var);
+        double randVar = new Random().nextInt(this.var);
         return randVar/100;
     }
 

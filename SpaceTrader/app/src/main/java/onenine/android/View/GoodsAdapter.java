@@ -24,13 +24,15 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
     private Game game;
     private Player player;
     private Ship ship;
+    private TradeGoodsActivity activity;
 
-    public GoodsAdapter (Game game) {
+    public GoodsAdapter (Game game, TradeGoodsActivity activity) {
         this.game = game;
         this.player = this.game.getPlayer();
         this.ship = this.player.getShip();
         this.goods = this.ship.getTradeGoods();
         this.goodsList = Goods.values();
+        this.activity = activity;
     }
 
     @NonNull
@@ -85,8 +87,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             player.setCredits(player.getCredits() - currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() + 1);
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
-                            TradeGoodsActivity.updateCreditsAvailable();
-                            TradeGoodsActivity.updateCargoSpaceAvailable();
+                            activity.updateCreditsAvailable();
+                            activity.updateCargoSpaceAvailable();
                         } else if (!ship.cargoSpaceAvailable()) {
                             Toast.makeText(itemView.getContext(), "There is no more cargo space",
                                     Toast.LENGTH_LONG).show();
@@ -111,8 +113,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             player.setCredits(player.getCredits() + currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() - 1);
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
-                            TradeGoodsActivity.updateCreditsAvailable();
-                            TradeGoodsActivity.updateCargoSpaceAvailable();
+                            activity.updateCreditsAvailable();
+                            activity.updateCargoSpaceAvailable();
                         } else {
                             Toast.makeText(itemView.getContext(), "There is no '" + currentGood.getName()
                             + "' on the ship", Toast.LENGTH_LONG).show();

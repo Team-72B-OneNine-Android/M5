@@ -13,7 +13,7 @@ public class Facade {
     private Player player;
     private Universe universe;
 
-    private static  Facade instance = new Facade();
+    private static final Facade instance = new Facade();
 
     public static Facade getInstance() { return instance; }
 
