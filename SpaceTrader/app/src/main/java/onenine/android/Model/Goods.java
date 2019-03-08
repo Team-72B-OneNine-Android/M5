@@ -72,7 +72,7 @@ public enum Goods {
             return price;
         } else {
             current = currentPlanet();
-            this.price = (int) (price + (this.basePrice * calculateVar()));
+            this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
             return price;
         }
     }
