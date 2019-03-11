@@ -96,7 +96,7 @@ public class Planet {
             return false;
         }
         Planet planet = (Planet) o;
-        return this.type.equals(planet.type) && this.resources.equals(planet.resources)
-                && this.x == planet.x && this.y == planet.y;
+        return this.type.equals(planet.type)
+                || (this.x == planet.x && this.y == planet.y);
     }
 }
