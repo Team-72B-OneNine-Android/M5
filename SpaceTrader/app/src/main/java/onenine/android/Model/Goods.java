@@ -63,6 +63,7 @@ public enum Goods {
     }
 
     public int getPrice() {
+        int randomEvent = new Random().nextInt(101);
         int currentPrice = this.basePrice + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP));
         if (current == null) {
             current = currentPlanet();
@@ -72,6 +73,15 @@ public enum Goods {
             return price;
         } else {
             current = currentPlanet();
+            if (randomEvent >= 90) {
+                this.basePrice = (int) (basePrice * 1.5);
+            }
+            if (randomEvent <= 10) {
+                this.basePrice = (int) (basePrice * 1.35);
+            }
+            if (randomEvent > 70 && randomEvent < 90) {
+                this.basePrice = (int) (basePrice * 0.60);
+            }
             this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
             return price;
         }
