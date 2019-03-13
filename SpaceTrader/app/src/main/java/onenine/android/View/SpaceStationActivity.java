@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import onenine.android.Model.Events;
+import onenine.android.Model.Game;
 import onenine.android.Model.Planet;
 import onenine.android.R;
 import onenine.android.ViewModel.SpaceStationActivityViewModel;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 public class SpaceStationActivity extends AppCompatActivity {
 
     private SpaceStationActivityViewModel vm;
+    private Game myGame;
     private Planet planet0;
     private Planet planet1;
     private Planet planet2;
@@ -56,6 +59,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
         //initialize view model
         vm = ViewModelProviders.of(this).get(SpaceStationActivityViewModel.class);
+        myGame = vm.getGame();
 
         //Get planet and fuel design ids
         currentPlanet = findViewById(R.id.spaceStationPlanet);
@@ -63,11 +67,11 @@ public class SpaceStationActivity extends AppCompatActivity {
 
         //get current planet
         currentPlanet = findViewById(R.id.spaceStationPlanet);
-        currentPlanet.setText("You are currently on planet " + vm.getGame().getCurrentPlanet().getType());
+        currentPlanet.setText("You are currently on planet " + myGame.getCurrentPlanet().getType());
 
         //gets amount of fuel that player has left
         currentFuel = findViewById(R.id.spaceStationFuel);
-        currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getGame().getPlayer().getShip().getShipFuel()) + "%");
+        currentFuel.setText("Fuel Remaining: " + Integer.toString(myGame.getPlayer().getShip().getShipFuel()) + "%");
 
         //Planet Buttons
         planet0B = findViewById(R.id.planet0);
@@ -118,16 +122,16 @@ public class SpaceStationActivity extends AppCompatActivity {
         fuelCost9 = findViewById(R.id.fuelCost9);
 
         //Set fuel cost text
-        fuelCost0.setText("Cost: " + Integer.toString(fuelCostForPlanet(0)) + "%");
-        fuelCost1.setText("Cost: " + Integer.toString(fuelCostForPlanet(1)) + "%");
-        fuelCost2.setText("Cost: " + Integer.toString(fuelCostForPlanet(2)) + "%");
-        fuelCost3.setText("Cost: " + Integer.toString(fuelCostForPlanet(3)) + "%");
-        fuelCost4.setText("Cost: " + Integer.toString(fuelCostForPlanet(4)) + "%");
-        fuelCost5.setText("Cost: " + Integer.toString(fuelCostForPlanet(5)) + "%");
-        fuelCost6.setText("Cost: " + Integer.toString(fuelCostForPlanet(6)) + "%");
-        fuelCost7.setText("Cost: " + Integer.toString(fuelCostForPlanet(7)) + "%");
-        fuelCost8.setText("Cost: " + Integer.toString(fuelCostForPlanet(8)) + "%");
-        fuelCost9.setText("Cost: " + Integer.toString(fuelCostForPlanet(9)) + "%");
+        fuelCost0.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet0)) + "%");
+        fuelCost1.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet1)) + "%");
+        fuelCost2.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet2)) + "%");
+        fuelCost3.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet3)) + "%");
+        fuelCost4.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet4)) + "%");
+        fuelCost5.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet5)) + "%");
+        fuelCost6.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet6)) + "%");
+        fuelCost7.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet7)) + "%");
+        fuelCost8.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet8)) + "%");
+        fuelCost9.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet9)) + "%");
 
 
 
@@ -136,10 +140,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet0Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet0));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet0);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet0));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet0);
+        if (myGame.travel(planet0)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -147,10 +152,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet1Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet1));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet1);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet1));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet1);
+        if (myGame.travel(planet1)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -158,10 +164,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet2Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet2));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet2);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet2));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet2);
+        if (myGame.travel(planet2)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -169,10 +176,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet3Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet3));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet3);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet3));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet3);
+        if (myGame.travel(planet3)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -180,10 +188,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet4Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet4));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet4);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet4));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet4);
+        if (myGame.travel(planet4)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -191,10 +200,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet5Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet5));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet5);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet5));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet5);
+        if (myGame.travel(planet5)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -202,10 +212,12 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet6Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet6));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet6);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet6));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet6);
+//            goToHomeScreen();
+        if (myGame.travel(planet6)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -213,10 +225,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet7Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet7));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet7);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet7));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet7);
+        if (myGame.travel(planet7)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -224,10 +237,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet8Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet8));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet8);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet8));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet8);
+        if (myGame.travel(planet8)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -235,10 +249,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     public void onPlanet9Pressed(View view) {
-        int result = decreaseFuel(calculateDistance(vm.getGame().getCurrentPlanet(), planet9));
-        if (result >= 0) {
-            vm.getGame().getPlayer().getShip().setShipFuel(result);
-            vm.getGame().setCurrentPlanet(planet9);
+//        int result = decreaseFuel(calculateDistance(myGame.getCurrentPlanet(), planet9));
+//        if (result >= 0) {
+//            myGame.getPlayer().getShip().setShipFuel(result);
+//            myGame.setCurrentPlanet(planet9);
+        if (myGame.travel(planet9)) {
             goToHomeScreen();
         } else {
             displayToast();
@@ -246,31 +261,33 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
 
-    public int calculateDistance(Planet planet1, Planet planet2) {
-        int x1 = 0;
-        int x2 = 0;
-        int y1 = 0;
-        int y2 = 0;
-        int xDiff = 0;
-        int yDiff = 0;
-        x1 = planet1.getX();
-        x2 = planet2.getX();
-        y1 = planet1.getY();
-        y2 = planet2.getY();
-        xDiff = x2 - x1;
-        yDiff = y2 - y1;
-        return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
-    }
+//    public int calculateDistance(Planet planet1, Planet planet2) {
+//        int x1 = 0;
+//        int x2 = 0;
+//        int y1 = 0;
+//        int y2 = 0;
+//        int xDiff = 0;
+//        int yDiff = 0;
+//        x1 = planet1.getX();
+//        x2 = planet2.getX();
+//        y1 = planet1.getY();
+//        y2 = planet2.getY();
+//        xDiff = x2 - x1;
+//        yDiff = y2 - y1;
+//        return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
+//    }
 
-    public int decreaseFuel(int distance) {
-        int amount = vm.getGame().getPlayer().getShip().getShipFuel();
-        int percentDecrease = distance / 2;
-        int result = amount - percentDecrease;
-        return result;
-    }
-    public int fuelCostForPlanet(int i) {
-        int distance = calculateDistance(vm.getGame().getCurrentPlanet(), vm.getUniverse().getPlanet(i));
-        return distance / 2;
+//    public int decreaseFuel(int distance) {
+//        int amount = myGame.getPlayer().getShip().getShipFuel();
+//        int percentDecrease = distance / 2;
+//        int result = amount - percentDecrease;
+//        return result;
+//    }
+
+    public int fuelCostForPlanet(Planet p) {
+//        int distance = calculateDistance(myGame.getCurrentPlanet(), vm.getUniverse().getPlanet(i));
+//        return distance / 2;
+        return myGame.fuelCostForPlanet(p);
     }
 
     public void goToHomeScreen() {
@@ -283,5 +300,4 @@ public class SpaceStationActivity extends AppCompatActivity {
                 + "travel there", Toast.LENGTH_LONG);
         notEnoughFuel.show();
     }
-
 }

@@ -72,4 +72,16 @@ public class Ship {
         return currentGoods;
     }
 
+    public int decreaseFuel(int distance) {
+        int percentDecrease = distance / 2;
+        shipFuel = shipFuel - percentDecrease;
+        return shipFuel;
+    }
+
+    public void emptyCargo() {
+        for (Goods goods : tradeGoods.keySet()) {
+            tradeGoods.replace(goods, 0);
+        }
+        this.cargoUsed = 0;
+    }
 }

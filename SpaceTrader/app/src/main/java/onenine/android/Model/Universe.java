@@ -16,6 +16,10 @@ public class Universe {
         return planets.get(i);
     }
 
+    public static int distanceBetweenTwoPlanets(Planet source, Planet destination) {
+        return source.calculateDistance(destination);
+    }
+
     @Override
     public String toString() {
         String result = "";

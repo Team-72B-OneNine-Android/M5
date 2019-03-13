@@ -84,7 +84,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                         if (player.getCredits() >= currentGood.getPrice() &&
                         ship.cargoSpaceAvailable()) {
                             goods.put(currentGood, goods.get(currentGood) + 1);
-                            player.setCredits(player.getCredits() - currentGood.getPrice());
+                            player.changeCredits(-currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() + 1);
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
                             activity.updateCreditsAvailable();
@@ -110,7 +110,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                     if (currentGood.canSell()) {
                         if (goods.get(currentGood) > 0) {
                             goods.put(currentGood, goods.get(currentGood) - 1);
-                            player.setCredits(player.getCredits() + currentGood.getPrice());
+                            player.changeCredits(currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() - 1);
                             numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
                             activity.updateCreditsAvailable();
