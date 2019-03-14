@@ -1,9 +1,10 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Universe {
+public class Universe implements Serializable {
 
     SolarSystem solarSystem = new SolarSystem();
     List<Planet> planets = new ArrayList<>();

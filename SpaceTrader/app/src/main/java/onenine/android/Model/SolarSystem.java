@@ -1,11 +1,12 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class SolarSystem {
+public class SolarSystem implements Serializable {
 
     PlanetAttributes pa = new PlanetAttributes();
     TechLevel techLevel;

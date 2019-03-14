@@ -6,9 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import onenine.android.Model.Facade;
 import onenine.android.R;
 import onenine.android.ViewModel.HomeScreenActivityViewModel;
 import android.view.View;
+import android.widget.Toast;
+
+import java.io.File;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -73,5 +77,13 @@ public class HomeScreenActivity extends AppCompatActivity {
     public void onTravelButtonPressed(View view) {
         Intent spaceStation = new Intent(this, SpaceStationActivity.class);
         startActivity(spaceStation);
+    }
+
+    public void onSaveButtonPressed(View view) {
+        File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
+        boolean result = Facade.getInstance().saveBinary(file);
+        if (result == false) {
+            Toast.makeText(this, "Can't Save!", Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -2,13 +2,20 @@ package onenine.android.Model;
 
 
 import android.util.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 
 
 public class Facade {
 
-
+    public final static String DEFAULT_BINARY_FILE_NAME = "myGame.bin";
     private Game game;
     private Player player;
     private Universe universe;
@@ -46,5 +53,38 @@ public class Facade {
 
     public Game getGame() {
         return this.game;
+    }
+
+    public boolean saveBinary(File file) {
+        boolean success = true;
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            out.writeObject(game);
+            out.writeObject(player);
+            out.writeObject(universe);
+            out.close();
+        } catch (IOException e) {
+            Log.e("Facade", "Error writing an entry from binary file",e);
+            success = false;
+        }
+        return success;
+    }
+
+    public boolean loadBinary(File file) {
+        boolean success = true;
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+            game = (Game) in.readObject();
+            player = (Player) in.readObject();
+            universe = (Universe) in.readObject();
+            in.close();
+        } catch (IOException e1) {
+            Log.e("Facade", "Error reading an entry from binary file",e1);
+            success = false;
+        } catch (ClassNotFoundException e2) {
+            Log.e("UserManagementFacade", "Error casting a class from the binary file",e2);
+            success = false;
+        }
+        return success;
     }
 }

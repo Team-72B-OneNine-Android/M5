@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import java.io.File;
+
+import onenine.android.Model.Facade;
 import onenine.android.R;
 
 public class MainScreenActivity extends AppCompatActivity {
@@ -21,5 +25,13 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
     public void loadGame(View view) {
+        File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
+        boolean result = Facade.getInstance().loadBinary(file);
+        if (result == false) {
+            Toast.makeText(this, "No saved game exist!", Toast.LENGTH_LONG).show();
+        } else {
+            Intent goToHomeScreen = new Intent(this, HomeScreenActivity.class);
+            startActivity(goToHomeScreen);
+        }
     }
 }

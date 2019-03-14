@@ -1,8 +1,9 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Player {
+public class Player implements Serializable {
     private String name;
     private int pilotPoints;
     private int fighterPoints;

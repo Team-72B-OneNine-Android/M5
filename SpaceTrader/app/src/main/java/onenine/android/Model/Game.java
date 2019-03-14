@@ -1,8 +1,8 @@
 package onenine.android.Model;
 
-import java.util.Random;
+import java.io.Serializable;
 
-public class Game {
+public class Game implements Serializable {
 
     private GameDifficulty difficulty;
     private Player player;

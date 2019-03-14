@@ -1,8 +1,9 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Ship {
+public class Ship implements Serializable {
     private ShipType shipType;
     private int cargoUsed;
     private int shipFuel;

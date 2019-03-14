@@ -1,6 +1,8 @@
 package onenine.android.Model;
 
-public class Planet {
+import java.io.Serializable;
+
+public class Planet implements Serializable {
     private String type;
     private TechLevel techLevel;
     private String resources;
