@@ -141,7 +141,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet0Pressed(View view) {
         if (myGame.travel(planet0)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -150,7 +150,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet1Pressed(View view) {
         if (myGame.travel(planet1)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -159,7 +159,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet2Pressed(View view) {
         if (myGame.travel(planet2)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -168,7 +168,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet3Pressed(View view) {
         if (myGame.travel(planet3)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -177,7 +177,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet4Pressed(View view) {
         if (myGame.travel(planet4)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -186,7 +186,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet5Pressed(View view) {
         if (myGame.travel(planet5)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -195,7 +195,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet6Pressed(View view) {
         if (myGame.travel(planet6)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -204,7 +204,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet7Pressed(View view) {
         if (myGame.travel(planet7)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -213,7 +213,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet8Pressed(View view) {
         if (myGame.travel(planet8)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -222,7 +222,7 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     public void onPlanet9Pressed(View view) {
         if (myGame.travel(planet9)) {
-            checkForEvent();
+            displayEventToast();
             goToHomeScreen();
         } else {
             displayToast();
@@ -243,22 +243,12 @@ public class SpaceStationActivity extends AppCompatActivity {
                 + "travel there", Toast.LENGTH_LONG);
         notEnoughFuel.show();
     }
-
-    private void checkForEvent() {
-        if (myGame.getRandomEvent() == Events.LOSE_CARGO) {
-            Toast eventHappened = Toast.makeText(getApplicationContext(), "Somebody stole all your cargo!",
-                    Toast.LENGTH_LONG);
+    
+    public void displayEventToast() {
+        if (myGame.showEventMessage().length() >= 1) {
+            Toast eventHappened = Toast.makeText(getApplicationContext(), myGame.showEventMessage(), Toast.LENGTH_LONG);
             eventHappened.show();
-        } else if (myGame.getRandomEvent() == Events.LOSE_CREDIT) {
-            Toast eventHappened = Toast.makeText(getApplicationContext(), "UGA Student took your money!",
-                    Toast.LENGTH_LONG);
-            eventHappened.show();
-        } else if (myGame.getRandomEvent() == Events.GAIN_CREDIT) {
-            Toast eventHappened = Toast.makeText(getApplicationContext(), "You got a trader bonus!",
-                    Toast.LENGTH_LONG);
-            eventHappened.show();
-        } else {
-            return;
         }
     }
+
 }

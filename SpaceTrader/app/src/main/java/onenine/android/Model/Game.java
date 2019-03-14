@@ -45,7 +45,7 @@ public class Game {
 
     public boolean travel(Planet p) {
         if (this.fuelCostForPlanet(p) != 0) {
-            randomEvent = checkForEvent();
+            randomEvent = Events.checkForEvent();
             if (randomEvent == Events.LOSE_CARGO) {
                 player.lossOfCargo();
             }
@@ -75,19 +75,7 @@ public class Game {
         return distance / 2;
     }
 
-    public Events checkForEvent() {
-        int random = new Random().nextInt(100);
-        Events[] possibleEvents = Events.values();
-        int randomEvent = new Random().nextInt(possibleEvents.length - 1);
-        randomEvent += 1;
-        if (random > 60) {
-            return possibleEvents[randomEvent];
-        } else {
-            return possibleEvents[0];
-        }
-    }
-
-    public Events getRandomEvent() {
-        return randomEvent;
+    public String showEventMessage() {
+        return Events.getEventMessage(randomEvent);
     }
 }
