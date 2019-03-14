@@ -79,9 +79,13 @@ public class Ship {
     }
 
     public void emptyCargo() {
-        for (Goods goods : tradeGoods.keySet()) {
-            tradeGoods.replace(goods, 0);
+        if (cargoUsed == 0) {
+            return;
+        } else {
+            for (Goods goods : tradeGoods.keySet()) {
+                tradeGoods.replace(goods, 0);
+            }
+            this.cargoUsed = 0;
         }
-        this.cargoUsed = 0;
     }
 }

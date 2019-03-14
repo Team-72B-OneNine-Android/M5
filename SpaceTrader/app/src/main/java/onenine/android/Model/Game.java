@@ -7,6 +7,7 @@ public class Game {
     private GameDifficulty difficulty;
     private Player player;
     private Planet currentPlanet;
+    private Events randomEvent;
 
 
     public Game(Player p, GameDifficulty difficulty) {
@@ -44,15 +45,20 @@ public class Game {
 
     public boolean travel(Planet p) {
         if (this.fuelCostForPlanet(p) != 0) {
-            if (checkForEvent() == Events.LOSE_CARGO) {
+            randomEvent = checkForEvent();
+            if (randomEvent == Events.LOSE_CARGO) {
                 player.lossOfCargo();
             }
-            if (checkForEvent() == Events.LOSE_CREDIT) {
-                player.changeCredits(-100);
+            if (randomEvent == Events.LOSE_CREDIT) {
+                if (!(player.getCredits() <= 0)) {
+                    player.changeCredits(-100);
+                }
             }
-            if (checkForEvent() == Events.GAIN_CREDIT) {
+            if (randomEvent == Events.GAIN_CREDIT) {
                 player.changeCredits(100);
             }
+        } else {
+            randomEvent = Events.NO_EVENT;
         }
         int distance = currentPlanet.calculateDistance(p);
         int fuel = player.updateShipFuel(distance);
@@ -72,12 +78,16 @@ public class Game {
     public Events checkForEvent() {
         int random = new Random().nextInt(100);
         Events[] possibleEvents = Events.values();
-        int randomEvent = new Random().nextInt(possibleEvents.length - 2);
+        int randomEvent = new Random().nextInt(possibleEvents.length - 1);
         randomEvent += 1;
         if (random > 60) {
             return possibleEvents[randomEvent];
         } else {
             return possibleEvents[0];
         }
+    }
+
+    public Events getRandomEvent() {
+        return randomEvent;
     }
 }
