@@ -1,8 +1,9 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Ship {
+public class Ship implements Serializable {
     private ShipType shipType;
     private int cargoUsed;
     private int shipFuel;
@@ -72,4 +73,20 @@ public class Ship {
         return currentGoods;
     }
 
+    public int decreaseFuel(int distance) {
+        int percentDecrease = distance / 2;
+        shipFuel = shipFuel - percentDecrease;
+        return shipFuel;
+    }
+
+    public void emptyCargo() {
+        if (cargoUsed == 0) {
+            return;
+        } else {
+            for (Goods goods : tradeGoods.keySet()) {
+                tradeGoods.replace(goods, 0);
+            }
+            this.cargoUsed = 0;
+        }
+    }
 }

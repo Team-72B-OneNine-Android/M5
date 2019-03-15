@@ -24,6 +24,8 @@ public enum Goods {
     private IE increasePrice;
     private CR cheapResource;
     private ER expensiveResource;
+    private Planet current;
+    private int price;
 
     Goods(String name, int MTLP, int MTLU, int TTP, int basePrice, int IPL, int var,
           IE increasePrice, CR cheapResource, ER expensiveResource) {
@@ -39,8 +41,12 @@ public enum Goods {
         this.expensiveResource = expensiveResource;
     }
 
+    private Planet currentPlanet() {
+        return Facade.getInstance().getGame().getCurrentPlanet();
+    }
+
     private int getCurrentPlanetTechLevel() {
-        return Facade.getInstance().getGame().getCurrentPlanet().getTechLevelNum();
+        return currentPlanet().getTechLevelNum();
     }
 
     public boolean canBuy() {
@@ -52,14 +58,23 @@ public enum Goods {
     }
 
     private double calculateVar() {
-        int randVar = new Random().nextInt(this.var);
+        double randVar = new Random().nextInt(this.var);
         return randVar/100;
     }
 
     public int getPrice() {
-        int price = (int) ((this.basePrice) + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP))
-                + (this.basePrice * calculateVar()));
-        return price;
+        int currentPrice = this.basePrice + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP));
+        if (current == null) {
+            current = currentPlanet();
+            this.price = ((int) (currentPrice + (this.basePrice * calculateVar())));
+            return price;
+        } else if (current.equals(currentPlanet())) {
+            return price;
+        } else {
+            current = currentPlanet();
+            this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
+            return price;
+        }
     }
 
     public String buyStringPrice() {

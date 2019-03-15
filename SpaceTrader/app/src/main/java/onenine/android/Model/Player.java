@@ -1,6 +1,9 @@
 package onenine.android.Model;
 
-public class Player {
+import java.io.Serializable;
+import java.util.HashMap;
+
+public class Player implements Serializable {
     private String name;
     private int pilotPoints;
     private int fighterPoints;
@@ -63,6 +66,11 @@ public class Player {
         return ship;
     }
 
+    public int changeCredits(int credits) {
+        this.credits = this.credits + credits;
+        return this.credits;
+    }
+
     public void setShip(Ship ship) {
         this.ship = ship;
     }
@@ -84,5 +92,13 @@ public class Player {
                 + "Engineer Skill: " + getEngineerPoints() + "\n"
                 + "Ship Type: " + getShip() + "\n"
                 + "Credits: " + getCredits());
+    }
+
+    public int updateShipFuel(int i) {
+        return ship.decreaseFuel(i);
+    }
+
+    public void lossOfCargo() {
+        ship.emptyCargo();
     }
 }

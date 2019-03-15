@@ -1,11 +1,12 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class SolarSystem {
+public class SolarSystem implements Serializable {
 
     PlanetAttributes pa = new PlanetAttributes();
     TechLevel techLevel;
@@ -23,7 +24,7 @@ public class SolarSystem {
             String randomPlanet = getRandomPlanet();
             String tempCoordinates = Integer.toString(x) + Integer.toString(y);
             if (!planetNames.contains(randomPlanet) && !coordinateStrings.contains(tempCoordinates)) {
-                planets.add(new Planet(getRandomPlanet(), getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+                planets.add(new Planet(randomPlanet, getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
                 planetNames.add(randomPlanet);
                 coordinateStrings.add(tempCoordinates);
                 counter += 1;

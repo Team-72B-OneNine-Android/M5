@@ -1,6 +1,8 @@
 package onenine.android.Model;
 
-public class Planet {
+import java.io.Serializable;
+
+public class Planet implements Serializable {
     private String type;
     private TechLevel techLevel;
     private String resources;
@@ -86,5 +88,29 @@ public class Planet {
      */
     public String coordinatesPretty() {
         return ("(") + getX() + (", ") + getY() + (")");
+    }
+
+    public boolean equals (Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Planet)) {
+            return false;
+        }
+        Planet planet = (Planet) o;
+        return this.type.equals(planet.type)
+                || (this.x == planet.x && this.y == planet.y);
+    }
+
+    public int calculateDistance(Planet planet) {
+        int xDiff = 0;
+        int yDiff = 0;
+        int x1 = this.getX();
+        int x2 = planet.getX();
+        int y1 = this.getY();
+        int y2 = planet.getY();
+        xDiff = x2 - x1;
+        yDiff = y2 - y1;
+        return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
     }
 }

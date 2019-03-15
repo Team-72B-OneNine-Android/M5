@@ -1,6 +1,8 @@
 package onenine.android.Model;
 
-public class PlanetAttributes {
+import java.io.Serializable;
+
+public class PlanetAttributes implements Serializable {
 
     String[] planets = {
             "Acamar",

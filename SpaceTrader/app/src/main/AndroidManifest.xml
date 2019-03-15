@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.SpaceStationActivity"></activity>
-        <activity android:name=".View.TradeGoodsActivity" />
-        <activity android:name=".View.MarketPlaceActivity" />
-        <activity android:name=".View.HomeScreenActivity" />
-        <activity android:name=".View.LaunchScreenActivity" />
-        <activity android:name=".View.ConfigurationActivity">
+        <activity android:name=".View.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".View.SpaceStationActivity" />
+        <activity android:name=".View.TradeGoodsActivity" />
+        <activity android:name=".View.MarketPlaceActivity" />
+        <activity android:name=".View.HomeScreenActivity" />
+        <activity android:name=".View.LaunchScreenActivity" />
+        <activity android:name=".View.ConfigurationActivity"  />
     </application>
 
 </manifest>

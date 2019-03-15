@@ -18,9 +18,9 @@ public class TradeGoodsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private GoodsAdapter adapter;
-    private static GoodsViewModel viewModel;
-    private static TextView creditsAvailable;
-    private static TextView cargoSpaceAvailable;
+    private GoodsViewModel viewModel;
+    private TextView creditsAvailable;
+    private TextView cargoSpaceAvailable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(GoodsViewModel.class);
 
-        adapter = new GoodsAdapter(viewModel.getGame());
+        adapter = new GoodsAdapter(viewModel.getGame(), this);
         recyclerView.setAdapter(adapter);
 
         TextView credits = findViewById(R.id.info);
@@ -74,11 +74,11 @@ public class TradeGoodsActivity extends AppCompatActivity {
 
     }
 
-    public static void updateCreditsAvailable() {
+    public void updateCreditsAvailable() {
         creditsAvailable.setText(String.valueOf(viewModel.getCredits()));
     }
 
-    public static void updateCargoSpaceAvailable() {
+    public void updateCargoSpaceAvailable() {
         cargoSpaceAvailable.setText(String.valueOf(viewModel.getCargoSpaceAvailable()));
     }
 

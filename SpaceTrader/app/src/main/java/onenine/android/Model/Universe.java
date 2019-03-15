@@ -1,9 +1,10 @@
 package onenine.android.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Universe {
+public class Universe implements Serializable {
 
     SolarSystem solarSystem = new SolarSystem();
     List<Planet> planets = new ArrayList<>();
@@ -14,6 +15,10 @@ public class Universe {
 
     public Planet getPlanet(int i) {
         return planets.get(i);
+    }
+
+    public static int distanceBetweenTwoPlanets(Planet source, Planet destination) {
+        return source.calculateDistance(destination);
     }
 
     @Override
