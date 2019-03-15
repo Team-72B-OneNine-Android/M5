@@ -130,9 +130,6 @@ public class SpaceStationActivity extends AppCompatActivity {
         fuelCost9.setText("Cost: " + Integer.toString(fuelCostForPlanet(9)) + "%");
 
 
-
-
-
     }
 
     public void onPlanet0Pressed(View view) {
