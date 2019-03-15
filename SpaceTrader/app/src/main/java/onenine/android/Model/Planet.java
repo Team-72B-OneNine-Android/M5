@@ -103,8 +103,8 @@ public class Planet implements Serializable {
     }
 
     public int calculateDistance(Planet planet) {
-        int xDiff = 0;
-        int yDiff = 0;
+        int xDiff;
+        int yDiff;
         int x1 = this.getX();
         int x2 = planet.getX();
         int y1 = this.getY();
