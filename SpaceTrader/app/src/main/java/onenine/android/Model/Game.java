@@ -44,14 +44,22 @@ public class Game implements Serializable {
     }
 
     public boolean travel(Planet p) {
-        if (this.fuelCostForPlanet(p) != 0) {
+        if (this.fuelCostForPlanet(p) != 0 && this.playerCanTravel(p)) {
             randomEvent = Events.checkForEvent();
             if (randomEvent == Events.LOSE_CARGO) {
-                player.lossOfCargo();
+                if (this.shipHasCargo()) {
+                    player.lossOfCargo();
+                } else {
+                    randomEvent = Events.NO_EVENT;
+                }
             }
             if (randomEvent == Events.LOSE_CREDIT) {
-                if (!(player.getCredits() <= 0)) {
-                    player.changeCredits(-100);
+                if (this.playerHasCredits()) {
+                    if (!(player.getCredits() <= 0)) {
+                        player.changeCredits(-100);
+                    }
+                } else {
+                    randomEvent = Events.NO_EVENT;
                 }
             }
             if (randomEvent == Events.GAIN_CREDIT) {
@@ -100,6 +108,17 @@ public class Game implements Serializable {
         return distance / 2;
     }
 
+    private boolean playerHasCredits() {
+        return player.getCredits() > 0;
+    }
+
+    private boolean shipHasCargo() {
+        return player.hasCargo();
+    }
+
+    private boolean playerCanTravel(Planet planet) {
+        return player.getShipFuel() >= fuelCostForPlanet(planet);
+    }
     public String showEventMessage() {
         return Events.getEventMessage(randomEvent);
     }

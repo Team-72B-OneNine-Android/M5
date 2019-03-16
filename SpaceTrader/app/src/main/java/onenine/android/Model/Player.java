@@ -102,6 +102,10 @@ public class Player implements Serializable {
         return ship.getShipFuel();
     }
 
+    public boolean hasCargo() {
+        return ship.getCargoUsed() != 0;
+    }
+
     public void lossOfCargo() {
         ship.emptyCargo();
     }
