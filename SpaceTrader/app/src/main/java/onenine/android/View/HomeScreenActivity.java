@@ -86,4 +86,9 @@ public class HomeScreenActivity extends AppCompatActivity {
             Toast.makeText(this, "Can't Save!", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void onShipYardButtonPressed(View view) {
+        Intent shipYard = new Intent(this, ShipYardActivity.class);
+        startActivity(shipYard);
+    }
 }
