@@ -37,35 +37,35 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         //get current player
         currentPlayer = findViewById(R.id.welcomeUser);
-        currentPlayer.setText("Hello, " + vm.getGame().getPlayer().getName() + "!");
+        currentPlayer.setText("Hello, " + vm.getPlayerName() + "!");
 
         //get current planet
         currentPlanet = findViewById(R.id.youAreOn);
-        currentPlanet.setText("You are currently on planet " + vm.getGame().getCurrentPlanet().getType());
+        currentPlanet.setText("You are currently on planet " + vm.getCurrentPlanet().getType());
 
         //gets coordinates that player is currently at in universe
         currentTechLevel = findViewById(R.id.currentTechLevel);
-        currentTechLevel.setText("Tech Level: " + vm.getGame().getCurrentPlanet().getTechLevel().toString());
+        currentTechLevel.setText("Tech Level: " + vm.getCurrentPlanet().getTechLevel().toString());
 
         //gets coordinates that player is currently at in universe
         currentResourceType = findViewById(R.id.currentResourceType);
-        currentResourceType.setText("Resource Type: " + vm.getGame().getCurrentPlanet().getResources());
+        currentResourceType.setText("Resource Type: " + vm.getCurrentPlanet().getResources());
 
         //gets coordinates that player is currently at in universe
         currentLocation = findViewById(R.id.currentLocation);
-        currentLocation.setText("Current Location in Universe: " + vm.getGame().getCurrentPlanet().coordinatesPretty());
+        currentLocation.setText("Current Location in Universe: " + vm.getCurrentPlanet().coordinatesPretty());
 
         //gets player ship type
         currentShip = findViewById(R.id.currentShip);
-        currentShip.setText("Current Ship Type: " + vm.getGame().getPlayer().getShip().getShipType().toString());
+        currentShip.setText("Current Ship Type: " + vm.getShip().getShipType().toString());
 
         //gets amount of fuel that player has left
         currentFuel = findViewById(R.id.currentFuel);
-        currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getGame().getPlayer().getShip().getShipFuel()) + "%");
+        currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getShip().getShipFuel()) + "%");
 
         //gets current cargo that player has in ship
         currentCargo = findViewById(R.id.currentCargo);
-        currentCargo.setText("Current Cargo in Ship: " + vm.getGame().getPlayer().getShip().currentGoods());
+        currentCargo.setText("Current Cargo in Ship: " + vm.getShip().currentGoods());
 
     }
 

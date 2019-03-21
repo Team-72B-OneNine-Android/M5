@@ -4,17 +4,18 @@ import android.arch.lifecycle.ViewModel;
 
 import onenine.android.Model.Facade;
 import onenine.android.Model.Game;
-import onenine.android.Model.Player;
 
 public class GoodsViewModel extends ViewModel {
+
+    Facade gameFacade = Facade.getInstance();
+
     public Game getGame() {
-        return Facade.getInstance().getGame();
+        return gameFacade.getGame();
     }
-    public Player getPlayer() {
-        return this.getGame().getPlayer();
-    }
-    public int getCredits() {return this.getPlayer().getCredits();}
+
+    public int getCredits() {return gameFacade.getPlayer().getCredits();}
+
     public int getCargoSpaceAvailable() {
-        return this.getPlayer().getShip().getCargoSpace();
+        return gameFacade.getShip().getCargoSpace();
     }
 }

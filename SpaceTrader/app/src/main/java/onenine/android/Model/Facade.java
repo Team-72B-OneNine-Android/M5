@@ -19,6 +19,8 @@ public class Facade {
     private Game game;
     private Player player;
     private Universe universe;
+    private Ship ship;
+    private Planet currentPlanet;
 
     private static final Facade instance = new Facade();
 
@@ -31,24 +33,35 @@ public class Facade {
 
     public void setPlayer(String name, int p, int f, int t, int e, int credits) {
         player = new Player(name, p, f, t, e, credits);
+        this.ship = player.getShip();
     }
 
     public void setGame(GameDifficulty difficulty) {
         game = new Game(player, difficulty);
         universe = new Universe();
         game.setCurrentPlanet(universe.getPlanet(0));
+        this.currentPlanet = game.getCurrentPlanet();
         Log.d("Game", "Game Information" + "\n" + game.toString());
         Log.d("Universe Information", "Universe Info" + "\n" + universe.toString());
     }
     public Universe getUniverse() {
         return universe;
     }
+
     public String getPlayerName() {
         return player.getName();
     }
 
     public Player getPlayer() {
         return this.player;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public Planet getCurrentPlanet() {
+        return currentPlanet;
     }
 
     public Game getGame() {
