@@ -13,6 +13,8 @@ public class SolarSystem implements Serializable {
     List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
     List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
     Random rand = new Random();
+    private static final int X_COORDINATE = 149;
+    private static final int Y_COORDINATE = 99;
 
     public void generatePlanets(List<Planet> planets) {
         List<String> planetNames = new ArrayList<>();
@@ -48,11 +50,11 @@ public class SolarSystem implements Serializable {
     }
 
     public int getRandomX() {
-        return rand.nextInt(149) + 1;
+        return rand.nextInt(X_COORDINATE) + 1;
     }
 
     public int getRandomY() {
-        return rand.nextInt(99) + 1;
+        return rand.nextInt(Y_COORDINATE) + 1;
     }
 
 

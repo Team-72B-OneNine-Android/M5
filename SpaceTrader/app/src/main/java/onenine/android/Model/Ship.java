@@ -80,9 +80,7 @@ public class Ship implements Serializable {
     }
 
     public void emptyCargo() {
-        if (cargoUsed == 0) {
-            return;
-        } else {
+        if (cargoUsed != 0) {
             for (Goods goods : tradeGoods.keySet()) {
                 tradeGoods.replace(goods, 0);
             }

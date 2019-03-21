@@ -20,6 +20,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
     private ConfigurationActivityViewModel vm;
 
+    private static final int SKILLS = 16;
     TextView playerName;
     TextView pilotSkill;
     TextView fighterSkill;
@@ -28,7 +29,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     TextView totalSkillPoints;
     Spinner difficultySpinner;
     Button playButton;
-    int skillsUsed = 16;
+    int skillsUsed = SKILLS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
     public void onPilotDecrementPressed(View view) {
-        if (skillsUsed < 16 && Integer.parseInt(pilotSkill.getText().toString()) != 0) {
+        if (skillsUsed < SKILLS && Integer.parseInt(pilotSkill.getText().toString()) != 0) {
             int subOne = Integer.parseInt(pilotSkill.getText().toString());
             subOne -= 1;
             pilotSkill.setText(String.valueOf(subOne));
@@ -103,7 +104,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
     public void onFighterDecrementPressed(View view) {
-        if (skillsUsed < 16 && Integer.parseInt(fighterSkill.getText().toString()) != 0) {
+        if (skillsUsed < SKILLS && Integer.parseInt(fighterSkill.getText().toString()) != 0) {
             int subOne = Integer.parseInt(fighterSkill.getText().toString());
             subOne -= 1;
             fighterSkill.setText(String.valueOf(subOne));
@@ -125,7 +126,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
     public void onTraderDecrementPressed(View view) {
-        if (skillsUsed < 16 && Integer.parseInt(traderSkill.getText().toString()) != 0) {
+        if (skillsUsed < SKILLS && Integer.parseInt(traderSkill.getText().toString()) != 0) {
             int subOne = Integer.parseInt(traderSkill.getText().toString());
             subOne -= 1;
             traderSkill.setText(String.valueOf(subOne));
@@ -147,7 +148,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     }
 
     public void onEngineerDecrementPressed(View view) {
-        if (skillsUsed < 16 && Integer.parseInt(engineerSkill.getText().toString()) != 0) {
+        if (skillsUsed < SKILLS && Integer.parseInt(engineerSkill.getText().toString()) != 0) {
             int subOne = Integer.parseInt(engineerSkill.getText().toString());
             subOne -= 1;
             engineerSkill.setText(String.valueOf(subOne));
