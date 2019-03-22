@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Universe implements Serializable {
 
-    SolarSystem solarSystem = new SolarSystem();
-    List<Planet> planets = new ArrayList<>();
+    private final SolarSystem solarSystem = new SolarSystem();
+    private final List<Planet> planets = new ArrayList<>();
 
     public Universe() {
         solarSystem.generatePlanets(planets);

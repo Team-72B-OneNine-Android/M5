@@ -1,7 +1,6 @@
 package onenine.android.View;
 
 import android.content.Intent;
-import android.os.TestLooperManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.arch.lifecycle.ViewModelProviders;
 import android.widget.TextView;
 
-import onenine.android.Model.Facade;
 import onenine.android.R;
 import onenine.android.ViewModel.GoodsViewModel;
 

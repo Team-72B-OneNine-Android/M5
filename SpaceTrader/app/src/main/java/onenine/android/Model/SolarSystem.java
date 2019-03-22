@@ -3,22 +3,23 @@ package onenine.android.Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-public class SolarSystem implements Serializable {
+class SolarSystem implements Serializable {
 
-    PlanetAttributes pa = new PlanetAttributes();
+    private final PlanetAttributes pa = new PlanetAttributes();
     TechLevel techLevel;
-    List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
-    List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
-    Random rand = new Random();
+    private final List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
+    private final List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
+    private final Random rand = new Random();
     private static final int X_COORDINATE = 149;
     private static final int Y_COORDINATE = 99;
 
-    public void generatePlanets(List<Planet> planets) {
-        List<String> planetNames = new ArrayList<>();
-        List<String> coordinateStrings = new ArrayList<>();
+    public void generatePlanets(Collection<Planet> planets) {
+        Collection<String> planetNames = new ArrayList<>();
+        Collection<String> coordinateStrings = new ArrayList<>();
         int counter = 0;
         while (counter < 10) {
             int x = getRandomX();
@@ -36,24 +37,24 @@ public class SolarSystem implements Serializable {
         }
 
 
-    public String getRandomPlanet() {
+    private String getRandomPlanet() {
         return planetsList.get(rand.nextInt(planetsList.size()));
     }
 
-    public TechLevel getRandomTechLevel() {
+    private TechLevel getRandomTechLevel() {
         int randomTechLevel = new Random().nextInt(TechLevel.values().length);
         return TechLevel.values()[randomTechLevel];
     }
 
-    public String getRandomResource() {
+    private String getRandomResource() {
         return resourceList.get(rand.nextInt(resourceList.size()));
     }
 
-    public int getRandomX() {
+    private int getRandomX() {
         return rand.nextInt(X_COORDINATE) + 1;
     }
 
-    public int getRandomY() {
+    private int getRandomY() {
         return rand.nextInt(Y_COORDINATE) + 1;
     }
 

@@ -17,14 +17,14 @@ import java.io.File;
 public class HomeScreenActivity extends AppCompatActivity {
 
     private HomeScreenActivityViewModel vm;
-    TextView currentPlayer;
-    TextView currentPlanet;
-    TextView currentTechLevel;
-    TextView currentResourceType;
-    TextView currentLocation;
-    TextView currentShip;
-    TextView currentFuel;
-    TextView currentCargo;
+    private TextView currentPlayer;
+    private TextView currentPlanet;
+    private TextView currentTechLevel;
+    private TextView currentResourceType;
+    private TextView currentLocation;
+    private TextView currentShip;
+    private TextView currentFuel;
+    private TextView currentCargo;
 
 
     @Override

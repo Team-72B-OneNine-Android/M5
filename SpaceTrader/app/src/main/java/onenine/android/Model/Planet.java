@@ -1,14 +1,15 @@
 package onenine.android.Model;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class Planet implements Serializable {
-    private String type;
-    private TechLevel techLevel;
-    private String resources;
-    private int x;
-    private int y;
-    private Goods[] myGoods= Goods.values();
+    private final String type;
+    private final TechLevel techLevel;
+    private final String resources;
+    private final int x;
+    private final int y;
+    private final Goods[] myGoods= Goods.values();
 
     public Planet(String type, TechLevel techLevel, String resources, int x, int y) {
         this.type = type;
@@ -30,10 +31,10 @@ public class Planet implements Serializable {
     public String getResources() {
         return resources;
     }
-    public int getX() {
+    private int getX() {
         return x;
     }
-    public int getY() {
+    private int getY() {
         return y;
     }
     public String getCoordinateString() {
@@ -112,5 +113,19 @@ public class Planet implements Serializable {
         xDiff = x2 - x1;
         yDiff = y2 - y1;
         return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
+    }
+
+    public int fuelPrice() {
+        int fuelPrice;
+        if (this.getTechLevelNum() >= 1 && this.getTechLevelNum() < 4) {
+            fuelPrice = new Random().nextInt(2) + 1;
+        } else if (this.getTechLevelNum() >= 4 && this.getTechLevelNum() < 7) {
+            fuelPrice = new Random().nextInt(4) + 2;
+        } else if (this.getTechLevelNum() == 7) {
+            fuelPrice = 5;
+        } else {
+            fuelPrice = 0;
+        }
+        return fuelPrice;
     }
 }

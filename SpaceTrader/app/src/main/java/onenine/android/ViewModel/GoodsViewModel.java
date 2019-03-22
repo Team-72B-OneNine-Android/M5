@@ -7,7 +7,7 @@ import onenine.android.Model.Game;
 
 public class GoodsViewModel extends ViewModel {
 
-    Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
 
     public Game getGame() {
         return gameFacade.getGame();

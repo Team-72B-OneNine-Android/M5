@@ -21,15 +21,15 @@ public class ConfigurationActivity extends AppCompatActivity {
     private ConfigurationActivityViewModel vm;
 
     private static final int SKILLS = 16;
-    TextView playerName;
-    TextView pilotSkill;
-    TextView fighterSkill;
-    TextView traderSkill;
-    TextView engineerSkill;
-    TextView totalSkillPoints;
-    Spinner difficultySpinner;
-    Button playButton;
-    int skillsUsed = SKILLS;
+    private TextView playerName;
+    private TextView pilotSkill;
+    private TextView fighterSkill;
+    private TextView traderSkill;
+    private TextView engineerSkill;
+    private TextView totalSkillPoints;
+    private Spinner difficultySpinner;
+    private Button playButton;
+    private int skillsUsed = SKILLS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,12 +157,12 @@ public class ConfigurationActivity extends AppCompatActivity {
             disablePlayButton();
         }
     }
-    public void enablePlayButton() {
+    private void enablePlayButton() {
         if (skillsUsed == 0) {
             playButton.setEnabled(true);
         }
     }
-    public void disablePlayButton() {
+    private void disablePlayButton() {
         playButton.setEnabled(false);
     }
 

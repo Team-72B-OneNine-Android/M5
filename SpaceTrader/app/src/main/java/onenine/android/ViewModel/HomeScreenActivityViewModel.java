@@ -8,7 +8,7 @@ import onenine.android.Model.Ship;
 
 public class HomeScreenActivityViewModel extends ViewModel {
 
-    Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
 
     public String getPlayerName() {
         return gameFacade.getPlayerName();

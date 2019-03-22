@@ -7,7 +7,7 @@ import onenine.android.Model.Ship;
 
 public class MarketPlaceActivityViewModel extends ViewModel{
 
-    Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
 
     public Ship getShip() {
         return gameFacade.getShip();

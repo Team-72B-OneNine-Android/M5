@@ -8,7 +8,7 @@ import onenine.android.Model.Universe;
 
 public class SpaceStationActivityViewModel extends ViewModel {
 
-    Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
 
     public Game getGame() {
         return gameFacade.getGame();

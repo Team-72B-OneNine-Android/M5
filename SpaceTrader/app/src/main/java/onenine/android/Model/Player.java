@@ -1,7 +1,7 @@
 package onenine.android.Model;
 
 import java.io.Serializable;
-import java.util.HashMap;
+
 
 public class Player implements Serializable {
     private String name;
@@ -30,7 +30,7 @@ public class Player implements Serializable {
         this.name = name;
     }
 
-    public int getPilotPoints() {
+    private int getPilotPoints() {
         return pilotPoints;
     }
 
@@ -38,7 +38,7 @@ public class Player implements Serializable {
         this.pilotPoints = points;
     }
 
-    public int getFighterPoints() {
+    private int getFighterPoints() {
         return fighterPoints;
     }
 
@@ -46,7 +46,7 @@ public class Player implements Serializable {
         this.fighterPoints = points;
     }
 
-    public int getTraderPoints() {
+    private int getTraderPoints() {
         return traderPoints;
     }
 
@@ -54,7 +54,7 @@ public class Player implements Serializable {
         this.traderPoints = points;
     }
 
-    public int getEngineerPoints() {
+    private int getEngineerPoints() {
         return engineerPoints;
     }
 
@@ -66,9 +66,8 @@ public class Player implements Serializable {
         return ship;
     }
 
-    public int changeCredits(int credits) {
+    public void changeCredits(int credits) {
         this.credits = this.credits + credits;
-        return this.credits;
     }
 
     public void setShip(Ship ship) {

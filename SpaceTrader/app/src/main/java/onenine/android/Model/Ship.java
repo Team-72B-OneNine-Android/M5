@@ -7,7 +7,7 @@ public class Ship implements Serializable {
     private ShipType shipType;
     private int cargoUsed;
     private int shipFuel;
-    HashMap<Goods, Integer> tradeGoods = new HashMap<>();
+    private HashMap<Goods, Integer> tradeGoods = new HashMap<>();
 
     public Ship (ShipType st) {
         this.shipType = st;

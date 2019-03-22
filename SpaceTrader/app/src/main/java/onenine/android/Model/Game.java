@@ -39,6 +39,7 @@ public class Game implements Serializable {
         this.currentPlanet = currentPlanet;
     }
 
+    @Override
     public String toString() {
         return player.toString() + "\n" + "Game Difficulty: " + difficulty.toString();
     }

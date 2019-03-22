@@ -8,12 +8,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-import java.util.HashMap;
 
 
 
-public class Facade {
+public final class Facade {
 
     public final static String DEFAULT_BINARY_FILE_NAME = "myGame.bin";
     private Game game;
@@ -71,7 +71,7 @@ public class Facade {
     public boolean saveBinary(File file) {
         boolean success = true;
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            ObjectOutput out = new ObjectOutputStream(new FileOutputStream(file));
             out.writeObject(game);
             out.writeObject(player);
             out.writeObject(universe);
