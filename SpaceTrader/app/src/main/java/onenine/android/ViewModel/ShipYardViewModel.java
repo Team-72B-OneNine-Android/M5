@@ -14,7 +14,11 @@ public class ShipYardViewModel extends ViewModel {
         return gameFacade.getShip().getShipFuel();
     }
 
-    private int planetFuelPrice() {
+    public String planetName() {
+        return gameFacade.getCurrentPlanet().getType();
+    }
+
+    public int planetFuelPrice() {
         return gameFacade.getCurrentPlanet().fuelPrice();
     }
 

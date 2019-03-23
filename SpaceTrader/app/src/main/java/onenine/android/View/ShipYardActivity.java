@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import onenine.android.R;
@@ -12,6 +13,7 @@ import onenine.android.ViewModel.ShipYardViewModel;
 
 public class ShipYardActivity extends AppCompatActivity {
 
+    private TextView fp;
     private ShipYardViewModel vm;
 
     @Override
@@ -19,6 +21,8 @@ public class ShipYardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ship_yard);
         vm = ViewModelProviders.of(this).get(ShipYardViewModel.class);
+        fp = findViewById(R.id.fuelPrice);
+        fp.setText("The current fuel price on " + vm.planetName() + " is: " + String.valueOf(vm.planetFuelPrice()) + " credits/unit");
     }
 
     public void onBackPressed(View view) {

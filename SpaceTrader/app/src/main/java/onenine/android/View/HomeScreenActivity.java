@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import onenine.android.Model.Facade;
+import onenine.android.Model.Planet;
 import onenine.android.R;
 import onenine.android.ViewModel.HomeScreenActivityViewModel;
 import android.view.View;
@@ -25,6 +26,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     private TextView currentShip;
     private TextView currentFuel;
     private TextView currentCargo;
+    private Planet planet;
 
 
     @Override
@@ -34,6 +36,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         //link vm to home screen view model
         vm = ViewModelProviders.of(this).get(HomeScreenActivityViewModel.class);
+        planet = vm.getCurrentPlanet();
 
         //get current player
         currentPlayer = findViewById(R.id.welcomeUser);
@@ -41,19 +44,19 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         //get current planet
         currentPlanet = findViewById(R.id.youAreOn);
-        currentPlanet.setText("You are currently on planet " + vm.getCurrentPlanet().getType());
+        currentPlanet.setText("You are currently on planet " + planet.getType());
 
         //gets coordinates that player is currently at in universe
         currentTechLevel = findViewById(R.id.currentTechLevel);
-        currentTechLevel.setText("Tech Level: " + vm.getCurrentPlanet().getTechLevel().toString());
+        currentTechLevel.setText("Tech Level: " + planet.getTechLevel().toString());
 
         //gets coordinates that player is currently at in universe
         currentResourceType = findViewById(R.id.currentResourceType);
-        currentResourceType.setText("Resource Type: " + vm.getCurrentPlanet().getResources());
+        currentResourceType.setText("Resource Type: " + planet.getResources());
 
         //gets coordinates that player is currently at in universe
         currentLocation = findViewById(R.id.currentLocation);
-        currentLocation.setText("Current Location in Universe: " + vm.getCurrentPlanet().coordinatesPretty());
+        currentLocation.setText("Current Location in Universe: " + planet.coordinatesPretty());
 
         //gets player ship type
         currentShip = findViewById(R.id.currentShip);
@@ -84,11 +87,17 @@ public class HomeScreenActivity extends AppCompatActivity {
         boolean result = Facade.getInstance().saveBinary(file);
         if (result == false) {
             Toast.makeText(this, "Can't Save!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Game Saved!", Toast.LENGTH_LONG).show();
         }
     }
 
     public void onShipYardButtonPressed(View view) {
-        Intent shipYard = new Intent(this, ShipYardActivity.class);
-        startActivity(shipYard);
+        if (planet.getTechLevelNum() < 2) {
+            Toast.makeText(this, "This planet is too small and poor to have a shipyard!", Toast.LENGTH_LONG).show();
+        } else {
+            Intent shipYard = new Intent(this, ShipYardActivity.class);
+            startActivity(shipYard);
+        }
     }
 }

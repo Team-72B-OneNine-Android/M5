@@ -15,7 +15,7 @@ public class HomeScreenActivityViewModel extends ViewModel {
     }
 
     public Planet getCurrentPlanet() {
-        return gameFacade.getCurrentPlanet();
+        return gameFacade.getGame().getCurrentPlanet();
     }
 
     public Ship getShip() {
