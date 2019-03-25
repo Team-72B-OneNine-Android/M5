@@ -14,8 +14,6 @@ import onenine.android.ViewModel.GoodsViewModel;
 
 public class TradeGoodsActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private GoodsAdapter adapter;
     private GoodsViewModel viewModel;
     private TextView creditsAvailable;
     private TextView cargoSpaceAvailable;
@@ -43,13 +41,13 @@ public class TradeGoodsActivity extends AppCompatActivity {
         TextView sellPrice = findViewById(R.id.sell_price);
         sellPrice.setText("Sell Price");
 
-        recyclerView = findViewById(R.id.goods_list);
+        RecyclerView recyclerView = findViewById(R.id.goods_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
         viewModel = ViewModelProviders.of(this).get(GoodsViewModel.class);
 
-        adapter = new GoodsAdapter(viewModel.getGame(), this);
+        GoodsAdapter adapter = new GoodsAdapter(viewModel.getGame(), this);
         recyclerView.setAdapter(adapter);
 
         TextView credits = findViewById(R.id.info);

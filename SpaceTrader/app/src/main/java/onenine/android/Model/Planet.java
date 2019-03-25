@@ -100,7 +100,7 @@ public class Planet implements Serializable {
         }
         Planet planet = (Planet) o;
         return this.type.equals(planet.type)
-                || (this.x == planet.x && this.y == planet.y);
+                || ((this.x == planet.x) && (this.y == planet.y));
     }
 
     public int calculateDistance(Planet planet) {
@@ -117,9 +117,9 @@ public class Planet implements Serializable {
 
     public int fuelPrice() {
         int fuelPrice;
-        if (this.getTechLevelNum() >= 1 && this.getTechLevelNum() < 4) {
+        if ((this.getTechLevelNum() >= 1) && (this.getTechLevelNum() < 4)) {
             fuelPrice = new Random().nextInt(2) + 1;
-        } else if (this.getTechLevelNum() >= 4 && this.getTechLevelNum() < 7) {
+        } else if ((this.getTechLevelNum() >= 4) && (this.getTechLevelNum() < 7)) {
             fuelPrice = new Random().nextInt(4) + 2;
         } else if (this.getTechLevelNum() == 7) {
             fuelPrice = 5;

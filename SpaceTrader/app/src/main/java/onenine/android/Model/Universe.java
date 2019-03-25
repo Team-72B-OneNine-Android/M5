@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Universe implements Serializable {
 
-    private final SolarSystem solarSystem = new SolarSystem();
     private final List<Planet> planets = new ArrayList<>();
 
     public Universe() {
+        SolarSystem solarSystem = new SolarSystem();
         solarSystem.generatePlanets(planets);
     }
 

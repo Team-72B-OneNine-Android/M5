@@ -17,15 +17,6 @@ import java.io.File;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
-    private HomeScreenActivityViewModel vm;
-    private TextView currentPlayer;
-    private TextView currentPlanet;
-    private TextView currentTechLevel;
-    private TextView currentResourceType;
-    private TextView currentLocation;
-    private TextView currentShip;
-    private TextView currentFuel;
-    private TextView currentCargo;
     private Planet planet;
 
 
@@ -35,39 +26,39 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         //link vm to home screen view model
-        vm = ViewModelProviders.of(this).get(HomeScreenActivityViewModel.class);
+        HomeScreenActivityViewModel vm = ViewModelProviders.of(this).get(HomeScreenActivityViewModel.class);
         planet = vm.getCurrentPlanet();
 
         //get current player
-        currentPlayer = findViewById(R.id.welcomeUser);
+        TextView currentPlayer = findViewById(R.id.welcomeUser);
         currentPlayer.setText("Hello, " + vm.getPlayerName() + "!");
 
         //get current planet
-        currentPlanet = findViewById(R.id.youAreOn);
+        TextView currentPlanet = findViewById(R.id.youAreOn);
         currentPlanet.setText("You are currently on planet " + planet.getType());
 
         //gets coordinates that player is currently at in universe
-        currentTechLevel = findViewById(R.id.currentTechLevel);
+        TextView currentTechLevel = findViewById(R.id.currentTechLevel);
         currentTechLevel.setText("Tech Level: " + planet.getTechLevel().toString());
 
         //gets coordinates that player is currently at in universe
-        currentResourceType = findViewById(R.id.currentResourceType);
+        TextView currentResourceType = findViewById(R.id.currentResourceType);
         currentResourceType.setText("Resource Type: " + planet.getResources());
 
         //gets coordinates that player is currently at in universe
-        currentLocation = findViewById(R.id.currentLocation);
+        TextView currentLocation = findViewById(R.id.currentLocation);
         currentLocation.setText("Current Location in Universe: " + planet.coordinatesPretty());
 
         //gets player ship type
-        currentShip = findViewById(R.id.currentShip);
+        TextView currentShip = findViewById(R.id.currentShip);
         currentShip.setText("Current Ship Type: " + vm.getShip().getShipType().toString());
 
         //gets amount of fuel that player has left
-        currentFuel = findViewById(R.id.currentFuel);
+        TextView currentFuel = findViewById(R.id.currentFuel);
         currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getShip().getShipFuel()) + "%");
 
         //gets current cargo that player has in ship
-        currentCargo = findViewById(R.id.currentCargo);
+        TextView currentCargo = findViewById(R.id.currentCargo);
         currentCargo.setText("Current Cargo in Ship: " + vm.getShip().currentGoods());
 
     }
@@ -85,7 +76,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     public void onSaveButtonPressed(View view) {
         File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
         boolean result = Facade.getInstance().saveBinary(file);
-        if (result == false) {
+        if (!result) {
             Toast.makeText(this, "Can't Save!", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Game Saved!", Toast.LENGTH_LONG).show();

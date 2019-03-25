@@ -26,6 +26,7 @@ public enum Goods {
     private final ER expensiveResource;
     private Planet current;
     private int price;
+    private Facade gameFacade = Facade.getInstance();
 
     Goods(String name, int MTLP, int MTLU, int TTP, int basePrice, int IPL, int var,
           IE increasePrice, CR cheapResource, ER expensiveResource) {
@@ -42,7 +43,7 @@ public enum Goods {
     }
 
     private Planet currentPlanet() {
-        return Facade.getInstance().getCurrentPlanet();
+        return gameFacade.getCurrentPlanet();
     }
 
     private int getCurrentPlanetTechLevel() {
