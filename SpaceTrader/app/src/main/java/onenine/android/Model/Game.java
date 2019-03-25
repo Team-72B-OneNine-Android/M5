@@ -73,31 +73,6 @@ public class Game implements Serializable {
         }
         return false;
     }
-//        if (player.getShipFuel() >= fuelCostForPlanet(p)) {
-//            randomEvent = Events.checkForEvent();
-//            this.setCurrentPlanet(p);
-//            int distance = currentPlanet.calculateDistance(p);
-//            player.updateShipFuel(distance);
-//            if (randomEvent == Events.LOSE_CARGO) {
-//                player.lossOfCargo();
-//                return true;
-//            }
-//            if (randomEvent == Events.LOSE_CREDIT) {
-//                if (!(player.getCredits() <= 0)) {
-//                    player.changeCredits(-100);
-//                }
-//                return true;
-//            }
-//            if (randomEvent == Events.GAIN_CREDIT) {
-//                player.changeCredits(100);
-//                return true;
-//            }
-//        } else {
-//            randomEvent = Events.NO_EVENT;
-//            return true;
-//        }
-//        return false;
-//    }
 
     public int fuelCostForPlanet(Planet planet) {
         int distance = Universe.distanceBetweenTwoPlanets(currentPlanet, planet);
