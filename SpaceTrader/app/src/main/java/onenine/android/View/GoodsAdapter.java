@@ -21,14 +21,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
 
     private HashMap<Goods, Integer> goods;
     private Goods[] goodsList;
-    private final Game game;
     private final Player player;
     private final Ship ship;
     private final TradeGoodsActivity activity;
 
     public GoodsAdapter (Game game, TradeGoodsActivity activity) {
-        this.game = game;
-        this.player = this.game.getPlayer();
+        Game game1 = game;
+        this.player = game1.getPlayer();
         this.ship = this.player.getShip();
         this.goods = this.ship.getTradeGoods();
         this.goodsList = Goods.values();
@@ -82,8 +81,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                     int position = getAdapterPosition();
                     Goods currentGood = goodsList[position];
                     if (currentGood.canBuy()) {
-                        if (player.getCredits() >= currentGood.getPrice() &&
-                        ship.cargoSpaceAvailable()) {
+                        if ((player.getCredits() >= currentGood.getPrice()) &&
+                                ship.cargoSpaceAvailable()) {
                             goods.put(currentGood, goods.get(currentGood) + 1);
                             player.changeCredits(-currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() + 1);

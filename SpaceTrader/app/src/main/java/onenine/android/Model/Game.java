@@ -45,7 +45,7 @@ public class Game implements Serializable {
     }
 
     public boolean travel(Planet p) {
-        if (this.fuelCostForPlanet(p) != 0 && this.playerCanTravel(p)) {
+        if ((this.fuelCostForPlanet(p) != 0) && this.playerCanTravel(p)) {
             randomEvent = Events.checkForEvent();
             if (randomEvent == Events.LOSE_CARGO) {
                 if (this.shipHasCargo()) {

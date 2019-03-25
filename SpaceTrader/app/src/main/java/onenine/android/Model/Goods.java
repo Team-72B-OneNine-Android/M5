@@ -26,6 +26,8 @@ public enum Goods {
     private final ER expensiveResource;
     private Planet current;
     private int price;
+    private Facade gameFacade = Facade.getInstance();
+    private Planet currentPlanet;
 
     Goods(String name, int MTLP, int MTLU, int TTP, int basePrice, int IPL, int var,
           IE increasePrice, CR cheapResource, ER expensiveResource) {
@@ -39,14 +41,12 @@ public enum Goods {
         this.increasePrice = increasePrice;
         this.cheapResource = cheapResource;
         this.expensiveResource = expensiveResource;
+        this.currentPlanet = gameFacade.getCurrentPlanet();
     }
 
-    private Planet currentPlanet() {
-        return Facade.getInstance().getCurrentPlanet();
-    }
 
     private int getCurrentPlanetTechLevel() {
-        return currentPlanet().getTechLevelNum();
+        return currentPlanet.getTechLevelNum();
     }
 
     public boolean canBuy() {
@@ -65,13 +65,13 @@ public enum Goods {
     public int getPrice() {
         int currentPrice = this.basePrice + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP));
         if (current == null) {
-            current = currentPlanet();
+            current = currentPlanet;
             this.price = ((int) (currentPrice + (this.basePrice * calculateVar())));
             return price;
-        } else if (current.equals(currentPlanet())) {
+        } else if (current.equals(currentPlanet)) {
             return price;
         } else {
-            current = currentPlanet();
+            current = currentPlanet;
             this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
             return price;
         }

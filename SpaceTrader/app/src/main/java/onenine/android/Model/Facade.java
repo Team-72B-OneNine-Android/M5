@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 
 public final class Facade {
 
-    public final static String DEFAULT_BINARY_FILE_NAME = "myGame.bin";
+    public static final String DEFAULT_BINARY_FILE_NAME = "myGame.bin";
     private Game game;
     private Player player;
     private Universe universe;
