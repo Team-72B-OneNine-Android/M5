@@ -13,7 +13,7 @@ public class GoodsViewModel extends ViewModel {
         return gameFacade.getGame();
     }
 
-    public int getCredits() {return gameFacade.getPlayer().getCredits();}
+    public int getCredits() {return gameFacade.getPlayerCredits();}
 
     public int getCargoSpaceAvailable() {
         return gameFacade.getShip().getCargoSpace();

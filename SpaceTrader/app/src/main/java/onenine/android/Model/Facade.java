@@ -64,6 +64,10 @@ public final class Facade {
         return this.game;
     }
 
+    public int getPlayerCredits() {
+        return this.player.getCredits();
+    }
+
     public boolean saveBinary(File file) {
         boolean success = true;
         try {
