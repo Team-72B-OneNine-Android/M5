@@ -9,41 +9,63 @@ public class Game implements Serializable {
     private Planet currentPlanet;
     private Events randomEvent;
 
-
+    /**
+     * Game constructor
+     *
+     * @param p the current player
+     * @param difficulty the game difficulty
+     */
     public Game(Player p, GameDifficulty difficulty) {
         this.player = p;
         this.difficulty = difficulty;
     }
 
-    public void setDifficulty(GameDifficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public GameDifficulty getDifficulty() {
-        return this.difficulty;
-    }
-
+    /**
+     * Gets the game's player
+     *
+     * @return the current player of game
+     */
     public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
+    /**
+     * Gets the current planet of game
+     *
+     * @return the planet the player is currently on
+     * in the game
+     */
     public Planet getCurrentPlanet() {
         return currentPlanet;
     }
 
+    /**
+     * Sets the planet the player is currently on in the game
+     *
+     * @param currentPlanet the planet to set the games planet to
+     */
     public void setCurrentPlanet(Planet currentPlanet) {
         this.currentPlanet = currentPlanet;
     }
 
+    /**
+     * Shows the player information and game difficulty
+     *
+     * @return the player info and game difficulty as
+     * a string
+     */
     @Override
     public String toString() {
         return player.toString() + "\n" + "Game Difficulty: " + difficulty.toString();
     }
 
+    /**
+     * Determines whether the player can travel.
+     * If player can travel, then a random event is created.
+     *
+     * @param p the planet to check whether player can travel to
+     * @return whether the player can travel to a specific planet
+     */
     public boolean travel(Planet p) {
         if ((this.fuelCostForPlanet(p) != 0) && this.playerCanTravel(p)) {
             randomEvent = Events.checkForEvent();
