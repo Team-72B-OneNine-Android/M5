@@ -14,16 +14,16 @@ public enum Goods {
     ROBOTS("Robots", 6, 4, 7, 5000, -150, 100, IE.LACKOFWORKERS, CR.NEVER, ER.NEVER);
 
 
-    private String name;
-    private int MTLP;
-    private int MTLU;
-    private int TTP;
-    private int basePrice;
-    private int IPL;
-    private int var;
-    private IE increasePrice;
-    private CR cheapResource;
-    private ER expensiveResource;
+    private final String name;
+    private final int MTLP;
+    private final int MTLU;
+    private final int TTP;
+    private final int basePrice;
+    private final int IPL;
+    private final int var;
+    private final IE increasePrice;
+    private final CR cheapResource;
+    private final ER expensiveResource;
     private Planet current;
     private int price;
 
@@ -42,7 +42,7 @@ public enum Goods {
     }
 
     private Planet currentPlanet() {
-        return Facade.getInstance().getGame().getCurrentPlanet();
+        return Facade.getInstance().getCurrentPlanet();
     }
 
     private int getCurrentPlanetTechLevel() {

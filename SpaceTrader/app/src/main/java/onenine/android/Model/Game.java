@@ -39,20 +39,28 @@ public class Game implements Serializable {
         this.currentPlanet = currentPlanet;
     }
 
+    @Override
     public String toString() {
         return player.toString() + "\n" + "Game Difficulty: " + difficulty.toString();
     }
 
     public boolean travel(Planet p) {
-        /*
-        if (this.fuelCostForPlanet(p) != 0) {
+        if (this.fuelCostForPlanet(p) != 0 && this.playerCanTravel(p)) {
             randomEvent = Events.checkForEvent();
             if (randomEvent == Events.LOSE_CARGO) {
-                player.lossOfCargo();
+                if (this.shipHasCargo()) {
+                    player.lossOfCargo();
+                } else {
+                    randomEvent = Events.NO_EVENT;
+                }
             }
             if (randomEvent == Events.LOSE_CREDIT) {
-                if (!(player.getCredits() <= 0)) {
-                    player.changeCredits(-100);
+                if (this.playerHasCredits()) {
+                    if (!(player.getCredits() <= 0)) {
+                        player.changeCredits(-100);
+                    }
+                } else {
+                    randomEvent = Events.NO_EVENT;
                 }
             }
             if (randomEvent == Events.GAIN_CREDIT) {
@@ -69,66 +77,49 @@ public class Game implements Serializable {
         } else {
             return false;
         }
-        */
-        if (this.fuelCostForPlanet(p) != 0 && player.getShip().getShipFuel() >= this.fuelCostForPlanet(p)) {
-            randomEvent = Events.checkForEvent();
-            if (randomEvent == Events.LOSE_CARGO) {
-                player.lossOfCargo();
-            }
-            if (randomEvent == Events.LOSE_CREDIT) {
-                if (!(player.getCredits() <= 0)) {
-                    player.changeCredits(-100);
-                }
-            }
-            if (randomEvent == Events.GAIN_CREDIT) {
-                player.changeCredits(100);
-            }
-        } else {
-            randomEvent = Events.NO_EVENT;
-        }
-        int distance = currentPlanet.calculateDistance(p);
-        int fuel = player.updateShipFuel(distance);
-        if (fuel >= 0) {
-            this.setCurrentPlanet(p);
-            return true;
-        } else {
-            return false;
-        }
-
-
-        /*
-        if (player.getShip().getShipFuel() >= 1) {
-            randomEvent = Events.checkForEvent();
-            setCurrentPlanet(p);
-            int distance = currentPlanet.calculateDistance(p);
-            player.updateShipFuel(distance);
-            if (randomEvent == Events.LOSE_CARGO) {
-                player.lossOfCargo();
-                return true;
-            }
-            if (randomEvent == Events.LOSE_CREDIT) {
-                if (!(player.getCredits() <= 0)) {
-                    player.changeCredits(-100);
-                }
-                return true;
-            }
-            if (randomEvent == Events.GAIN_CREDIT) {
-                player.changeCredits(100);
-                return true;
-            }
-        } else {
-            randomEvent = Events.NO_EVENT;
-            return true;
-        }
-        return false;
-        */
     }
+//        if (player.getShipFuel() >= fuelCostForPlanet(p)) {
+//            randomEvent = Events.checkForEvent();
+//            this.setCurrentPlanet(p);
+//            int distance = currentPlanet.calculateDistance(p);
+//            player.updateShipFuel(distance);
+//            if (randomEvent == Events.LOSE_CARGO) {
+//                player.lossOfCargo();
+//                return true;
+//            }
+//            if (randomEvent == Events.LOSE_CREDIT) {
+//                if (!(player.getCredits() <= 0)) {
+//                    player.changeCredits(-100);
+//                }
+//                return true;
+//            }
+//            if (randomEvent == Events.GAIN_CREDIT) {
+//                player.changeCredits(100);
+//                return true;
+//            }
+//        } else {
+//            randomEvent = Events.NO_EVENT;
+//            return true;
+//        }
+//        return false;
+//    }
 
     public int fuelCostForPlanet(Planet planet) {
         int distance = Universe.distanceBetweenTwoPlanets(currentPlanet, planet);
         return distance / 2;
     }
 
+    private boolean playerHasCredits() {
+        return player.getCredits() > 0;
+    }
+
+    private boolean shipHasCargo() {
+        return player.hasCargo();
+    }
+
+    private boolean playerCanTravel(Planet planet) {
+        return player.getShipFuel() >= fuelCostForPlanet(planet);
+    }
     public String showEventMessage() {
         return Events.getEventMessage(randomEvent);
     }

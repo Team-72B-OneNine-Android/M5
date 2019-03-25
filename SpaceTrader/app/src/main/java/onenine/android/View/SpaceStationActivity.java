@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import onenine.android.Model.Events;
 import onenine.android.Model.Game;
 import onenine.android.Model.Planet;
 import onenine.android.R;
@@ -29,28 +28,28 @@ public class SpaceStationActivity extends AppCompatActivity {
     private Planet planet7;
     private Planet planet8;
     private Planet planet9;
-    TextView currentPlanet;
-    TextView currentFuel;
-    TextView fuelCost0;
-    TextView fuelCost1;
-    TextView fuelCost2;
-    TextView fuelCost3;
-    TextView fuelCost4;
-    TextView fuelCost5;
-    TextView fuelCost6;
-    TextView fuelCost7;
-    TextView fuelCost8;
-    TextView fuelCost9;
-    Button planet0B;
-    Button planet1B;
-    Button planet2B;
-    Button planet3B;
-    Button planet4B;
-    Button planet5B;
-    Button planet6B;
-    Button planet7B;
-    Button planet8B;
-    Button planet9B;
+    private TextView currentPlanet;
+    private TextView currentFuel;
+    private TextView fuelCost0;
+    private TextView fuelCost1;
+    private TextView fuelCost2;
+    private TextView fuelCost3;
+    private TextView fuelCost4;
+    private TextView fuelCost5;
+    private TextView fuelCost6;
+    private TextView fuelCost7;
+    private TextView fuelCost8;
+    private TextView fuelCost9;
+    private Button planet0B;
+    private Button planet1B;
+    private Button planet2B;
+    private Button planet3B;
+    private Button planet4B;
+    private Button planet5B;
+    private Button planet6B;
+    private Button planet7B;
+    private Button planet8B;
+    private Button planet9B;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,22 +225,22 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
-    public int fuelCostForPlanet(Planet p) {
+    private int fuelCostForPlanet(Planet p) {
         return myGame.fuelCostForPlanet(p);
     }
 
-    public void goToHomeScreen() {
+    private void goToHomeScreen() {
         Intent back = new Intent(this, HomeScreenActivity.class);
         startActivity(back);
     }
 
-    public void displayToast() {
+    private void displayToast() {
         Toast notEnoughFuel = Toast.makeText(getApplicationContext(), "Sorry, you do not have enough fuel to "
                 + "travel there", Toast.LENGTH_LONG);
         notEnoughFuel.show();
     }
     
-    public void displayEventToast() {
+    private void displayEventToast() {
         if (myGame.showEventMessage().length() >= 1) {
             Toast eventHappened = Toast.makeText(getApplicationContext(), myGame.showEventMessage(), Toast.LENGTH_LONG);
             eventHappened.show();

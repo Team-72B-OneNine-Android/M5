@@ -12,9 +12,9 @@ import onenine.android.ViewModel.MarketPlaceActivityViewModel;
 
 public class MarketPlaceActivity extends AppCompatActivity {
 
-    TextView currentGoodsList;
-    TextView goodsProducedOnPlanet;
-    TextView goodsUsedOnPlanet;
+    private TextView currentGoodsList;
+    private TextView goodsProducedOnPlanet;
+    private TextView goodsUsedOnPlanet;
     private MarketPlaceActivityViewModel viewModel;
 
     @Override

@@ -21,10 +21,10 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
 
     private HashMap<Goods, Integer> goods;
     private Goods[] goodsList;
-    private Game game;
-    private Player player;
-    private Ship ship;
-    private TradeGoodsActivity activity;
+    private final Game game;
+    private final Player player;
+    private final Ship ship;
+    private final TradeGoodsActivity activity;
 
     public GoodsAdapter (Game game, TradeGoodsActivity activity) {
         this.game = game;
@@ -45,6 +45,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         return new GoodsViewHolder(itemView);
     }
 
+    @Override
     public void onBindViewHolder(@NonNull GoodsViewHolder holder, int position) {
 
         holder.goodName.setText(goodsList[position].getName());
@@ -59,14 +60,14 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
 
     class GoodsViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView goodName;
-        private TextView numberHave;
-        private Button buyButton;
-        private Button sellButton;
-        private TextView goodBuyPrice;
-        private TextView goodSellPrice;
+        private final TextView goodName;
+        private final TextView numberHave;
+        private final Button buyButton;
+        private final Button sellButton;
+        private final TextView goodBuyPrice;
+        private final TextView goodSellPrice;
 
-        public GoodsViewHolder(@NonNull final View itemView) {
+        GoodsViewHolder(@NonNull final View itemView) {
 
             super(itemView);
             goodName = itemView.findViewById(R.id.good_name);
@@ -128,6 +129,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         }
     }
 
+    @Override
     public int getItemCount() {
         return this.goods.size();
     }

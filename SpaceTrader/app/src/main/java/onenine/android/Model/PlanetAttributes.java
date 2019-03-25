@@ -2,9 +2,9 @@ package onenine.android.Model;
 
 import java.io.Serializable;
 
-public class PlanetAttributes implements Serializable {
+class PlanetAttributes implements Serializable {
 
-    String[] planets = {
+    private final String[] planets = {
             "Acamar",
             "Adahn",		// The alternate personality for The Nameless One in "Planescape: Torment"
             "Aldea",
@@ -126,7 +126,7 @@ public class PlanetAttributes implements Serializable {
             "Zalkon",
             "Zuul"			// From the first Ghostbusters movie
     };
-    String[] techLevel = {
+    private final String[] techLevel = {
             "Pre-Agriculture",
             "Agriculture",
             "Medieval",
@@ -136,7 +136,7 @@ public class PlanetAttributes implements Serializable {
             "Post-Industrial",
             "Hi-Tech"
     };
-    String[] resources = {
+    private final String[] resources = {
             "NOSPECIALRESOURCES",
             "MINERALRICH",
             "MINERALPOOR",

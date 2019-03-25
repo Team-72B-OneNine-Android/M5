@@ -10,7 +10,7 @@ public enum TechLevel {
     POST_INDUSTRIAL("Post Industrial"),
     HI_TECH("Hi-Tech");
 
-    private String techLevel;
+    private final String techLevel;
 
     TechLevel(String techLevel) {
         this.techLevel = techLevel;

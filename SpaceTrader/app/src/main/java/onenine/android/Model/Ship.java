@@ -7,7 +7,7 @@ public class Ship implements Serializable {
     private ShipType shipType;
     private int cargoUsed;
     private int shipFuel;
-    HashMap<Goods, Integer> tradeGoods = new HashMap<>();
+    private HashMap<Goods, Integer> tradeGoods = new HashMap<>();
 
     public Ship (ShipType st) {
         this.shipType = st;
@@ -80,9 +80,7 @@ public class Ship implements Serializable {
     }
 
     public void emptyCargo() {
-        if (cargoUsed == 0) {
-            return;
-        } else {
+        if (cargoUsed != 0) {
             for (Goods goods : tradeGoods.keySet()) {
                 tradeGoods.replace(goods, 0);
             }
