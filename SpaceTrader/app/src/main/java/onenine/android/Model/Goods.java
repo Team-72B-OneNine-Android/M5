@@ -28,6 +28,20 @@ public enum Goods {
     private int price;
     private Facade gameFacade = Facade.getInstance();
 
+    /**
+     * Goods constructor
+     *
+     * @param name the good name
+     * @param MTLP the good MTLP
+     * @param MTLU the good MTLU
+     * @param TTP the good TTP
+     * @param basePrice the good base price
+     * @param IPL the good IPL
+     * @param var the good var
+     * @param increasePrice the good price increase
+     * @param cheapResource the good cheap resource
+     * @param expensiveResource the good expensive resource
+     */
     Goods(String name, int MTLP, int MTLU, int TTP, int basePrice, int IPL, int var,
           IE increasePrice, CR cheapResource, ER expensiveResource) {
         this.name = name;
@@ -42,27 +56,59 @@ public enum Goods {
         this.expensiveResource = expensiveResource;
     }
 
+    /**
+     * Gets the current planet of the game facade
+     *
+     * @return the game facade's current planet
+     */
     private Planet currentPlanet() {
         return gameFacade.getCurrentPlanet();
     }
 
+    /**
+     * Gets the current planets tech level number
+     *
+     * @return the number that represents the
+     * current planets tech level
+     */
     private int getCurrentPlanetTechLevel() {
         return currentPlanet().getTechLevelNum();
     }
 
+    /**
+     * Determines whether or not a good can be bought
+     *
+     * @return whether the good can be bought on
+     * the current planet
+     */
     public boolean canBuy() {
         return getCurrentPlanetTechLevel() >= this.MTLP;
     }
 
+    /**
+     * Determines whether good can be sold
+     *
+     * @return whether good can be sold
+     */
     public boolean canSell() {
         return getCurrentPlanetTechLevel() >= this.MTLU;
     }
 
+    /**
+     * Calculates the var for a specific good
+     *
+     * @return the var of the specific good
+     */
     private double calculateVar() {
         double randVar = new Random().nextInt(this.var);
         return randVar/100;
     }
 
+    /**
+     * Determines the price of a good
+     *
+     * @return the price of a good
+     */
     public int getPrice() {
         int currentPrice = this.basePrice + (this.IPL * (getCurrentPlanetTechLevel() - this.MTLP));
         if (current == null) {
@@ -78,6 +124,11 @@ public enum Goods {
         }
     }
 
+    /**
+     * Gets buying price of a good as a string
+     *
+     * @return the good price as a string
+     */
     public String buyStringPrice() {
         if (canBuy()) {
             return String.valueOf(getPrice());
@@ -86,6 +137,11 @@ public enum Goods {
         }
     }
 
+    /**
+     * Gets the sell price of a good as a string
+     *
+     * @return the sell price of a good as a string
+     */
     public String sellStringPrice() {
         if (canSell()) {
             return String.valueOf(getPrice());
@@ -94,6 +150,11 @@ public enum Goods {
         }
     }
 
+    /**
+     * Gets the name of a godd
+     *
+     * @return the name of a good as a string
+     */
     public String getName() {
         return this.name;
     }

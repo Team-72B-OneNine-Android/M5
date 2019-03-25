@@ -10,6 +10,11 @@ public enum Events {
 
     private static final int CHANCE = 60;
 
+    /**
+     * Checks for a random event
+     *
+     * @return A random event
+     */
     public static Events checkForEvent() {
         int random = new Random().nextInt(100);
         Events[] possibleEvents = Events.values();
@@ -22,6 +27,14 @@ public enum Events {
         }
     }
 
+    /**
+     * Returns the event message associated with an
+     * event as a String
+     *
+     * @param events the event to get the message of
+     * @return the event message associated with
+     * the event
+     */
     public static String getEventMessage(Events events) {
         if (events == LOSE_CARGO) {
             return "Somebody stole all your cargo!";
