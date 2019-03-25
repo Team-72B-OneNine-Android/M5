@@ -66,17 +66,12 @@ public class Game implements Serializable {
             if (randomEvent == Events.GAIN_CREDIT) {
                 player.changeCredits(100);
             }
-        } else {
-            randomEvent = Events.NO_EVENT;
-        }
-        int distance = currentPlanet.calculateDistance(p);
-        int fuel = player.updateShipFuel(distance);
-        if (fuel >= 0) {
+            int distance = currentPlanet.calculateDistance(p);
+            player.updateShipFuel(distance);
             this.setCurrentPlanet(p);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 //        if (player.getShipFuel() >= fuelCostForPlanet(p)) {
 //            randomEvent = Events.checkForEvent();
