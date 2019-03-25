@@ -98,9 +98,6 @@ public class Player implements Serializable {
         return ship.decreaseFuel(i);
     }
 
-    public int getShipFuel() {
-        return ship.getShipFuel();
-    }
 
     public void lossOfCargo() {
         ship.emptyCargo();
