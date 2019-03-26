@@ -12,6 +12,11 @@ public enum TechLevel {
 
     private final String techLevel;
 
+    /**
+     * Tech level constructor
+     *
+     * @param techLevel the tech level for a planet
+     */
     TechLevel(String techLevel) {
         this.techLevel = techLevel;
     }
