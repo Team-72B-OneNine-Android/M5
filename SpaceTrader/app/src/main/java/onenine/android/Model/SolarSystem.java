@@ -16,6 +16,12 @@ class SolarSystem implements Serializable {
     private static final int X_COORDINATE = 149;
     private static final int Y_COORDINATE = 99;
 
+    /**
+     * Generates 10 random planets for a solar system
+     * given a large collection of planets
+     *
+     * @param planets a large collection of planets
+     */
     public void generatePlanets(Collection<Planet> planets) {
         Collection<String> planetNames = new ArrayList<>();
         Collection<String> coordinateStrings = new ArrayList<>();
@@ -35,24 +41,48 @@ class SolarSystem implements Serializable {
 
         }
 
-
+    /**
+     * Gets a random planet from a list of planets
+     *
+     * @return random planet as a string
+     */
     private String getRandomPlanet() {
         return planetsList.get(rand.nextInt(planetsList.size()));
     }
 
+    /**
+     * Gets a random tech level number
+     *
+     * @return random tech level number
+     */
     private TechLevel getRandomTechLevel() {
         int randomTechLevel = new Random().nextInt(TechLevel.values().length);
         return TechLevel.values()[randomTechLevel];
     }
 
+    /**
+     * Gets a random resource from a resource list
+     *
+     * @return a random resource
+     */
     private String getRandomResource() {
         return resourceList.get(rand.nextInt(resourceList.size()));
     }
 
+    /**
+     * Gets a random x coordinate
+     *
+     * @return a random x coordinate
+     */
     private int getRandomX() {
         return rand.nextInt(X_COORDINATE) + 1;
     }
 
+    /**
+     * Gets a random y coordinate
+     *
+     * @return a random y coordinate
+     */
     private int getRandomY() {
         return rand.nextInt(Y_COORDINATE) + 1;
     }
