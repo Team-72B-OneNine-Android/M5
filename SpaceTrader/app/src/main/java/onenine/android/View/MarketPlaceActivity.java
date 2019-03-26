@@ -24,19 +24,19 @@ public class MarketPlaceActivity extends AppCompatActivity {
         textView.setText("Goods currently on the ship: ");
 
         TextView currentGoodsList = findViewById(R.id.current_good_list);
-        currentGoodsList.setText(viewModel.getShip().currentGoods());
+        currentGoodsList.setText(viewModel.getCurrentGoods());
 
         TextView textView1 = findViewById(R.id.goodsPro);
         textView1.setText("Goods produced/sold on the current planet: ");
 
         TextView goodsProducedOnPlanet = findViewById(R.id.goods_produced);
-        goodsProducedOnPlanet.setText(viewModel.getPlanet().goodsProduced());
+        goodsProducedOnPlanet.setText(viewModel.getGoodsProduced());
 
         TextView textView2 = findViewById(R.id.goodsUsed);
         textView2.setText("Goods used/bought on current planet: ");
 
         TextView goodsUsedOnPlanet = findViewById(R.id.goods_sold);
-        goodsUsedOnPlanet.setText(viewModel.getPlanet().goodsUsed());
+        goodsUsedOnPlanet.setText(viewModel.getGoodsUsed());
 
     }
 

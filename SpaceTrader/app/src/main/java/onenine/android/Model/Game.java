@@ -51,6 +51,14 @@ public class Game implements Serializable {
         return player.getShipFuel();
     }
 
+    public String currentPlanetGoodsProduced() {
+        return currentPlanet.goodsProduced();
+    }
+
+    public String currentPlanetGoodsUsed() {
+        return currentPlanet.goodsUsed();
+    }
+
     /**
      * Sets the planet the player is currently on in the game
      *

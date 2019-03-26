@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 
 import onenine.android.Model.Facade;
 import onenine.android.Model.Planet;
-import onenine.android.Model.Ship;
+import onenine.android.Model.ShipType;
 
 public class HomeScreenActivityViewModel extends ViewModel {
 
@@ -18,7 +18,15 @@ public class HomeScreenActivityViewModel extends ViewModel {
         return gameFacade.getCurrentPlanet();
     }
 
-    public Ship getShip() {
-        return gameFacade.getShip();
+    public ShipType getShipType() {
+        return gameFacade.shipType();
+    }
+
+    public int getShipFuel() {
+        return gameFacade.myShipFuel();
+    }
+
+    public String getCurrentGoods() {
+        return gameFacade.shipCurrentGoods();
     }
 }

@@ -30,8 +30,8 @@ public class ShipYardActivity extends AppCompatActivity {
     }
 
     public void onRefuelPressed(View view) {
-        vm.getPlayer().changeCredits(-vm.fuelCost());
-        vm.getShip().setShipFuel(100);
+        vm.chargeForFuel(-vm.fuelCost());
+        vm.changeFuel(100);
         Toast.makeText(this, "Your Ship has been refueled!", Toast.LENGTH_LONG).show();
     }
 }

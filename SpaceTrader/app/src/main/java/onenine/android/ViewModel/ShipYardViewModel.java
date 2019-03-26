@@ -3,8 +3,6 @@ package onenine.android.ViewModel;
 import android.arch.lifecycle.ViewModel;
 
 import onenine.android.Model.Facade;
-import onenine.android.Model.Player;
-import onenine.android.Model.Ship;
 
 public class ShipYardViewModel extends ViewModel {
 
@@ -18,19 +16,19 @@ public class ShipYardViewModel extends ViewModel {
         return gameFacade.getPlanetType();
     }
 
+    public void chargeForFuel(int i) {
+        gameFacade.changeMyCredits(i);
+    }
+
+    public void changeFuel(int i) {
+        gameFacade.changeShipFuel(i);
+    }
+
     public int planetFuelPrice() {
         return gameFacade.getCurrentPlanetFuelPrice();
     }
 
     public int fuelCost() {
         return ((100 - this.currentFuel()) * planetFuelPrice());
-    }
-
-    public Player getPlayer() {
-        return gameFacade.getPlayer();
-    }
-
-    public Ship getShip() {
-        return gameFacade.getShip();
     }
 }

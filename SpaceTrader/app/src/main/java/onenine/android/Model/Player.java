@@ -46,8 +46,21 @@ public class Player implements Serializable {
         return ship;
     }
 
+    public ShipType myShipType() {
+        return ship.getShipType();
+    }
+
+    public String myCurrentGoods() {
+        return ship.currentGoods();
+    }
+
     public int getShipCargoSpace() {
         return this.ship.getCargoSpace();
+    }
+
+
+    public void changeMyFuel(int fuel) {
+        ship.setShipFuel(fuel);
     }
 
     public void changeCredits(int credits) {

@@ -51,15 +51,15 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         //gets player ship type
         TextView currentShip = findViewById(R.id.currentShip);
-        currentShip.setText("Current Ship Type: " + vm.getShip().getShipType().toString());
+        currentShip.setText("Current Ship Type: " + vm.getShipType().toString());
 
         //gets amount of fuel that player has left
         TextView currentFuel = findViewById(R.id.currentFuel);
-        currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getShip().getShipFuel()) + "%");
+        currentFuel.setText("Fuel Remaining: " + Integer.toString(vm.getShipFuel()) + "%");
 
         //gets current cargo that player has in ship
         TextView currentCargo = findViewById(R.id.currentCargo);
-        currentCargo.setText("Current Cargo in Ship: " + vm.getShip().currentGoods());
+        currentCargo.setText("Current Cargo in Ship: " + vm.getCurrentGoods());
 
     }
 

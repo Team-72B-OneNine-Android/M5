@@ -109,12 +109,36 @@ public final class Facade {
         return player.getShip();
     }
 
+    public ShipType shipType() {
+        return player.myShipType();
+    }
+
     public int myShipFuel() {
         return player.getShipFuel();
     }
 
     public int cargoSpace() {
         return player.getShipCargoSpace();
+    }
+
+    public String shipCurrentGoods() {
+        return player.myCurrentGoods();
+    }
+
+    public String planetGoodsProduced() {
+        return game.currentPlanetGoodsProduced();
+    }
+
+    public String planetGoodsUsed() {
+        return game.currentPlanetGoodsUsed();
+    }
+
+    public void changeMyCredits(int i) {
+        player.changeCredits(i);
+    }
+
+    public void changeShipFuel(int i) {
+        player.changeMyFuel(i);
     }
     /**
      * Gets the planet the player is currently on
