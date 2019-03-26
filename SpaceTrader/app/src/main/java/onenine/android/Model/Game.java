@@ -120,22 +120,51 @@ public class Game implements Serializable {
         return false;
     }
 
+    /**
+     * Calculates the cost for fuel to travel to a specific planet
+     *
+     * @param planet the planet to calculate the cost of fuel to travel to
+     * @return the cost for fuel to travel
+     */
     public int fuelCostForPlanet(Planet planet) {
         int distance = Universe.distanceBetweenTwoPlanets(currentPlanet, planet);
         return distance / 2;
     }
 
+    /**
+     * Determines whether the player has greater than zero credits
+     *
+     * @return whether the player has more than zero credits
+     */
     private boolean playerHasCredits() {
         return player.getCredits() > 0;
     }
 
+    /**
+     * Determines whether or not the player's ship
+     * has cargo
+     *
+     * @return whether player's ship has cargo
+     */
     private boolean shipHasCargo() {
         return player.hasCargo();
     }
 
+    /**
+     * Tells whether the player can travel to a specific planet
+     *
+     * @param planet the planet the player is trying to travel to
+     * @return whether the player can travel to a specific planet
+     */
     private boolean playerCanTravel(Planet planet) {
         return player.getShipFuel() >= fuelCostForPlanet(planet);
     }
+
+    /**
+     * Shows an event message
+     *
+     * @return an event message as a string
+     */
     public String showEventMessage() {
         return Events.getEventMessage(randomEvent);
     }
