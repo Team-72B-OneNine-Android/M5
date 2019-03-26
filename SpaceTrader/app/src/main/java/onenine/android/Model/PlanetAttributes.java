@@ -152,10 +152,20 @@ class PlanetAttributes implements Serializable {
             "WARLIKE"
     };
 
+    /**
+     * Gets all of the possible planets
+     *
+     * @return the planets that can be used to create a solar system
+     */
     public String[] getPlanetsStringArray() {
         return planets;
     }
 
+    /**
+     * Gets all of the possible resources
+     *
+     * @return the resources that can be associated with a planet
+     */
     public String[] getResourcesStringArray() {
         return resources;
     }
