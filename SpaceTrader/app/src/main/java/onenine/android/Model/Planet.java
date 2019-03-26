@@ -37,9 +37,6 @@ public class Planet implements Serializable {
     private int getY() {
         return y;
     }
-    public String getCoordinateString() {
-        return (Integer.toString(getX()) + Integer.toString(getY()));
-    }
 
     @Override
     public String toString() {

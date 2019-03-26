@@ -26,56 +26,32 @@ public class Player implements Serializable {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     private int getPilotPoints() {
         return pilotPoints;
-    }
-
-    public void setPilotPoints(int points) {
-        this.pilotPoints = points;
     }
 
     private int getFighterPoints() {
         return fighterPoints;
     }
 
-    public void setFighterPoints(int points) {
-        this.fighterPoints = points;
-    }
-
     private int getTraderPoints() {
         return traderPoints;
-    }
-
-    public void setTraderPoints(int points) {
-        this.traderPoints = points;
     }
 
     private int getEngineerPoints() {
         return engineerPoints;
     }
 
-    public void setEngineerPoints(int points) {
-        this.engineerPoints = points;
-    }
-
     public Ship getShip() {
         return ship;
     }
 
+    public int getShipCargoSpace() {
+        return this.ship.getCargoSpace();
+    }
+
     public void changeCredits(int credits) {
         this.credits = this.credits + credits;
-    }
-
-    public void setShip(Ship ship) {
-        this.ship = ship;
-    }
-
-    public void setCredits(int credits) {
-        this.credits = credits;
     }
 
     public int getCredits() {

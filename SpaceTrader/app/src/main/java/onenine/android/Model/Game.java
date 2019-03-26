@@ -39,6 +39,18 @@ public class Game implements Serializable {
         return currentPlanet;
     }
 
+    public String getCurrentPlanetType() {
+        return currentPlanet.getType();
+    }
+
+    public int planetFuelPrice() {
+        return currentPlanet.fuelPrice();
+    }
+
+    public int myShipFuel() {
+        return player.getShipFuel();
+    }
+
     /**
      * Sets the planet the player is currently on in the game
      *
@@ -89,6 +101,8 @@ public class Game implements Serializable {
                 if (randomEvent == Events.GAIN_CREDIT) {
                     player.changeCredits(100);
                 }
+            } else {
+                randomEvent = Events.NO_EVENT;
             }
             int distance = currentPlanet.calculateDistance(p);
             player.updateShipFuel(distance);

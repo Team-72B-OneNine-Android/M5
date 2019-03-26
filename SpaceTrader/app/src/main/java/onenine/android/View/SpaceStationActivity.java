@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 public class SpaceStationActivity extends AppCompatActivity {
 
-    private SpaceStationActivityViewModel vm;
     private Game myGame;
     private Planet planet0;
     private Planet planet1;
@@ -28,28 +27,6 @@ public class SpaceStationActivity extends AppCompatActivity {
     private Planet planet7;
     private Planet planet8;
     private Planet planet9;
-    private TextView currentPlanet;
-    private TextView currentFuel;
-    private TextView fuelCost0;
-    private TextView fuelCost1;
-    private TextView fuelCost2;
-    private TextView fuelCost3;
-    private TextView fuelCost4;
-    private TextView fuelCost5;
-    private TextView fuelCost6;
-    private TextView fuelCost7;
-    private TextView fuelCost8;
-    private TextView fuelCost9;
-    private Button planet0B;
-    private Button planet1B;
-    private Button planet2B;
-    private Button planet3B;
-    private Button planet4B;
-    private Button planet5B;
-    private Button planet6B;
-    private Button planet7B;
-    private Button planet8B;
-    private Button planet9B;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,68 +34,65 @@ public class SpaceStationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_space_station);
 
         //initialize view model
-        vm = ViewModelProviders.of(this).get(SpaceStationActivityViewModel.class);
+        SpaceStationActivityViewModel vm = ViewModelProviders.of(this).get(SpaceStationActivityViewModel.class);
         myGame = vm.getGame();
 
-        //Get planet and fuel design ids
-        currentPlanet = findViewById(R.id.spaceStationPlanet);
-        currentFuel = findViewById(R.id.spaceStationFuel);
-
         //get current planet
-        currentPlanet = findViewById(R.id.spaceStationPlanet);
-        currentPlanet.setText("You are currently on planet " + myGame.getCurrentPlanet().getType());
+        TextView currentPlanet = findViewById(R.id.spaceStationPlanet);
+        currentPlanet.setText("You are currently on planet " + myGame.getCurrentPlanetType());
 
         //gets amount of fuel that player has left
-        currentFuel = findViewById(R.id.spaceStationFuel);
-        currentFuel.setText("Fuel Remaining: " + Integer.toString(myGame.getPlayer().getShip().getShipFuel()) + "%");
+        TextView currentFuel = findViewById(R.id.spaceStationFuel);
+        currentFuel.setText("Fuel Remaining: " + Integer.toString(myGame.myShipFuel()) + "%");
 
         //Planet Buttons
-        planet0B = findViewById(R.id.planet0);
-        planet1B = findViewById(R.id.planet1);
-        planet2B = findViewById(R.id.planet2);
-        planet3B = findViewById(R.id.planet3);
-        planet4B = findViewById(R.id.planet4);
-        planet5B = findViewById(R.id.planet5);
-        planet6B = findViewById(R.id.planet6);
-        planet7B = findViewById(R.id.planet7);
-        planet8B = findViewById(R.id.planet8);
-        planet9B = findViewById(R.id.planet9);
-
-        //Set text of each button
-        planet0B.setText(vm.getUniverse().getPlanet(0).getType());
-        planet1B.setText(vm.getUniverse().getPlanet(1).getType());
-        planet2B.setText(vm.getUniverse().getPlanet(2).getType());
-        planet3B.setText(vm.getUniverse().getPlanet(3).getType());
-        planet4B.setText(vm.getUniverse().getPlanet(4).getType());
-        planet5B.setText(vm.getUniverse().getPlanet(5).getType());
-        planet6B.setText(vm.getUniverse().getPlanet(6).getType());
-        planet7B.setText(vm.getUniverse().getPlanet(7).getType());
-        planet8B.setText(vm.getUniverse().getPlanet(8).getType());
-        planet9B.setText(vm.getUniverse().getPlanet(9).getType());
+        Button planet0B = findViewById(R.id.planet0);
+        Button planet1B = findViewById(R.id.planet1);
+        Button planet2B = findViewById(R.id.planet2);
+        Button planet3B = findViewById(R.id.planet3);
+        Button planet4B = findViewById(R.id.planet4);
+        Button planet5B = findViewById(R.id.planet5);
+        Button planet6B = findViewById(R.id.planet6);
+        Button planet7B = findViewById(R.id.planet7);
+        Button planet8B = findViewById(R.id.planet8);
+        Button planet9B = findViewById(R.id.planet9);
 
         //Declare planet values
-        planet0 = vm.getUniverse().getPlanet(0);
-        planet1 = vm.getUniverse().getPlanet(1);
-        planet2 = vm.getUniverse().getPlanet(2);
-        planet3 = vm.getUniverse().getPlanet(3);
-        planet4 = vm.getUniverse().getPlanet(4);
-        planet5 = vm.getUniverse().getPlanet(5);
-        planet6 = vm.getUniverse().getPlanet(6);
-        planet7 = vm.getUniverse().getPlanet(7);
-        planet8 = vm.getUniverse().getPlanet(8);
-        planet9 = vm.getUniverse().getPlanet(9);
+        planet0 = vm.getPlanetAtIndex(0);
+        planet1 = vm.getPlanetAtIndex(1);
+        planet2 = vm.getPlanetAtIndex(2);
+        planet3 = vm.getPlanetAtIndex(3);
+        planet4 = vm.getPlanetAtIndex(4);
+        planet5 = vm.getPlanetAtIndex(5);
+        planet6 = vm.getPlanetAtIndex(6);
+        planet7 = vm.getPlanetAtIndex(7);
+        planet8 = vm.getPlanetAtIndex(8);
+        planet9 = vm.getPlanetAtIndex(9);
+
+        //Set text of each button
+        planet0B.setText(planet0.getType());
+        planet1B.setText(planet1.getType());
+        planet2B.setText(planet2.getType());
+        planet3B.setText(planet3.getType());
+        planet4B.setText(planet4.getType());
+        planet5B.setText(planet5.getType());
+        planet6B.setText(planet6.getType());
+        planet7B.setText(planet7.getType());
+        planet8B.setText(planet8.getType());
+        planet9B.setText(planet9.getType());
+
 
         //get fuel cost ids
-        fuelCost0 = findViewById(R.id.fuelCost0);
-        fuelCost1 = findViewById(R.id.fuelCost1);
-        fuelCost2 = findViewById(R.id.fuelCost2);
-        fuelCost3 = findViewById(R.id.fuelCost3);
-        fuelCost4 = findViewById(R.id.fuelCost4);
-        fuelCost5 = findViewById(R.id.fuelCost5);
-        fuelCost6 = findViewById(R.id.fuelCost6);
-        fuelCost7 = findViewById(R.id.fuelCost7);
-        fuelCost8 = findViewById(R.id.fuelCost8);
-        fuelCost9 = findViewById(R.id.fuelCost9);
+        TextView fuelCost0 = findViewById(R.id.fuelCost0);
+        TextView fuelCost1 = findViewById(R.id.fuelCost1);
+        TextView fuelCost2 = findViewById(R.id.fuelCost2);
+        TextView fuelCost3 = findViewById(R.id.fuelCost3);
+        TextView fuelCost4 = findViewById(R.id.fuelCost4);
+        TextView fuelCost5 = findViewById(R.id.fuelCost5);
+        TextView fuelCost6 = findViewById(R.id.fuelCost6);
+        TextView fuelCost7 = findViewById(R.id.fuelCost7);
+        TextView fuelCost8 = findViewById(R.id.fuelCost8);
+        TextView fuelCost9 = findViewById(R.id.fuelCost9);
 
         //Set fuel cost text
         fuelCost0.setText("Cost: " + Integer.toString(fuelCostForPlanet(planet0)) + "%");

@@ -83,6 +83,10 @@ public final class Facade {
         return player.getName();
     }
 
+    public Planet getPlanet(int i) {
+        return universe.getPlanet(i);
+    }
+
     /**
      * Gets the games current player
      *
@@ -105,6 +109,13 @@ public final class Facade {
         return player.getShip();
     }
 
+    public int myShipFuel() {
+        return player.getShipFuel();
+    }
+
+    public int cargoSpace() {
+        return player.getShipCargoSpace();
+    }
     /**
      * Gets the planet the player is currently on
      *
@@ -112,6 +123,14 @@ public final class Facade {
      */
     public Planet getCurrentPlanet() {
         return game.getCurrentPlanet();
+    }
+
+    public String getPlanetType() {
+        return game.getCurrentPlanetType();
+    }
+
+    public int getCurrentPlanetFuelPrice() {
+        return game.planetFuelPrice();
     }
 
     /**

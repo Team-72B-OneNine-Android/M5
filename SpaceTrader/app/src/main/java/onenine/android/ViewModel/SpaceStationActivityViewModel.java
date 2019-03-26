@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 
 import onenine.android.Model.Facade;
 import onenine.android.Model.Game;
-import onenine.android.Model.Universe;
+import onenine.android.Model.Planet;
 
 public class SpaceStationActivityViewModel extends ViewModel {
 
@@ -14,8 +14,9 @@ public class SpaceStationActivityViewModel extends ViewModel {
         return gameFacade.getGame();
     }
 
-    public Universe getUniverse() {
-        return gameFacade.getUniverse();
+    public Planet getPlanetAtIndex(int i) {
+        return gameFacade.getPlanet(i);
     }
+
 
 }

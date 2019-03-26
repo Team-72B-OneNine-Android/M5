@@ -22,10 +22,6 @@ public class Ship implements Serializable {
         return shipType;
     }
 
-    public void setShipType(ShipType shipType) {
-        this.shipType = shipType;
-    }
-
     public int getCargoUsed() {
         return cargoUsed;
     }
@@ -43,10 +39,6 @@ public class Ship implements Serializable {
 
     public HashMap<Goods, Integer> getTradeGoods() {
         return tradeGoods;
-    }
-
-    public void setTradeGoods(HashMap<Goods, Integer> tradeGoods) {
-        this.tradeGoods = tradeGoods;
     }
 
     public int getCargoSpace() {

@@ -16,6 +16,6 @@ public class GoodsViewModel extends ViewModel {
     public int getCredits() {return gameFacade.getPlayerCredits();}
 
     public int getCargoSpaceAvailable() {
-        return gameFacade.getShip().getCargoSpace();
+        return gameFacade.cargoSpace();
     }
 }

@@ -17,13 +17,9 @@ public enum Goods {
     private final String name;
     private final int MTLP;
     private final int MTLU;
-    private final int TTP;
     private final int basePrice;
     private final int IPL;
     private final int var;
-    private final IE increasePrice;
-    private final CR cheapResource;
-    private final ER expensiveResource;
     private Planet current;
     private int price;
     private Facade gameFacade = Facade.getInstance();
@@ -47,13 +43,13 @@ public enum Goods {
         this.name = name;
         this.MTLP = MTLP;
         this.MTLU = MTLU;
-        this.TTP = TTP;
+        int TTP1 = TTP;
         this.basePrice = basePrice;
         this.IPL = IPL;
         this.var = var;
-        this.increasePrice = increasePrice;
-        this.cheapResource = cheapResource;
-        this.expensiveResource = expensiveResource;
+        IE increasePrice1 = increasePrice;
+        CR cheapResource1 = cheapResource;
+        ER expensiveResource1 = expensiveResource;
     }
 
     /**

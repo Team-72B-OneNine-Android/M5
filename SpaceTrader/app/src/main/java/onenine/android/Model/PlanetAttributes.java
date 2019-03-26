@@ -156,10 +156,6 @@ class PlanetAttributes implements Serializable {
         return planets;
     }
 
-    public String[] getTechLevelStringArray() {
-        return techLevel;
-    }
-
     public String[] getResourcesStringArray() {
         return resources;
     }

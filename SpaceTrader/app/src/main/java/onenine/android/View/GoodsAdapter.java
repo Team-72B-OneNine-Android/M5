@@ -133,20 +133,4 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         return this.goods.size();
     }
 
-    public HashMap<Goods, Integer> getGoods() {
-        return goods;
-    }
-
-    public void setGoods(HashMap<Goods, Integer> goods) {
-        this.goods = goods;
-    }
-
-    public Goods[] getGoodsList() {
-        return goodsList;
-    }
-
-    public void setGoodsList(Goods[] goodsList) {
-        this.goodsList = goodsList;
-    }
-
 }

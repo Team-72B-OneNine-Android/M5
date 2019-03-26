@@ -11,15 +11,15 @@ public class ShipYardViewModel extends ViewModel {
     private final Facade gameFacade = Facade.getInstance();
 
     private int currentFuel() {
-        return gameFacade.getShip().getShipFuel();
+        return gameFacade.myShipFuel();
     }
 
     public String planetName() {
-        return gameFacade.getCurrentPlanet().getType();
+        return gameFacade.getPlanetType();
     }
 
     public int planetFuelPrice() {
-        return gameFacade.getCurrentPlanet().fuelPrice();
+        return gameFacade.getCurrentPlanetFuelPrice();
     }
 
     public int fuelCost() {
