@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 
 public class Player implements Serializable {
-    private String name;
-    private int pilotPoints;
-    private int fighterPoints;
-    private int traderPoints;
-    private int engineerPoints;
-    private int totalPoints;
+    private final String name;
+    private final int pilotPoints;
+    private final int fighterPoints;
+    private final int traderPoints;
+    private final int engineerPoints;
+    private final int totalPoints;
     private int credits;
-    private Ship ship;
+    private final Ship ship;
 
     /**
      * Player constructor
@@ -38,9 +38,11 @@ public class Player implements Serializable {
         return ((traderPoints * 100) / totalPoints) > 55;
     }
 
-    public boolean isGoodPilot() {
-        return ((pilotPoints * 100) / totalPoints) > 55;
-    }
+// --Commented out by Inspection START (4/1/19, 12:34 PM):
+//    public boolean isGoodPilot() {
+//        return ((pilotPoints * 100) / totalPoints) > 55;
+//    }
+// --Commented out by Inspection STOP (4/1/19, 12:34 PM)
 
     /**
      * Gets player name
@@ -172,8 +174,8 @@ public class Player implements Serializable {
      * @param i the amount to decrease the fuel by
      * @return
      */
-    public int updateShipFuel(int i) {
-        return ship.decreaseFuel(i);
+    public void updateShipFuel(int i) {
+        ship.decreaseFuel(i);
     }
 
     /**

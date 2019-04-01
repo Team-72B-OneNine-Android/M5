@@ -180,7 +180,7 @@ public class Planet implements Serializable {
         return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
     }
 
-    public Player getCurrentPlayer() {
+    private Player getCurrentPlayer() {
         return Facade.getInstance().getPlayer();
     }
 

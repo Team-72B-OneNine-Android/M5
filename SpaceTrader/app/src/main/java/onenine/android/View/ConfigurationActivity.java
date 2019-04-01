@@ -14,7 +14,6 @@ import onenine.android.Model.GameDifficulty;
 import onenine.android.R;
 import onenine.android.ViewModel.ConfigurationActivityViewModel;
 
-@SuppressWarnings("ChainedMethodCall")
 public class ConfigurationActivity extends AppCompatActivity {
 
 

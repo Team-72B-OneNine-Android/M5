@@ -11,7 +11,6 @@ import java.io.File;
 import onenine.android.Model.Facade;
 import onenine.android.R;
 
-@SuppressWarnings("LawOfDemeter")
 public class MainScreenActivity extends AppCompatActivity {
 
     @Override

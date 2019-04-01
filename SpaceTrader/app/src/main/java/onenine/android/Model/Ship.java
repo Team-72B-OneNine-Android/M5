@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class Ship implements Serializable {
-    private ShipType shipType;
+    private final ShipType shipType;
     private int cargoUsed;
     private int shipFuel;
-    private HashMap<Goods, Integer> tradeGoods = new HashMap<>();
+    private final HashMap<Goods, Integer> tradeGoods = new HashMap<>();
 
     /**
      * Ship constructor
@@ -122,10 +122,9 @@ public class Ship implements Serializable {
      * @param distance the distance to travel
      * @return the amount the fuel should be decreased by
      */
-    public int decreaseFuel(int distance) {
+    public void decreaseFuel(int distance) {
         int percentDecrease = distance / 2;
         shipFuel = shipFuel - percentDecrease;
-        return shipFuel;
     }
 
     /**

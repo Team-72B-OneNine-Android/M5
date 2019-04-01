@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
-    private GameDifficulty difficulty;
-    private Player player;
+    private final GameDifficulty difficulty;
+    private final Player player;
     private Planet currentPlanet;
     private Events randomEvent;
 

@@ -64,15 +64,17 @@ public final class Facade {
         Log.d("Universe Information", "Universe Info" + "\n" + universe.toString());
     }
 
-    /**
-     * Gets the current instance of universe
-     *
-     * @return the game's current instance of
-     * universe
-     */
-    public Universe getUniverse() {
-        return universe;
-    }
+// --Commented out by Inspection START (4/1/19, 12:34 PM):
+//    /**
+//     * Gets the current instance of universe
+//     *
+//     * @return the game's current instance of
+//     * universe
+//     */
+//    public Universe getUniverse() {
+//        return universe;
+//    }
+// --Commented out by Inspection STOP (4/1/19, 12:34 PM)
 
     /**
      * Gets the players name
@@ -100,14 +102,16 @@ public final class Facade {
         return this.player.getCredits();
     }
 
-    /**
-     * Gets the ship of the player
-     *
-     * @return the player's ship
-     */
-    public Ship getShip() {
-        return player.getShip();
-    }
+// --Commented out by Inspection START (4/1/19, 12:34 PM):
+//    /**
+//     * Gets the ship of the player
+//     *
+//     * @return the player's ship
+//     */
+//    public Ship getShip() {
+//        return player.getShip();
+//    }
+// --Commented out by Inspection STOP (4/1/19, 12:34 PM)
 
     public ShipType shipType() {
         return player.myShipType();
