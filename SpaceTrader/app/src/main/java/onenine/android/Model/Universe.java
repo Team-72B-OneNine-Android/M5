@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class Universe implements Serializable {
+public class Universe implements Serializable {
 
     private final List<Planet> planets = new ArrayList<>();
 

@@ -11,5 +11,5 @@ public class GameTravelTest {
 
     private Game game;
     private Universe universe;
-    
+
 }
