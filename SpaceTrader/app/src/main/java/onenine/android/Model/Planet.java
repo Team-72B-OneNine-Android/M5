@@ -180,6 +180,10 @@ public class Planet implements Serializable {
         return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
     }
 
+    public Player getCurrentPlayer() {
+        return Facade.getInstance().getPlayer();
+    }
+
     /**
      * Calculates the fuel price for a planet
      *
@@ -188,11 +192,23 @@ public class Planet implements Serializable {
     public int fuelPrice() {
         int fuelPrice;
         if ((this.getTechLevelNum() >= 1) && (this.getTechLevelNum() < 4)) {
-            fuelPrice = new Random().nextInt(2) + 1;
+            if (getCurrentPlayer().isGoodTrader()) {
+                fuelPrice = 1;
+            } else {
+                fuelPrice = new Random().nextInt(2) + 1;
+            }
         } else if ((this.getTechLevelNum() >= 4) && (this.getTechLevelNum() < 7)) {
-            fuelPrice = new Random().nextInt(4) + 2;
+            if (getCurrentPlayer().isGoodTrader()) {
+                fuelPrice = 2;
+            } else {
+                fuelPrice = new Random().nextInt(4) + 2;
+            }
         } else if (this.getTechLevelNum() == 7) {
-            fuelPrice = 5;
+            if (getCurrentPlayer().isGoodTrader()) {
+                fuelPrice = 4;
+            } else {
+                fuelPrice = 5;
+            }
         } else {
             fuelPrice = 0;
         }

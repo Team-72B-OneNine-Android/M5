@@ -9,6 +9,7 @@ public class Player implements Serializable {
     private int fighterPoints;
     private int traderPoints;
     private int engineerPoints;
+    private int totalPoints;
     private int credits;
     private Ship ship;
 
@@ -28,8 +29,17 @@ public class Player implements Serializable {
         this.fighterPoints = fighterPoints;
         this.traderPoints = traderPoints;
         this.engineerPoints = engineerPoints;
+        this.totalPoints = pilotPoints + fighterPoints + traderPoints + engineerPoints;
         this.ship = new Ship(ShipType.GNAT);
         this.credits = credits;
+    }
+
+    public boolean isGoodTrader() {
+        return ((traderPoints * 100) / totalPoints) > 55;
+    }
+
+    public boolean isGoodPilot() {
+        return ((pilotPoints * 100) / totalPoints) > 55;
     }
 
     /**

@@ -107,7 +107,11 @@ public class Game implements Serializable {
                     }
                 }
                 if (randomEvent == Events.GAIN_CREDIT) {
-                    player.changeCredits(100);
+                    if (player.isGoodTrader()) {
+                        player.changeCredits(200);
+                    } else {
+                        player.changeCredits(100);
+                    }
                 }
             } else {
                 randomEvent = Events.NO_EVENT;

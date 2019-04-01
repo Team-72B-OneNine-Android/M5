@@ -61,6 +61,10 @@ public enum Goods {
         return gameFacade.getCurrentPlanet();
     }
 
+    private Player currentPlayer() {
+        return gameFacade.getPlayer();
+    }
+
     /**
      * Gets the current planets tech level number
      *
@@ -110,12 +114,21 @@ public enum Goods {
         if (current == null) {
             current = currentPlanet();
             this.price = ((int) (currentPrice + (this.basePrice * calculateVar())));
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (0.20 * this.price)));
+            }
             return price;
         } else if (current.equals(currentPlanet())) {
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (0.20 * this.price)));
+            }
             return price;
         } else {
             current = currentPlanet();
             this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (0.20 * this.price)));
+            }
             return price;
         }
     }
