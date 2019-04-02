@@ -99,8 +99,10 @@ public class Game implements Serializable {
                 }
                 if (randomEvent == Events.LOSE_CREDIT) {
                     if (this.playerHasCredits()) {
-                        if (!(player.getCredits() <= 0)) {
+                        if (!(player.getCredits() <= 100)) {
                             player.changeCredits(-100);
+                        } else {
+                            player.setCredits(0);
                         }
                     } else {
                         randomEvent = Events.NO_EVENT;
@@ -171,5 +173,9 @@ public class Game implements Serializable {
      */
     public String showEventMessage() {
         return Events.getEventMessage(randomEvent);
+    }
+
+    public Events getRandomEvent() {
+        return this.randomEvent;
     }
 }

@@ -5,13 +5,29 @@ import java.io.Serializable;
 
 public class Player implements Serializable {
     private final String name;
-    private final int pilotPoints;
-    private final int fighterPoints;
-    private final int traderPoints;
-    private final int engineerPoints;
-    private final int totalPoints;
+    private int pilotPoints;
+    private int fighterPoints;
+    private int traderPoints;
+    private int engineerPoints;
+    private int totalPoints;
     private int credits;
     private final Ship ship;
+
+    public void setPilotPoints(int pilotPoints) {
+        this.pilotPoints = pilotPoints;
+    }
+
+    public void setFighterPoints(int fighterPoints) {
+        this.fighterPoints = fighterPoints;
+    }
+
+    public void setTraderPoints(int traderPoints) {
+        this.traderPoints = traderPoints;
+    }
+
+    public void setEngineerPoints(int engineerPoints) {
+        this.engineerPoints = engineerPoints;
+    }
 
     /**
      * Player constructor
@@ -201,5 +217,9 @@ public class Player implements Serializable {
      */
     public void lossOfCargo() {
         ship.emptyCargo();
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 }
