@@ -28,6 +28,11 @@ public class SpaceStationActivity extends AppCompatActivity {
     private Planet planet8;
     private Planet planet9;
 
+    /**
+     * Creates view for space port
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +114,13 @@ public class SpaceStationActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the first planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet0Pressed(View view) {
         if (myGame.travel(planet0)) {
             displayEventToast();
@@ -118,6 +130,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the second planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet1Pressed(View view) {
         if (myGame.travel(planet1)) {
             displayEventToast();
@@ -127,6 +146,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the third planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet2Pressed(View view) {
         if (myGame.travel(planet2)) {
             displayEventToast();
@@ -136,6 +162,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the fourth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet3Pressed(View view) {
         if (myGame.travel(planet3)) {
             displayEventToast();
@@ -145,6 +178,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the fifth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet4Pressed(View view) {
         if (myGame.travel(planet4)) {
             displayEventToast();
@@ -154,6 +194,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the sixth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet5Pressed(View view) {
         if (myGame.travel(planet5)) {
             displayEventToast();
@@ -163,6 +210,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the seventh planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet6Pressed(View view) {
         if (myGame.travel(planet6)) {
             displayEventToast();
@@ -172,6 +226,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the eighth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet7Pressed(View view) {
         if (myGame.travel(planet7)) {
             displayEventToast();
@@ -181,6 +242,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the ninth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet8Pressed(View view) {
         if (myGame.travel(planet8)) {
             displayEventToast();
@@ -190,6 +258,13 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the player has enough fuel to travel to the tenth planet. If player has enough fuel,
+     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * If player does not have enough fuel, then nothing will happen.
+     *
+     * @param view
+     */
     public void onPlanet9Pressed(View view) {
         if (myGame.travel(planet9)) {
             displayEventToast();
@@ -199,21 +274,37 @@ public class SpaceStationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Gets the amount of fuel required to travel to a specific planet
+     *
+     * @param p a given planet
+     * @return the amount of fuel required to travel to a given planet
+     */
     private int fuelCostForPlanet(Planet p) {
         return myGame.fuelCostForPlanet(p);
     }
 
+    /**
+     * Switches view to home screen activity and takes player to home screen
+     */
     private void goToHomeScreen() {
         Intent back = new Intent(this, HomeScreenActivity.class);
         startActivity(back);
     }
 
+    /**
+     * Displays a message if the player does not have enough fuel to travel to
+     * a planet that he or she selects
+     */
     private void displayToast() {
         Toast notEnoughFuel = Toast.makeText(getApplicationContext(), "Sorry, you do not have enough fuel to "
                 + "travel there", Toast.LENGTH_LONG);
         notEnoughFuel.show();
     }
-    
+
+    /**
+     * Displays message to player when a random event occurs during travel between two planets
+     */
     private void displayEventToast() {
         if (myGame.showEventMessage().length() >= 1) {
             Toast eventHappened = Toast.makeText(getApplicationContext(), myGame.showEventMessage(), Toast.LENGTH_LONG);
