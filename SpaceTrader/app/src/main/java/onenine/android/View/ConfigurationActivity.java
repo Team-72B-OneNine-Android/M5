@@ -31,6 +31,11 @@ public class ConfigurationActivity extends AppCompatActivity {
     private Button playButton;
     private int skillsUsed = SKILLS;
 
+    /**
+     * Generates UI for configuration activity
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +62,12 @@ public class ConfigurationActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Checks whether the player has selected the corrected amount of skill points.
+     * If user has correct amount of points, then view will change to home screen
+     *
+     * @param view
+     */
     public void onPlayPressed(View view) {
         if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
             vm.onConfig(playerName.getText().toString(), Integer.parseInt(pilotSkill.getText().toString()),
@@ -72,6 +82,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Increments the amount of pilot points by one
+     *
+     * @param view
+     */
     public void onPilotIncrementPressed(View view) {
         if (skillsUsed > 0) {
             int addOne = Integer.parseInt(pilotSkill.getText().toString());
@@ -82,6 +97,12 @@ public class ConfigurationActivity extends AppCompatActivity {
             enablePlayButton();
         }
     }
+
+    /**
+     * Decrements the amount of pilot points by one
+     *
+     * @param view
+     */
     public void onPilotDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(pilotSkill.getText().toString()) != 0)) {
             int subOne = Integer.parseInt(pilotSkill.getText().toString());
@@ -93,6 +114,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Increments the amount of fighter points by one
+     *
+     * @param view
+     */
     public void onFighterIncrementPressed(View view) {
         if (skillsUsed > 0) {
             int addOne = Integer.parseInt(fighterSkill.getText().toString());
@@ -104,6 +130,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Decrements the amount of pilot points by one
+     *
+     * @param view
+     */
     public void onFighterDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(fighterSkill.getText().toString()) != 0)) {
             int subOne = Integer.parseInt(fighterSkill.getText().toString());
@@ -115,6 +146,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Increments the amount of trader points by one
+     *
+     * @param view
+     */
     public void onTraderIncrementPressed(View view) {
         if (skillsUsed > 0) {
             int addOne = Integer.parseInt(traderSkill.getText().toString());
@@ -126,6 +162,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Decrements the amount of trader points by one
+     *
+     * @param view
+     */
     public void onTraderDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(traderSkill.getText().toString()) != 0)) {
             int subOne = Integer.parseInt(traderSkill.getText().toString());
@@ -137,6 +178,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Increments the amount of engineer points by one
+     *
+     * @param view
+     */
     public void onEngineerIncrementPressed(View view) {
         if (skillsUsed > 0) {
             int addOne = Integer.parseInt(engineerSkill.getText().toString());
@@ -148,6 +194,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Decrements the amount of engineer points by one
+     *
+     * @param view
+     */
     public void onEngineerDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(engineerSkill.getText().toString()) != 0)) {
             int subOne = Integer.parseInt(engineerSkill.getText().toString());
@@ -158,11 +209,19 @@ public class ConfigurationActivity extends AppCompatActivity {
             disablePlayButton();
         }
     }
+
+    /**
+     * Allows user to press play button when correct amount of skill points are used
+     */
     private void enablePlayButton() {
         if (skillsUsed == 0) {
             playButton.setEnabled(true);
         }
     }
+
+    /**
+     * Disables the play button for the user
+     */
     private void disablePlayButton() {
         playButton.setEnabled(false);
     }
