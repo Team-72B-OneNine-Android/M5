@@ -22,7 +22,8 @@ public enum Goods {
     private final int var;
     private Planet current;
     private int price;
-    private Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
+    private static final double TRADER_DISCOUNT = 0.20;
 
     /**
      * Goods constructor
@@ -43,13 +44,9 @@ public enum Goods {
         this.name = name;
         this.MTLP = MTLP;
         this.MTLU = MTLU;
-        int TTP1 = TTP;
         this.basePrice = basePrice;
         this.IPL = IPL;
         this.var = var;
-        IE increasePrice1 = increasePrice;
-        CR cheapResource1 = cheapResource;
-        ER expensiveResource1 = expensiveResource;
     }
 
     /**
@@ -59,6 +56,10 @@ public enum Goods {
      */
     private Planet currentPlanet() {
         return gameFacade.getCurrentPlanet();
+    }
+
+    private Player currentPlayer() {
+        return gameFacade.getPlayer();
     }
 
     /**
@@ -110,12 +111,21 @@ public enum Goods {
         if (current == null) {
             current = currentPlanet();
             this.price = ((int) (currentPrice + (this.basePrice * calculateVar())));
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
+            }
             return price;
         } else if (current.equals(currentPlanet())) {
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
+            }
             return price;
         } else {
             current = currentPlanet();
             this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
+            if (currentPlayer().isGoodTrader()) {
+                return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
+            }
             return price;
         }
     }
