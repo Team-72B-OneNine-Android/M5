@@ -19,7 +19,11 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     private Planet planet;
 
-
+    /**
+     * Creates the view for the home screen
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,16 +67,31 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Switches the view to the market place activity and takes player to the marketplace
+     *
+     * @param view
+     */
     public void onMarketButtonPressed(View view) {
         Intent market = new Intent(this, MarketPlaceActivity.class);
         startActivity(market);
     }
 
+    /**
+     * Switches the view to the space station activity and takes player to the space port
+     *
+     * @param view
+     */
     public void onTravelButtonPressed(View view) {
         Intent spaceStation = new Intent(this, SpaceStationActivity.class);
         startActivity(spaceStation);
     }
 
+    /**
+     * Saves all player information for the current game
+     *
+     * @param view
+     */
     public void onSaveButtonPressed(View view) {
         File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
         boolean result = Facade.getInstance().saveBinary(file);
@@ -83,6 +102,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Switches the view to the ship yard activity and takes player to ship yard
+     * @param view
+     */
     public void onShipYardButtonPressed(View view) {
         if (planet.getTechLevelNum() < 2) {
             Toast.makeText(this, "This planet is too small and poor to have a shipyard!", Toast.LENGTH_LONG).show();
