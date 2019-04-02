@@ -126,18 +126,7 @@ class PlanetAttributes implements Serializable {
             "Zalkon",
             "Zuul"			// From the first Ghostbusters movie
     };
-// --Commented out by Inspection START (4/1/19, 12:34 PM):
-//    private final String[] techLevel = {
-//            "Pre-Agriculture",
-//            "Agriculture",
-//            "Medieval",
-//            "Renaissance",
-//            "Early Industrial",
-//            "Industrial",
-//            "Post-Industrial",
-//            "Hi-Tech"
-//    };
-// --Commented out by Inspection STOP (4/1/19, 12:34 PM)
+
     private final String[] resources = {
             "NOSPECIALRESOURCES",
             "MINERALRICH",
