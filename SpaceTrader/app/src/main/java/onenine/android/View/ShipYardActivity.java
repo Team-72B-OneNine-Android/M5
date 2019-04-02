@@ -15,6 +15,11 @@ public class ShipYardActivity extends AppCompatActivity {
 
     private ShipYardViewModel vm;
 
+    /**
+     * Creates view for shipyard
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +29,21 @@ public class ShipYardActivity extends AppCompatActivity {
         fp.setText("The current fuel price on " + vm.planetName() + " is: " + String.valueOf(vm.planetFuelPrice()) + " credits/unit");
     }
 
+    /**
+     * Switches view back to the home screen activity
+     *
+     * @param view
+     */
     public void onBackPressed(View view) {
         Intent back = new Intent(this, HomeScreenActivity.class);
         startActivity(back);
     }
 
+    /**
+     * Refuels the player's ship if player has enough credits to do so
+     *
+     * @param view
+     */
     public void onRefuelPressed(View view) {
         vm.chargeForFuel(-vm.fuelCost());
         vm.changeFuel(100);
