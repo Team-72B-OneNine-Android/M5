@@ -25,6 +25,12 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
     private final Ship ship;
     private final TradeGoodsActivity activity;
 
+    /**
+     * Goods adapter constructor
+     *
+     * @param game the current game
+     * @param activity
+     */
     public GoodsAdapter (Game game, TradeGoodsActivity activity) {
         this.player = game.getPlayer();
         this.ship = this.player.getShip();
@@ -33,6 +39,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         this.activity = activity;
     }
 
+    /**
+     * creates a new goods view holder
+     *
+     * @param parent
+     * @param i
+     * @return a Goods view holder of an item view from a specific parent
+     */
     @NonNull
     @Override
     public GoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
@@ -43,6 +56,12 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         return new GoodsViewHolder(itemView);
     }
 
+    /**
+     * Sets the infomration for each good view holder at a given position
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull GoodsViewHolder holder, int position) {
 
@@ -55,7 +74,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
 
     }
 
-
     class GoodsViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView goodName;
@@ -65,6 +83,11 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         private final TextView goodBuyPrice;
         private final TextView goodSellPrice;
 
+        /**
+         * Inner class constructor
+         *
+         * @param itemView
+         */
         GoodsViewHolder(@NonNull final View itemView) {
 
             super(itemView);
@@ -127,6 +150,11 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         }
     }
 
+    /**
+     * Gets the size of goods
+     *
+     * @return the size of goods
+     */
     @Override
     public int getItemCount() {
         return this.goods.size();
