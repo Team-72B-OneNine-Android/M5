@@ -12,6 +12,11 @@ import onenine.android.ViewModel.MarketPlaceActivityViewModel;
 
 public class MarketPlaceActivity extends AppCompatActivity {
 
+    /**
+     * Creates view for market place
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,12 +45,20 @@ public class MarketPlaceActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Switches view back to home screen activity and takes player to home screen
+     * @param view
+     */
     public void onBackButtonPressed(View view) {
         Intent back = new Intent(this, HomeScreenActivity.class);
         startActivity(back);
     }
 
-
+    /**
+     * Switches view to trade goods activity
+     *
+     * @param view
+     */
     public void onTradeGoodsButtonPressed(View view) {
         Intent tradeGoods = new Intent(this, TradeGoodsActivity.class);
         startActivity(tradeGoods);
