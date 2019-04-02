@@ -18,6 +18,11 @@ public class TradeGoodsActivity extends AppCompatActivity {
     private TextView creditsAvailable;
     private TextView cargoSpaceAvailable;
 
+    /**
+     * Creates the view
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,16 +69,27 @@ public class TradeGoodsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Switches view back to market place activity and takes player to market place
+     *
+     * @param view
+     */
     public void onBackButtonPressed(View view) {
         Intent back = new Intent(this, MarketPlaceActivity.class);
         startActivity(back);
 
     }
 
+    /**
+     * Displays the updated credits for the player once he or she buys or sells an item
+     */
     public void updateCreditsAvailable() {
         creditsAvailable.setText(String.valueOf(viewModel.getCredits()));
     }
 
+    /**
+     * Displays the updated cargo space available for the player once he or she buys or sells an item
+     */
     public void updateCargoSpaceAvailable() {
         cargoSpaceAvailable.setText(String.valueOf(viewModel.getCargoSpaceAvailable()));
     }
