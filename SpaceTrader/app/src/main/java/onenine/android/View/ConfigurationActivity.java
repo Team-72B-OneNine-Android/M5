@@ -58,6 +58,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
     }
 
+
     public void onPlayPressed(View view) {
         if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
             vm.onConfig(playerName.getText().toString(), Integer.parseInt(pilotSkill.getText().toString()),
