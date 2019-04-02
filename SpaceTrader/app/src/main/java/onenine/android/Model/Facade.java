@@ -93,39 +93,83 @@ public final class Facade {
         return this.player;
     }
 
+    /**
+     * Gets the amount of credits the player has
+     *
+     * @return the player's credits
+     */
     public int getPlayerCredits() {
         return this.player.getCredits();
     }
 
-
+    /**
+     * Gets the ship type of the players ship
+     *
+     * @return player's ship type
+     */
     public ShipType shipType() {
         return player.myShipType();
     }
 
+    /**
+     * Gets the amount of fuel the player has
+     *
+     * @return the amount of fuel the player has for ship
+     */
     public int myShipFuel() {
         return player.getShipFuel();
     }
 
+    /**
+     * Gets the player's ship cargo space
+     *
+     * @return player's cargo space
+     */
     public int cargoSpace() {
         return player.getShipCargoSpace();
     }
 
+    /**
+     * Gets the goods that are currently on player's ship
+     *
+     * @return player's goods
+     */
     public String shipCurrentGoods() {
         return player.myCurrentGoods();
     }
 
+    /**
+     * Gets the goods produced on the planet the player is on
+     *
+     * @return goods produced the player is on
+     */
     public String planetGoodsProduced() {
         return game.currentPlanetGoodsProduced();
     }
 
+    /**
+     * Gets the goods used on the planet the player is on
+     *
+     * @return the goods used on the planet the player is on
+     */
     public String planetGoodsUsed() {
         return game.currentPlanetGoodsUsed();
     }
 
+    /**
+     * Changes the amount of credits a player has
+     *
+     * @param i the amount of credits to set for the player
+     */
     public void changeMyCredits(int i) {
         player.changeCredits(i);
     }
 
+    /**
+     * Changes the amount of fuel the ship has
+     *
+     * @param i amount of fuel to set the player's ship to have
+     */
     public void changeShipFuel(int i) {
         player.changeMyFuel(i);
     }
@@ -139,10 +183,20 @@ public final class Facade {
         return game.getCurrentPlanet();
     }
 
+    /**
+     * Gets the planet type of the planet the player is on
+     *
+     * @return the planet type the player is on
+     */
     public String getPlanetType() {
         return game.getCurrentPlanetType();
     }
 
+    /**
+     * Gets the fuel price for the planet the player is on
+     *
+     * @return the price for fuel for the planet the player is on
+     */
     public int getCurrentPlanetFuelPrice() {
         return game.planetFuelPrice();
     }
