@@ -219,6 +219,11 @@ public class Player implements Serializable {
         ship.emptyCargo();
     }
 
+    /**
+     * Sets the player's credits
+     *
+     * @param credits amount to set player's credits to
+     */
     public void setCredits(int credits) {
         this.credits = credits;
     }
