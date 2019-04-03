@@ -101,19 +101,19 @@ public class Ship implements Serializable {
      * @return the goods that are currently on the ship
      */
     public String currentGoods() {
-        String currentGoods = "";
+        StringBuilder currentGoods = new StringBuilder();
         for (Goods goods : tradeGoods.keySet()) {
             if (tradeGoods.get(goods) != 0) {
-                currentGoods += goods.getName() + " = " + tradeGoods.get(goods) + ", ";
+                currentGoods.append(goods.getName()).append(" = ").append(tradeGoods.get(goods)).append(", ");
             }
         }
         if (currentGoods.length() <= 0) {
-            currentGoods = "None";
+            currentGoods = new StringBuilder("None");
         }
         if (currentGoods.charAt(currentGoods.length() - 2) == ',') {
-            currentGoods = currentGoods.substring(0, currentGoods.length() - 2);
+            currentGoods = new StringBuilder(currentGoods.substring(0, currentGoods.length() - 2));
         }
-        return currentGoods;
+        return currentGoods.toString();
     }
 
     /**

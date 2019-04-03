@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
+    private final int TWO_HUNDRED = 200;
     private final GameDifficulty difficulty;
     private final Player player;
     private Planet currentPlanet;
@@ -110,7 +111,7 @@ public class Game implements Serializable {
                 }
                 if (randomEvent == Events.GAIN_CREDIT) {
                     if (player.isGoodTrader()) {
-                        player.changeCredits(200);
+                        player.changeCredits(TWO_HUNDRED);
                     } else {
                         player.changeCredits(100);
                     }

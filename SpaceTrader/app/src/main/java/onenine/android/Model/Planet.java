@@ -104,19 +104,19 @@ public class Planet implements Serializable {
      * @return the goods produced on a planet
      */
     public String goodsProduced() {
-        String goodsProduced = "";
+        StringBuilder goodsProduced = new StringBuilder();
         for (Goods goods : myGoods) {
             if (goods.canBuy()) {
-                goodsProduced += goods.getName() + ", ";
+                goodsProduced.append(goods.getName()).append(", ");
             }
         }
         if (goodsProduced.length() <= 0) {
-            goodsProduced = "None";
+            goodsProduced = new StringBuilder("None");
         }
         if (goodsProduced.charAt(goodsProduced.length() - 2) == ',') {
-            goodsProduced = goodsProduced.substring(0, goodsProduced.length() - 2);
+            goodsProduced = new StringBuilder(goodsProduced.substring(0, goodsProduced.length() - 2));
         }
-        return goodsProduced;
+        return goodsProduced.toString();
     }
 
     /**
@@ -125,19 +125,19 @@ public class Planet implements Serializable {
      * @return the goods that can be sold for a planet
      */
     public String goodsUsed() {
-        String goodsUsed = "";
+        StringBuilder goodsUsed = new StringBuilder();
         for (Goods goods : myGoods) {
             if (goods.canSell()) {
-                goodsUsed += goods.getName() + ", ";
+                goodsUsed.append(goods.getName()).append(", ");
             }
         }
         if (goodsUsed.length() <= 0) {
-            goodsUsed = "None";
+            goodsUsed = new StringBuilder("None");
         }
         if (goodsUsed.charAt(goodsUsed.length() - 2) == ',') {
-            goodsUsed = goodsUsed.substring(0, goodsUsed.length() - 2);
+            goodsUsed = new StringBuilder(goodsUsed.substring(0, goodsUsed.length() - 2));
         }
-        return goodsUsed;
+        return goodsUsed.toString();
     }
 
 

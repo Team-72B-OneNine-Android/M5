@@ -44,13 +44,13 @@ public class Universe implements Serializable {
      */
     @Override
     public String toString() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < planets.size(); i++){
-            result += (i + 1) + ". ";
-            result += planets.get(i).toString();
-            result += "\n";
+            result.append(i + 1).append(". ");
+            result.append(planets.get(i).toString());
+            result.append("\n");
         }
-        return result;
+        return result.toString();
     }
 
 
