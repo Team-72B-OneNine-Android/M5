@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to represent a universe
+ */
 public class Universe implements Serializable {
 
     private final List<Planet> planets = new ArrayList<>();

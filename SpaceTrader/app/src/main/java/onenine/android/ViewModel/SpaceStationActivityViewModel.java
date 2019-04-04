@@ -6,6 +6,9 @@ import onenine.android.Model.Facade;
 import onenine.android.Model.Game;
 import onenine.android.Model.Planet;
 
+/**
+ * View model for space station activity
+ */
 public class SpaceStationActivityViewModel extends ViewModel {
 
     private final Facade gameFacade = Facade.getInstance();

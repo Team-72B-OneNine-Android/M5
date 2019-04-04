@@ -14,6 +14,9 @@ import onenine.android.ViewModel.SpaceStationActivityViewModel;
 import android.view.View;
 import android.widget.Toast;
 
+/**
+ * Class that represents the view for the space port
+ */
 public class SpaceStationActivity extends AppCompatActivity {
 
     private Game myGame;
@@ -31,7 +34,7 @@ public class SpaceStationActivity extends AppCompatActivity {
     /**
      * Creates view for space port
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance of the game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +122,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet0Pressed(View view) {
         if (myGame.travel(planet0)) {
@@ -135,7 +138,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet1Pressed(View view) {
         if (myGame.travel(planet1)) {
@@ -151,7 +154,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet2Pressed(View view) {
         if (myGame.travel(planet2)) {
@@ -167,7 +170,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet3Pressed(View view) {
         if (myGame.travel(planet3)) {
@@ -183,7 +186,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet4Pressed(View view) {
         if (myGame.travel(planet4)) {
@@ -199,7 +202,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet5Pressed(View view) {
         if (myGame.travel(planet5)) {
@@ -215,7 +218,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet6Pressed(View view) {
         if (myGame.travel(planet6)) {
@@ -231,7 +234,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet7Pressed(View view) {
         if (myGame.travel(planet7)) {
@@ -247,7 +250,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet8Pressed(View view) {
         if (myGame.travel(planet8)) {
@@ -263,7 +266,7 @@ public class SpaceStationActivity extends AppCompatActivity {
      * then he or she will travel to the selected planet and the view will switch to the home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
-     * @param view
+     * @param view the view
      */
     public void onPlanet9Pressed(View view) {
         if (myGame.travel(planet9)) {

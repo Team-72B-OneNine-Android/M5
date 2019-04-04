@@ -12,6 +12,9 @@ import android.widget.TextView;
 import onenine.android.R;
 import onenine.android.ViewModel.GoodsViewModel;
 
+/**
+ * Class that represents the view for the trade goods activity
+ */
 public class TradeGoodsActivity extends AppCompatActivity {
 
     private GoodsViewModel viewModel;
@@ -21,7 +24,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
     /**
      * Creates the view
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance of game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +75,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
     /**
      * Switches view back to market place activity and takes player to market place
      *
-     * @param view
+     * @param view the view
      */
     public void onBackButtonPressed(View view) {
         Intent back = new Intent(this, MarketPlaceActivity.class);

@@ -7,6 +7,7 @@ import onenine.android.Model.Universe;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("JavaDoc")
 public class GameTravelTest {
 
     private Game game;

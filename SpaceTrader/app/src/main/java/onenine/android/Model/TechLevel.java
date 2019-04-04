@@ -1,5 +1,8 @@
 package onenine.android.Model;
 
+/**
+ * All possible tech levels
+ */
 public enum TechLevel {
     PRE_AGRICULTURE("Pre-Agriculture"),
     AGRICULTURE("Agriculture"),
