@@ -2,6 +2,9 @@ package onenine.android.Model;
 
 import java.util.Random;
 
+/**
+ * Types of events that can occur
+ */
 public enum Events {
     NO_EVENT,
     LOSE_CARGO,

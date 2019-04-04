@@ -4,7 +4,9 @@ import android.arch.lifecycle.ViewModel;
 import onenine.android.Model.Facade;
 import onenine.android.Model.GameDifficulty;
 
-
+/**
+ * View model for configuration activity
+ */
 public class ConfigurationActivityViewModel extends ViewModel {
     private final Facade gameFacade = Facade.getInstance();
 
