@@ -11,6 +11,9 @@ import android.widget.Toast;
 import onenine.android.R;
 import onenine.android.ViewModel.ShipYardViewModel;
 
+/**
+ * Creates the view for the ship yard
+ */
 public class ShipYardActivity extends AppCompatActivity {
 
     private ShipYardViewModel vm;
@@ -18,7 +21,7 @@ public class ShipYardActivity extends AppCompatActivity {
     /**
      * Creates view for shipyard
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance state of game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class ShipYardActivity extends AppCompatActivity {
     /**
      * Switches view back to the home screen activity
      *
-     * @param view
+     * @param view the view
      */
     public void onBackPressed(View view) {
         Intent back = new Intent(this, HomeScreenActivity.class);
@@ -42,7 +45,7 @@ public class ShipYardActivity extends AppCompatActivity {
     /**
      * Refuels the player's ship if player has enough credits to do so
      *
-     * @param view
+     * @param view the view
      */
     public void onRefuelPressed(View view) {
         vm.chargeForFuel(-vm.fuelCost());

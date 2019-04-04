@@ -3,6 +3,9 @@ package onenine.android.Model;
 import java.io.Serializable;
 import java.util.HashMap;
 
+/**
+ * Ship class
+ */
 public class Ship implements Serializable {
     private final ShipType shipType;
     private int cargoUsed;
@@ -33,7 +36,7 @@ public class Ship implements Serializable {
     }
 
     /**
-     * Gets the amoutn of cargo used on the ship
+     * Gets the amount of cargo used on the ship
      *
      * @return the amount of cargo used
      */
@@ -71,7 +74,7 @@ public class Ship implements Serializable {
     /**
      * Gets the trade goods
      *
-     * @return trade goos for a ship
+     * @return trade goods for a ship
      */
     public HashMap<Goods, Integer> getTradeGoods() {
         return tradeGoods;
@@ -89,7 +92,7 @@ public class Ship implements Serializable {
     /**
      * Determines whether there is cargo space available for a ship
      *
-     * @return wheter or not cargo space is available for a ship
+     * @return whether or not cargo space is available for a ship
      */
     public boolean cargoSpaceAvailable() {
         return cargoUsed < shipType.getCargoSpace();
@@ -120,7 +123,6 @@ public class Ship implements Serializable {
      * Decreases fuel for a ship based on a provided distance
      *
      * @param fuelCost the amount of fuel required to travel
-     * @return the amount the fuel should be decreased by
      */
     public void decreaseFuel(int fuelCost) {
         shipFuel = shipFuel - fuelCost;

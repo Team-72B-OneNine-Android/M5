@@ -3,6 +3,9 @@ package onenine.android.Model;
 import java.io.Serializable;
 import java.util.Random;
 
+/**
+ * Planet class
+ */
 public class Planet implements Serializable {
     private final String type;
     private final TechLevel techLevel;

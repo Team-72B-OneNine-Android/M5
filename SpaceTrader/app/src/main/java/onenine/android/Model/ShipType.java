@@ -1,5 +1,8 @@
 package onenine.android.Model;
 
+/**
+ * All possible ship types
+ */
 public enum ShipType {
     FLEA(12),
     GNAT(15),

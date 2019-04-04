@@ -2,7 +2,9 @@ package onenine.android.Model;
 
 import java.io.Serializable;
 
-
+/**
+ * Player class
+ */
 public class Player implements Serializable {
 
     private final int GOOD_TRADER = 55;
@@ -16,18 +18,38 @@ public class Player implements Serializable {
     private int credits;
     private final Ship ship;
 
+    /**
+     * Sets pilot points
+     *
+     * @param pilotPoints amount of points to set
+     */
     public void setPilotPoints(int pilotPoints) {
         this.pilotPoints = pilotPoints;
     }
 
+    /**
+     * Sets fighter points
+     *
+     * @param fighterPoints amount of points to set
+     */
     public void setFighterPoints(int fighterPoints) {
         this.fighterPoints = fighterPoints;
     }
 
+    /**
+     * Sets trader points
+     *
+     * @param traderPoints amount of points to set
+     */
     public void setTraderPoints(int traderPoints) {
         this.traderPoints = traderPoints;
     }
 
+    /**
+     * Sets engineer points
+     *
+     * @param engineerPoints amount of points to set
+     */
     public void setEngineerPoints(int engineerPoints) {
         this.engineerPoints = engineerPoints;
     }
@@ -40,7 +62,7 @@ public class Player implements Serializable {
      * @param fighterPoints the players fighter points
      * @param traderPoints the players trader points
      * @param engineerPoints the players engineer points
-     * @param credits
+     * @param credits amount of credit
      */
     public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints, int credits) {
         this.name = name;
@@ -62,6 +84,11 @@ public class Player implements Serializable {
         return ((traderPoints * 100) / totalPoints) > GOOD_TRADER;
     }
 
+    /**
+     * Checks if player is good pilot
+     *
+     * @return whether player is a good pilot
+     */
     public boolean isGoodPilot() {
         return ((pilotPoints * 100) / totalPoints) > GOOD_PILOT;
     }
@@ -194,7 +221,6 @@ public class Player implements Serializable {
      * Decreases the fuel in a player's ship
      *
      * @param i the amount to decrease the fuel by
-     * @return
      */
     public void updateShipFuel(int i) {
         ship.decreaseFuel(i);

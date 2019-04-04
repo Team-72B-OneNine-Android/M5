@@ -4,6 +4,9 @@ import android.arch.lifecycle.ViewModel;
 
 import onenine.android.Model.Facade;
 
+/**
+ * View model for ship yard activity
+ */
 public class ShipYardViewModel extends ViewModel {
 
     private final Facade gameFacade = Facade.getInstance();
