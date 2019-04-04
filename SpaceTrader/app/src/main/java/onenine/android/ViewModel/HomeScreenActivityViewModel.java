@@ -6,6 +6,9 @@ import onenine.android.Model.Facade;
 import onenine.android.Model.Planet;
 import onenine.android.Model.ShipType;
 
+/**
+ * View model for the home screen activity
+ */
 public class HomeScreenActivityViewModel extends ViewModel {
 
     private final Facade gameFacade = Facade.getInstance();

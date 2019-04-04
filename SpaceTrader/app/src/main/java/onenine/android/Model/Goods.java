@@ -1,6 +1,9 @@
 package onenine.android.Model;
 import java.util.Random;
 
+/**
+ * All goods that can be found in game
+ */
 public enum Goods {
     WATER("Water", 0, 0, 2, 30, 3, 4, IE.DROUGHT, CR.LOTSOFWATER, ER.DESERT),
     FURS("Furs", 0, 0, 0, 250, 10, 10, IE.COLD, CR.RICHFAUNA, ER.LIFELESS),

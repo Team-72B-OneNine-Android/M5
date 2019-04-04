@@ -10,12 +10,15 @@ import android.widget.TextView;
 import onenine.android.R;
 import onenine.android.ViewModel.MarketPlaceActivityViewModel;
 
+/**
+ * Creates the view for the market place
+ */
 public class MarketPlaceActivity extends AppCompatActivity {
 
     /**
      * Creates view for market place
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance of the game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class MarketPlaceActivity extends AppCompatActivity {
 
     /**
      * Switches view back to home screen activity and takes player to home screen
-     * @param view
+     * @param view the view
      */
     public void onBackButtonPressed(View view) {
         Intent back = new Intent(this, HomeScreenActivity.class);
@@ -57,7 +60,7 @@ public class MarketPlaceActivity extends AppCompatActivity {
     /**
      * Switches view to trade goods activity
      *
-     * @param view
+     * @param view the view
      */
     public void onTradeGoodsButtonPressed(View view) {
         Intent tradeGoods = new Intent(this, TradeGoodsActivity.class);

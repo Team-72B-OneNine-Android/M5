@@ -11,12 +11,15 @@ import java.io.File;
 import onenine.android.Model.Facade;
 import onenine.android.R;
 
+/**
+ * Creates the view for the main screen
+ */
 public class MainScreenActivity extends AppCompatActivity {
 
     /**
      * Creates the initial view for the game
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance of the game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class MainScreenActivity extends AppCompatActivity {
     /**
      * Starts a new game
      *
-     * @param view
+     * @param view the view
      */
     public void newButton(View view) {
         Intent newGame = new Intent(this, ConfigurationActivity.class);
@@ -37,7 +40,7 @@ public class MainScreenActivity extends AppCompatActivity {
     /**
      * Loads a previously saved game
      *
-     * @param view
+     * @param view the view
      */
     public void loadGame(View view) {
         File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);

@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import java.io.File;
 
+/**
+ * This class creates view for the home screen
+ */
 public class HomeScreenActivity extends AppCompatActivity {
 
     private Planet planet;
@@ -22,7 +25,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     /**
      * Creates the view for the home screen
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance of game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +73,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     /**
      * Switches the view to the market place activity and takes player to the marketplace
      *
-     * @param view
+     * @param view the view
      */
     public void onMarketButtonPressed(View view) {
         Intent market = new Intent(this, MarketPlaceActivity.class);
@@ -80,7 +83,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     /**
      * Switches the view to the space station activity and takes player to the space port
      *
-     * @param view
+     * @param view the view
      */
     public void onTravelButtonPressed(View view) {
         Intent spaceStation = new Intent(this, SpaceStationActivity.class);
@@ -90,7 +93,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     /**
      * Saves all player information for the current game
      *
-     * @param view
+     * @param view the view
      */
     public void onSaveButtonPressed(View view) {
         File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
@@ -104,7 +107,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Switches the view to the ship yard activity and takes player to ship yard
-     * @param view
+     * @param view the view
      */
     public void onShipYardButtonPressed(View view) {
         if (planet.getTechLevelNum() < 2) {

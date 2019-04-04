@@ -17,6 +17,9 @@ import onenine.android.Model.Player;
 import onenine.android.Model.Ship;
 import onenine.android.R;
 
+/**
+ * Class to help create the view for player to buy/sell goods
+ */
 public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHolder> {
 
     private final HashMap<Goods, Integer> goods;
@@ -29,7 +32,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
      * Goods adapter constructor
      *
      * @param game the current game
-     * @param activity
+     * @param activity the activity
      */
     public GoodsAdapter (Game game, TradeGoodsActivity activity) {
         this.player = game.getPlayer();
@@ -42,8 +45,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
     /**
      * creates a new goods view holder
      *
-     * @param parent
-     * @param i
+     * @param parent the parent
+     * @param i the index
      * @return a Goods view holder of an item view from a specific parent
      */
     @NonNull
@@ -57,10 +60,10 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
     }
 
     /**
-     * Sets the infomration for each good view holder at a given position
+     * Sets the information for each good view holder at a given position
      *
-     * @param holder
-     * @param position
+     * @param holder the holder
+     * @param position the position
      */
     @Override
     public void onBindViewHolder(@NonNull GoodsViewHolder holder, int position) {
@@ -86,7 +89,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
         /**
          * Inner class constructor
          *
-         * @param itemView
+         * @param itemView the item view
          */
         GoodsViewHolder(@NonNull final View itemView) {
 

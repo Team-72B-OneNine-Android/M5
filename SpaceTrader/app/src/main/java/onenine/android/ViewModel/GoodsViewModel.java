@@ -5,6 +5,9 @@ import android.arch.lifecycle.ViewModel;
 import onenine.android.Model.Facade;
 import onenine.android.Model.Game;
 
+/**
+ * View model for Goods
+ */
 public class GoodsViewModel extends ViewModel {
 
     private final Facade gameFacade = Facade.getInstance();
