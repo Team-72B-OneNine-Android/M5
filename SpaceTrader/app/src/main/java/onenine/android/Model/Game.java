@@ -120,7 +120,7 @@ public class Game implements Serializable {
                 randomEvent = Events.NO_EVENT;
             }
             int distance = currentPlanet.calculateDistance(p);
-            player.updateShipFuel(distance);
+            player.updateShipFuel(fuelCostForPlanet(p));
             this.setCurrentPlanet(p);
             return true;
         }
@@ -135,7 +135,11 @@ public class Game implements Serializable {
      */
     public int fuelCostForPlanet(Planet planet) {
         int distance = Universe.distanceBetweenTwoPlanets(currentPlanet, planet);
-        return distance / 2;
+        if (player.isGoodPilot()) {
+            return distance / 6;
+        } else {
+            return distance / 2;
+        }
     }
 
     /**

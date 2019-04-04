@@ -119,12 +119,11 @@ public class Ship implements Serializable {
     /**
      * Decreases fuel for a ship based on a provided distance
      *
-     * @param distance the distance to travel
+     * @param fuelCost the amount of fuel required to travel
      * @return the amount the fuel should be decreased by
      */
-    public void decreaseFuel(int distance) {
-        int percentDecrease = distance / 2;
-        shipFuel = shipFuel - percentDecrease;
+    public void decreaseFuel(int fuelCost) {
+        shipFuel = shipFuel - fuelCost;
     }
 
     /**

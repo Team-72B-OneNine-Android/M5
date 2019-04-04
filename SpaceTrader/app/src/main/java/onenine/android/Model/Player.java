@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Player implements Serializable {
 
     private final int GOOD_TRADER = 55;
+    private final int GOOD_PILOT = 55;
     private final String name;
     private int pilotPoints;
     private int fighterPoints;
@@ -59,6 +60,10 @@ public class Player implements Serializable {
      */
     public boolean isGoodTrader() {
         return ((traderPoints * 100) / totalPoints) > GOOD_TRADER;
+    }
+
+    public boolean isGoodPilot() {
+        return ((pilotPoints * 100) / totalPoints) > GOOD_PILOT;
     }
 
     /**

@@ -163,6 +163,14 @@ public class Planet implements Serializable {
                 || ((this.x == planet.x) && (this.y == planet.y));
     }
 
+    public int hashCode() {
+        int hash = 7;
+        hash = (31 * hash) + x;
+        hash = (31 * hash) + y;
+        hash = (31 * hash) + ((type == null) ? 0 : type.hashCode());
+        return hash;
+    }
+
     /**
      * Calculates the distance between the current planet and a given planet
      *
