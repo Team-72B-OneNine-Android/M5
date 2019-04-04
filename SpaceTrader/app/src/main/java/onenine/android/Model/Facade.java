@@ -210,6 +210,10 @@ public final class Facade {
         return this.game;
     }
 
+    public boolean goodTrader() {
+        return this.player.isGoodTrader();
+    }
+
     /**
      * Saves the binary for the current game
      *

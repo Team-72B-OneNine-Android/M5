@@ -10,6 +10,7 @@ public class Planet implements Serializable {
     private final int x;
     private final int y;
     private final Goods[] myGoods= Goods.values();
+    private Facade gameFacade = Facade.getInstance();
 
     /**
      * Planet constructor
@@ -180,8 +181,8 @@ public class Planet implements Serializable {
         return (int) Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
     }
 
-    private Player getCurrentPlayer() {
-        return Facade.getInstance().getPlayer();
+    private boolean playerGoodTrader() {
+        return gameFacade.goodTrader();
     }
 
     /**
@@ -192,19 +193,19 @@ public class Planet implements Serializable {
     public int fuelPrice() {
         int fuelPrice;
         if ((this.getTechLevelNum() >= 1) && (this.getTechLevelNum() < 4)) {
-            if (getCurrentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 fuelPrice = 1;
             } else {
                 fuelPrice = new Random().nextInt(2) + 1;
             }
         } else if ((this.getTechLevelNum() >= 4) && (this.getTechLevelNum() < 7)) {
-            if (getCurrentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 fuelPrice = 2;
             } else {
                 fuelPrice = new Random().nextInt(4) + 2;
             }
         } else if (this.getTechLevelNum() == 7) {
-            if (getCurrentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 fuelPrice = 4;
             } else {
                 fuelPrice = 5;

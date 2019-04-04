@@ -58,8 +58,8 @@ public enum Goods {
         return gameFacade.getCurrentPlanet();
     }
 
-    private Player currentPlayer() {
-        return gameFacade.getPlayer();
+    private boolean playerGoodTrader() {
+        return gameFacade.goodTrader();
     }
 
     /**
@@ -111,19 +111,19 @@ public enum Goods {
         if (current == null) {
             current = currentPlanet();
             this.price = ((int) (currentPrice + (this.basePrice * calculateVar())));
-            if (currentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
             }
             return price;
         } else if (current.equals(currentPlanet())) {
-            if (currentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
             }
             return price;
         } else {
             current = currentPlanet();
             this.price = (int) (currentPrice + (this.basePrice * calculateVar()));
-            if (currentPlayer().isGoodTrader()) {
+            if (playerGoodTrader()) {
                 return ((int) (this.price - (TRADER_DISCOUNT * this.price)));
             }
             return price;
