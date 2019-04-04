@@ -14,6 +14,9 @@ import onenine.android.Model.GameDifficulty;
 import onenine.android.R;
 import onenine.android.ViewModel.ConfigurationActivityViewModel;
 
+/**
+ * The activity for the configuration screen
+ */
 public class ConfigurationActivity extends AppCompatActivity {
 
 
@@ -34,7 +37,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Generates UI for configuration activity
      *
-     * @param savedInstanceState
+     * @param savedInstanceState the saved instance
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,7 @@ public class ConfigurationActivity extends AppCompatActivity {
      * Checks whether the player has selected the corrected amount of skill points.
      * If user has correct amount of points, then view will change to home screen
      *
-     * @param view
+     * @param view the view
      */
     public void onPlayPressed(View view) {
         if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
@@ -85,7 +88,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Increments the amount of pilot points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onPilotIncrementPressed(View view) {
         if (skillsUsed > 0) {
@@ -101,7 +104,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Decrements the amount of pilot points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onPilotDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(pilotSkill.getText().toString()) != 0)) {
@@ -117,7 +120,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Increments the amount of fighter points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onFighterIncrementPressed(View view) {
         if (skillsUsed > 0) {
@@ -133,7 +136,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Decrements the amount of pilot points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onFighterDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(fighterSkill.getText().toString()) != 0)) {
@@ -149,7 +152,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Increments the amount of trader points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onTraderIncrementPressed(View view) {
         if (skillsUsed > 0) {
@@ -165,7 +168,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Decrements the amount of trader points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onTraderDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(traderSkill.getText().toString()) != 0)) {
@@ -181,7 +184,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Increments the amount of engineer points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onEngineerIncrementPressed(View view) {
         if (skillsUsed > 0) {
@@ -197,7 +200,7 @@ public class ConfigurationActivity extends AppCompatActivity {
     /**
      * Decrements the amount of engineer points by one
      *
-     * @param view
+     * @param view the view
      */
     public void onEngineerDecrementPressed(View view) {
         if ((skillsUsed < SKILLS) && (Integer.parseInt(engineerSkill.getText().toString()) != 0)) {
