@@ -12,7 +12,9 @@ import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 
-
+/**
+ * Application Facade
+ */
 public final class Facade {
 
     public static final String DEFAULT_BINARY_FILE_NAME = "myGame.bin";
@@ -210,6 +212,11 @@ public final class Facade {
         return this.game;
     }
 
+    /**
+     * Determines whether player is a good trader
+     *
+     * @return whether player is a good trader
+     */
     public boolean goodTrader() {
         return this.player.isGoodTrader();
     }

@@ -2,6 +2,9 @@ package onenine.android.Model;
 
 import java.io.Serializable;
 
+/**
+ * Game class
+ */
 public class Game implements Serializable {
 
     private final int TWO_HUNDRED = 200;
@@ -40,22 +43,47 @@ public class Game implements Serializable {
         return currentPlanet;
     }
 
+    /**
+     * Gets the current planet type
+     *
+     * @return current planet type
+     */
     public String getCurrentPlanetType() {
         return currentPlanet.getType();
     }
 
+    /**
+     * Gets planet fuel price
+     *
+     * @return current planet fuel price
+     */
     public int planetFuelPrice() {
         return currentPlanet.fuelPrice();
     }
 
+    /**
+     * Gets amount of fuel player has
+     *
+     * @return amount of fuel player has
+     */
     public int myShipFuel() {
         return player.getShipFuel();
     }
 
+    /**
+     * Goods produced on the current planet
+     *
+     * @return the goods produced on the planet player is on
+     */
     public String currentPlanetGoodsProduced() {
         return currentPlanet.goodsProduced();
     }
 
+    /**
+     * Gets goods used on planet player is on
+     *
+     * @return goods used on planet player is on
+     */
     public String currentPlanetGoodsUsed() {
         return currentPlanet.goodsUsed();
     }
@@ -180,6 +208,11 @@ public class Game implements Serializable {
         return Events.getEventMessage(randomEvent);
     }
 
+    /**
+     * Gets a random event
+     *
+     * @return a random event
+     */
     public Events getRandomEvent() {
         return this.randomEvent;
     }
