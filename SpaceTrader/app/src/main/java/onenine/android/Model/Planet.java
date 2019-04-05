@@ -73,7 +73,7 @@ public class Planet implements Serializable {
      *
      * @return the planets x coordinate
      */
-    private int getX() {
+    public int getX() {
         return x;
     }
 
@@ -82,7 +82,7 @@ public class Planet implements Serializable {
      *
      * @return the planets y coordinate
      */
-    private int getY() {
+    public int getY() {
         return y;
     }
 
