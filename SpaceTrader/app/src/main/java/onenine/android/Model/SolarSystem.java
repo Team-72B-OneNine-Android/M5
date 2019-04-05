@@ -23,6 +23,9 @@ public class SolarSystem implements Serializable {
      * @param planets a large collection of planets
      */
     public void generatePlanets(Collection<Planet> planets) {
+        if (planets == null) {
+            throw new IllegalArgumentException("List of planets cannot be null.");
+        }
         Collection<String> planetNames = new ArrayList<>();
         Collection<String> coordinateStrings = new ArrayList<>();
         int counter = 0;
