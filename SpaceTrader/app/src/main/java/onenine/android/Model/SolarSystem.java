@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-class SolarSystem implements Serializable {
+public class SolarSystem implements Serializable {
 
     private final PlanetAttributes pa = new PlanetAttributes();
     private final List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
