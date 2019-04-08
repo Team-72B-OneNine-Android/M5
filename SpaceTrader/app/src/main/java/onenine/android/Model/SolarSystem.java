@@ -12,7 +12,7 @@ public class SolarSystem implements Serializable {
     private final PlanetAttributes pa = new PlanetAttributes();
     private final List<String> planetsList = Arrays.asList(pa.getPlanetsStringArray());
     private final List<String> resourceList = Arrays.asList(pa.getResourcesStringArray());
-    private final Random rand = new Random();
+    private Random rand = new Random();
     private static final int X_COORDINATE = 149;
     private static final int Y_COORDINATE = 99;
 
@@ -22,7 +22,8 @@ public class SolarSystem implements Serializable {
      *
      * @param planets a large collection of planets
      */
-    public void generatePlanets(Collection<Planet> planets) {
+    public boolean generatePlanets(Collection<Planet> planets) {
+        boolean flag = false;
         if (planets == null) {
             throw new IllegalArgumentException("List of planets cannot be null.");
         }
@@ -42,10 +43,13 @@ public class SolarSystem implements Serializable {
                 planetNames.add(randomPlanet);
                 coordinateStrings.add(tempCoordinates);
                 counter += 1;
+            } else {
+                flag = true;
             }
         }
+        return flag;
 
-        }
+    }
 
     /**
      * Gets a random planet from a list of planets
@@ -93,7 +97,11 @@ public class SolarSystem implements Serializable {
         return rand.nextInt(Y_COORDINATE) + 1;
     }
 
+    public Random getRand() {
+        return rand;
+    }
 
-
-
+    public void setRand(Random rand) {
+        this.rand = rand;
+    }
 }
