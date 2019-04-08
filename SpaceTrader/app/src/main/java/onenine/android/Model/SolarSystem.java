@@ -26,6 +26,9 @@ public class SolarSystem implements Serializable {
         if (planets == null) {
             throw new IllegalArgumentException("List of planets cannot be null.");
         }
+        if (planets.size() != 0) {
+            throw new IllegalArgumentException("Planet list must be empty or have size of zero");
+        }
         Collection<String> planetNames = new ArrayList<>();
         Collection<String> coordinateStrings = new ArrayList<>();
         int counter = 0;
