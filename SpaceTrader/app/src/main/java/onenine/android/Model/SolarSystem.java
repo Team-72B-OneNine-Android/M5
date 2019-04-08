@@ -7,6 +7,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Solar system class
+ */
 public class SolarSystem implements Serializable {
 
     private final PlanetAttributes pa = new PlanetAttributes();
@@ -21,6 +24,7 @@ public class SolarSystem implements Serializable {
      * given a large collection of planets
      *
      * @param planets a large collection of planets
+     * @return whether there was a duplicate planet
      */
     public boolean generatePlanets(Collection<Planet> planets) {
         boolean flag = false;
@@ -97,10 +101,20 @@ public class SolarSystem implements Serializable {
         return rand.nextInt(Y_COORDINATE) + 1;
     }
 
+    /**
+     * For testing purposes only
+     *
+     * @return instance of random
+     */
     public Random getRand() {
         return rand;
     }
 
+    /**
+     * For testing purposes only
+     *
+     * @param rand instance of Random
+     */
     public void setRand(Random rand) {
         this.rand = rand;
     }
