@@ -142,7 +142,7 @@ public enum Goods {
         if (canBuy()) {
             return String.valueOf(getPrice());
         } else {
-            return "N/A";
+            return "N/P";
         }
     }
 
@@ -155,7 +155,7 @@ public enum Goods {
         if (canSell()) {
             return String.valueOf(getPrice());
         } else {
-            return "N/A";
+            return "N/U";
         }
     }
 
