@@ -19,7 +19,7 @@ public class ShipYardActivity extends AppCompatActivity {
     private ShipYardViewModel vm;
 
     /**
-     * Creates view for shipyard
+     * Creates the view for the shipyard
      *
      * @param savedInstanceState the saved instance state of game
      */
@@ -33,7 +33,7 @@ public class ShipYardActivity extends AppCompatActivity {
     }
 
     /**
-     * Switches view back to the home screen activity
+     * Switches the view back to the home screen activity
      *
      * @param view the view
      */

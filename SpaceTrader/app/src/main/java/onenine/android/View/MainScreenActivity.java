@@ -46,7 +46,7 @@ public class MainScreenActivity extends AppCompatActivity {
         File file = new File(this.getFilesDir(), Facade.DEFAULT_BINARY_FILE_NAME);
         boolean result = Facade.getInstance().loadBinary(file);
         if (!result) {
-            Toast.makeText(this, "No saved game exist!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No saved game exists!", Toast.LENGTH_LONG).show();
         } else {
             Intent goToHomeScreen = new Intent(this, HomeScreenActivity.class);
             startActivity(goToHomeScreen);

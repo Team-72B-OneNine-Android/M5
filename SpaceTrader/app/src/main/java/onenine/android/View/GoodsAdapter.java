@@ -43,7 +43,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
     }
 
     /**
-     * creates a new goods view holder
+     * Creates a new goods view holder
      *
      * @param parent the parent
      * @param i the index

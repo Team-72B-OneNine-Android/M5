@@ -25,7 +25,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     /**
      * Creates the view for the home screen
      *
-     * @param savedInstanceState the saved instance of game
+     * @param savedInstanceState the saved instance of the game
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,7 +33,7 @@ public class Planet implements Serializable {
     }
 
     /**
-     * gets the planet type
+     * Gets the planet type
      *
      * @return planet type as a string
      */
@@ -89,7 +89,7 @@ public class Planet implements Serializable {
     /**
      * Displays the planet's information
      *
-     * @return the planet's informations as a string
+     * @return the planet's information as a string
      */
     @Override
     public String toString() {

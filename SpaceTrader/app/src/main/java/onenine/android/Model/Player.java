@@ -58,10 +58,10 @@ public class Player implements Serializable {
      * Player constructor
      *
      * @param name the player name
-     * @param pilotPoints the players pilot points
-     * @param fighterPoints the players fighter points
-     * @param traderPoints the players trader points
-     * @param engineerPoints the players engineer points
+     * @param pilotPoints the player's pilot points
+     * @param fighterPoints the player's fighter points
+     * @param traderPoints the player's trader points
+     * @param engineerPoints the player's engineer points
      * @param credits amount of credit
      */
     public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints, int credits) {
@@ -76,7 +76,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Checks if player is good trader
+     * Checks if the player is a good trader
      *
      * @return whether player is a good trader
      */
@@ -85,7 +85,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Checks if player is good pilot
+     * Checks if the player is a good pilot
      *
      * @return whether player is a good pilot
      */
@@ -103,7 +103,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets player pilot points
+     * Gets player's pilot points
      *
      * @return players pilot points
      */
@@ -112,7 +112,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets player fighter points
+     * Gets player's fighter points
      *
      * @return players fighter points
      */
@@ -121,7 +121,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets player trader points
+     * Gets player's trader points
      *
      * @return players trader points
      */
@@ -130,7 +130,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets player engineer points
+     * Gets player's engineer points
      *
      * @return players engineer points
      */
@@ -148,7 +148,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets the ship type of the players ship
+     * Gets the ship type of the player's ship
      *
      * @return player's ship type
      */
@@ -157,7 +157,7 @@ public class Player implements Serializable {
     }
 
     /**
-     * Gets the goods that are currently on player's ship
+     * Gets the goods that are currently on the player's ship
      *
      * @return player's goods
      */

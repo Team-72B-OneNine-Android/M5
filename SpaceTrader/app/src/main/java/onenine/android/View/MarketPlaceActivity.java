@@ -16,7 +16,7 @@ import onenine.android.ViewModel.MarketPlaceActivityViewModel;
 public class MarketPlaceActivity extends AppCompatActivity {
 
     /**
-     * Creates view for market place
+     * Creates the view for market place
      *
      * @param savedInstanceState the saved instance of the game
      */
@@ -49,7 +49,7 @@ public class MarketPlaceActivity extends AppCompatActivity {
     }
 
     /**
-     * Switches view back to home screen activity and takes player to home screen
+     * Switches view back to the home screen activity and takes the player to the home screen
      * @param view the view
      */
     public void onBackButtonPressed(View view) {

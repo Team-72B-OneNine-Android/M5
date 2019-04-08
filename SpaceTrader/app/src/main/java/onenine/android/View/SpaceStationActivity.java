@@ -32,7 +32,7 @@ public class SpaceStationActivity extends AppCompatActivity {
     private Planet planet9;
 
     /**
-     * Creates view for space port
+     * Creates view for the space port
      *
      * @param savedInstanceState the saved instance of the game
      */
@@ -49,7 +49,7 @@ public class SpaceStationActivity extends AppCompatActivity {
         TextView currentPlanet = findViewById(R.id.spaceStationPlanet);
         currentPlanet.setText("You are currently on planet " + myGame.getCurrentPlanetType());
 
-        //gets amount of fuel that player has left
+        //get amount of fuel that player has left
         TextView currentFuel = findViewById(R.id.spaceStationFuel);
         currentFuel.setText("Fuel Remaining: " + Integer.toString(myGame.myShipFuel()) + "%");
 

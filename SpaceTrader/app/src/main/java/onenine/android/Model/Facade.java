@@ -42,12 +42,12 @@ public final class Facade {
      * creates the player with
      * all appropriate player information
      *
-     * @param name the players name
-     * @param p the players pilot points
-     * @param f the players fighter points
-     * @param t the players trader points
-     * @param e the players engineer points
-     * @param credits the players credits
+     * @param name the player's name
+     * @param p the player's pilot points
+     * @param f the player's fighter points
+     * @param t the player's trader points
+     * @param e the player's engineer points
+     * @param credits the player's credits
      */
     public void setPlayer(String name, int p, int f, int t, int e, int credits) {
         player = new Player(name, p, f, t, e, credits);
@@ -68,9 +68,9 @@ public final class Facade {
 
 
     /**
-     * Gets the players name
+     * Gets the player's name
      *
-     * @return the players name as a string
+     * @return the player's name as a string
      */
     public String getPlayerName() {
         return player.getName();
@@ -87,9 +87,9 @@ public final class Facade {
     }
 
     /**
-     * Gets the games current player
+     * Gets the game's current player
      *
-     * @return the games current player
+     * @return the game's current player
      */
     public Player getPlayer() {
         return this.player;
@@ -105,7 +105,7 @@ public final class Facade {
     }
 
     /**
-     * Gets the ship type of the players ship
+     * Gets the ship type of the player's ship
      *
      * @return player's ship type
      */

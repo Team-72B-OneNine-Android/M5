@@ -73,7 +73,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
     }
 
     /**
-     * Switches view back to market place activity and takes player to market place
+     * Switches the view back to market place activity and takes player to market place
      *
      * @param view the view
      */
