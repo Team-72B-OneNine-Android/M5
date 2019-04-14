@@ -24,7 +24,6 @@ public class SolarSystem implements Serializable {
      * given a large collection of planets
      *
      * @param planets a large collection of planets
-     * @return whether there was a duplicate planet
      */
     public void generatePlanets(Collection<Planet> planets) {
 //        boolean flag = false;

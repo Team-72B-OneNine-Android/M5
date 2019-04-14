@@ -22,7 +22,7 @@ public enum ShipType {
     /**
      * Ship type constructor that sets the amount of cargo space
      *
-     * @param cargoSpace the amount of cargo space for a given shiptype
+     * @param cargoSpace the amount of cargo space for a given shipType
      */
     ShipType(int cargoSpace) {
         this.cargoSpace = cargoSpace;

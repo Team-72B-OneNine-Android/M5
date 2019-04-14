@@ -226,7 +226,7 @@ public final class Facade {
      *
      * @param file the binary file for the game
      * @return boolean whether or not the
-     * game saved successfulyy
+     * game saved successfully
      */
     public boolean saveBinary(File file) {
         boolean success = true;

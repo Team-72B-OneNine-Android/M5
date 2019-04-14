@@ -6,7 +6,7 @@ class PlanetAttributes implements Serializable {
 
     private final String[] planets = {
             "Acamar",
-            "Adahn",		// The alternate personality for The Nameless One in "Planescape: Torment"
+            "Adahn",
             "Aldea",
             "Andevian",
             "Antedi",
@@ -18,7 +18,7 @@ class PlanetAttributes implements Serializable {
             "Campor",
             "Capelle",		// The city I lived in while programming this game
             "Carzon",
-            "Castor",		// A Greek demi-god
+            "Castor",
             "Cestus",
             "Cheron",
             "Courteney",	// After Courteney Cox…
@@ -31,7 +31,7 @@ class PlanetAttributes implements Serializable {
             "Draylon",
             "Drema",
             "Endor",
-            "Esmee",		// One of the witches in Pratchett's Discworld
+            "Esmee",
             "Exo",
             "Ferris",		// Iron
             "Festen",		// A great Scandinavian movie
@@ -62,20 +62,20 @@ class PlanetAttributes implements Serializable {
             "Lave",			// The starting system in Elite
             "Ligon",
             "Lowry",		// The name of the "hero" in Terry Gilliam's "Brazil"
-            "Magrat",		// The second of the witches in Pratchett's Discworld
+            "Magrat",
             "Malcoria",
             "Melina",
-            "Mentar",		// The Psilon home system in Master of Orion
+            "Mentar",
             "Merik",
             "Mintaka",
-            "Montor",		// A city in Ultima III and Ultima VII part 2
+            "Montor",
             "Mordan",
             "Myrthe",		// The name of my daughter
             "Nelvana",
             "Nix",			// An interesting spelling of a word meaning "nothing" in Dutch
             "Nyle",			// An interesting spelling of the great river
             "Odet",
-            "Og",			// The last of the witches in Pratchett's Discworld
+            "Og",
             "Omega",		// The end of it all
             "Omphalos",		// Greek for navel
             "Orias",
@@ -86,12 +86,12 @@ class PlanetAttributes implements Serializable {
             "Pollux",		// Brother of Castor
             "Quator",
             "Rakhar",
-            "Ran",			// A film by Akira Kurosawa
+            "Ran",
             "Regulas",
             "Relva",
             "Rhymus",
             "Rochani",
-            "Rubicum",		// The river Ceasar crossed to get into Rome
+            "Rubicum",
             "Rutia",
             "Sarpeidon",
             "Sefalla",
@@ -113,7 +113,7 @@ class PlanetAttributes implements Serializable {
             "Triacus",
             "Turkana",
             "Tyrus",
-            "Umberlee",		// A god from AD&D, which has a prominent role in Baldur's Gate
+            "Umberlee",
             "Utopia",		// The ultimate goal
             "Vadera",
             "Vagra",
@@ -121,10 +121,10 @@ class PlanetAttributes implements Serializable {
             "Ventax",
             "Xenon",
             "Xerxes",		// A Greek hero
-            "Yew",			// A city which is in almost all of the Ultima games
-            "Yojimbo",		// A film by Akira Kurosawa
+            "Yew",
+            "Yojimbo",
             "Zalkon",
-            "Zuul"			// From the first Ghostbusters movie
+            "Zuul"
     };
 
     private final String[] resources = {
