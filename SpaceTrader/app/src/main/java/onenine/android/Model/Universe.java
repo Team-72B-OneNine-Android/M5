@@ -30,7 +30,7 @@ public class Universe implements Serializable {
     }
 
     /**
-     * Calculates the distance between two planets in the univers
+     * Calculates the distance between two planets in the universe
      *
      * @param source the first planet
      * @param destination the second planet
