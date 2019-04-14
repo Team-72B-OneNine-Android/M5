@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/welcome"
-        android:text="Welcome to Space Trader!"
+        android:text="@string/Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/enterInfo"
-        android:text="Enter Your Information Below."
+        android:text="@string/Enter_Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/onceFinished"
-        android:text="Once you're finished, press PLAY to begin"
+        android:text="@string/Press_Play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

@@ -38,7 +38,7 @@
         android:layout_toEndOf="@+id/good_number_have"
         android:background="@android:color/holo_green_light"
         android:layout_alignParentTop="true"
-        android:text="Buy"
+        android:text="@string/buy"
         android:textSize="15sp" />
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_toEndOf="@+id/buy_button"
-        android:text="Sell"
+        android:text="@string/sell"
         android:layout_alignParentTop="true"
         android:textSize="15sp" />
 

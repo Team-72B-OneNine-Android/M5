@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SpaceTrader</string>
+    <string name ="Welcome">Welcome to Space Trader!</string>
+    <string name ="Enter_Info">Enter Your Information Below.</string>
+    <string name ="Press_Play">Once you\'re finished, press PLAY to begin</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+
+
 </resources>
