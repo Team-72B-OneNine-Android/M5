@@ -59,7 +59,7 @@
     <TextView
         android:id="@+id/skillPoints"
         android:text="Skill Points:"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/enterNameHere"
@@ -79,7 +79,7 @@
 
     <TextView
         android:id="@+id/totalSkillPoints"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterNameHere"
@@ -104,7 +104,7 @@
     <TextView
         android:id="@+id/pilotStatic"
         android:text="Pilot:"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/skillPointsMustTotal"
@@ -127,7 +127,7 @@
 
     <TextView
         android:id="@+id/pilotSkill"
-        android:textSize="125px"
+        android:textSize="45sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillPointsMustTotal"
@@ -155,7 +155,7 @@
     <TextView
         android:id="@+id/fighterStatic"
         android:text="Fighter:"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/pilotStatic"
@@ -178,7 +178,7 @@
 
     <TextView
         android:id="@+id/fighterSkill"
-        android:textSize="125px"
+        android:textSize="45sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotSkill"
@@ -206,7 +206,7 @@
     <TextView
         android:id="@+id/traderStatic"
         android:text="Trader:"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/fighterStatic"
@@ -229,7 +229,7 @@
 
     <TextView
         android:id="@+id/traderSkill"
-        android:textSize="125px"
+        android:textSize="45sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterSkill"
@@ -256,7 +256,7 @@
     <TextView
         android:id="@+id/engineerStatic"
         android:text="Engineer:"
-        android:textSize="50px"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/traderStatic"
@@ -279,7 +279,7 @@
 
     <TextView
         android:id="@+id/engineerSkill"
-        android:textSize="125px"
+        android:textSize="45sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderSkill"

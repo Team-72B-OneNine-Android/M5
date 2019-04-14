@@ -5,6 +5,6 @@
     <string name ="Press_Play">Once you\'re finished, press PLAY to begin</string>
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
-
+    <string name="desc">Loading Screen Image</string>
 
 </resources>

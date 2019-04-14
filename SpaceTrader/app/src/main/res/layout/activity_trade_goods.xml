@@ -21,7 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="8dp"
             android:text="text1"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:layout_marginBottom="17dp"
             />
 
@@ -34,7 +34,7 @@
             android:layout_toEndOf="@id/info_holder"
             android:layout_marginStart="88dp"
             android:text="text2"
-            android:textSize="18dp"
+            android:textSize="18sp"
             />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@id/no_have"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:text="text3"/>
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="47dp"
             android:layout_toEndOf="@id/buy"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:text="text4"/>
 
         <TextView
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@id/sell"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:text="text5"/>
 
         <TextView
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_toEndOf="@id/buy_price"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:text="text6"/>
 
         <android.support.v7.widget.RecyclerView
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="text7"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_below="@id/goods_list"
             android:layout_above="@+id/button_back_market"
             android:layout_marginTop="-75dp"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:text="text8"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_toEndOf="@+id/info"
             android:layout_below="@id/goods_list"
             android:layout_above="@+id/button_back_market"
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
             android:text="text9"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_toEndOf="@+id/credits_available"
             android:layout_below="@id/goods_list"
             android:layout_above="@+id/button_back_market"
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:text="text8"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_toEndOf="@+id/cargo_space"
             android:layout_below="@id/goods_list"
             android:layout_above="@+id/button_back_market"
