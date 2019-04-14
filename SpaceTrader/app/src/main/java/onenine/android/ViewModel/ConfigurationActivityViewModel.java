@@ -22,7 +22,8 @@ public class ConfigurationActivityViewModel extends ViewModel {
      * @param credits player credits
      * @param difficulty game difficulty
      */
-    public void onConfig(String n, int p, int f, int t, int e, int credits, GameDifficulty difficulty) {
+    public void onConfig(String n, int p, int f, int t, int e, int credits,
+                         GameDifficulty difficulty) {
         gameFacade.setPlayer(n, p, f, t, e, credits);
         gameFacade.setGame(difficulty);
     }

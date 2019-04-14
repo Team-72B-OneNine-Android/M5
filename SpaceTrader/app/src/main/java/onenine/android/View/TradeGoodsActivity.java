@@ -91,7 +91,7 @@ public class TradeGoodsActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays the updated cargo space available for the player once he or she buys or sells an item
+     * Displays the updated cargo space available for the player once he or she buys/sells an item
      */
     public void updateCargoSpaceAvailable() {
         cargoSpaceAvailable.setText(String.valueOf(viewModel.getCargoSpaceAvailable()));

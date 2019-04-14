@@ -24,7 +24,6 @@ public class SolarSystem implements Serializable {
      * given a large collection of planets
      *
      * @param planets a large collection of planets
-     * @return whether there was a duplicate planet
      */
     public void generatePlanets(Collection<Planet> planets) {
 //        boolean flag = false;
@@ -42,8 +41,10 @@ public class SolarSystem implements Serializable {
             int y = getRandomY();
             String randomPlanet = getRandomPlanet();
             String tempCoordinates = Integer.toString(x) + Integer.toString(y);
-            if (!planetNames.contains(randomPlanet) && !coordinateStrings.contains(tempCoordinates)) {
-                planets.add(new Planet(randomPlanet, getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+            if (!planetNames.contains(randomPlanet) &&
+                    !coordinateStrings.contains(tempCoordinates)) {
+                planets.add(new Planet(randomPlanet, getRandomTechLevel(), getRandomResource(),
+                        getRandomX(), getRandomY()));
                 planetNames.add(randomPlanet);
                 coordinateStrings.add(tempCoordinates);
                 counter += 1;

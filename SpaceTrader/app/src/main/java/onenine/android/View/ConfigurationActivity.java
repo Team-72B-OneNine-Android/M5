@@ -58,7 +58,8 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         //Creates the spinner for difficulties
         difficultySpinner = findViewById(R.id.spinnerDifficulty);
-        ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GameDifficulty.values());
+        ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, GameDifficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
 
@@ -73,7 +74,8 @@ public class ConfigurationActivity extends AppCompatActivity {
      */
     public void onPlayPressed(View view) {
         if (Integer.parseInt(totalSkillPoints.getText().toString()) == 0) {
-            vm.onConfig(playerName.getText().toString(), Integer.parseInt(pilotSkill.getText().toString()),
+            vm.onConfig(playerName.getText().toString(),
+                    Integer.parseInt(pilotSkill.getText().toString()),
                     Integer.parseInt(fighterSkill.getText().toString()),
                     Integer.parseInt(traderSkill.getText().toString()),
                     Integer.parseInt(engineerSkill.getText().toString()),

@@ -23,7 +23,8 @@ public class MarketPlaceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        MarketPlaceActivityViewModel viewModel = ViewModelProviders.of(this).get(MarketPlaceActivityViewModel.class);
+        MarketPlaceActivityViewModel viewModel = ViewModelProviders.of(
+                this).get(MarketPlaceActivityViewModel.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_place);
