@@ -26,8 +26,8 @@ public class SolarSystem implements Serializable {
      * @param planets a large collection of planets
      * @return whether there was a duplicate planet
      */
-    public boolean generatePlanets(Collection<Planet> planets) {
-        boolean flag = false;
+    public void generatePlanets(Collection<Planet> planets) {
+//        boolean flag = false;
         if (planets == null) {
             throw new IllegalArgumentException("List of planets cannot be null.");
         }
@@ -47,11 +47,12 @@ public class SolarSystem implements Serializable {
                 planetNames.add(randomPlanet);
                 coordinateStrings.add(tempCoordinates);
                 counter += 1;
-            } else {
-                flag = true;
             }
+//            else {
+//                flag = true;
+//            }
         }
-        return flag;
+//        return flag;
 
     }
 

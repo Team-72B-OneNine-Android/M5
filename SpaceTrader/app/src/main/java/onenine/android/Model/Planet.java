@@ -13,7 +13,7 @@ public class Planet implements Serializable {
     private final int x;
     private final int y;
     private final Goods[] myGoods= Goods.values();
-    private Facade gameFacade = Facade.getInstance();
+    private final Facade gameFacade = Facade.getInstance();
 
     /**
      * Planet constructor

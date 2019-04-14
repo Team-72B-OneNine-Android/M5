@@ -14,7 +14,7 @@ public class Player implements Serializable {
     private int fighterPoints;
     private int traderPoints;
     private int engineerPoints;
-    private int totalPoints;
+    private final int totalPoints;
     private int credits;
     private final Ship ship;
 
