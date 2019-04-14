@@ -29,7 +29,8 @@ public class ShipYardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ship_yard);
         vm = ViewModelProviders.of(this).get(ShipYardViewModel.class);
         TextView fp = findViewById(R.id.fuelPrice);
-        fp.setText("The current fuel price on " + vm.planetName() + " is: " + String.valueOf(vm.planetFuelPrice()) + " credits/unit");
+        fp.setText("The current fuel price on " + vm.planetName() + " is: " +
+                String.valueOf(vm.planetFuelPrice()) + " credits/unit");
     }
 
     /**

@@ -42,7 +42,8 @@ public class SpaceStationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_space_station);
 
         //initialize view model
-        SpaceStationActivityViewModel vm = ViewModelProviders.of(this).get(SpaceStationActivityViewModel.class);
+        SpaceStationActivityViewModel vm = ViewModelProviders.of(this).get(
+                SpaceStationActivityViewModel.class);
         myGame = vm.getGame();
 
         //get current planet
@@ -118,8 +119,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the first planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the first planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the
+     * home screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -134,8 +136,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the second planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the second planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -150,8 +153,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the third planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the third planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -166,8 +170,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the fourth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the fourth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -182,8 +187,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the fifth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the fifth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -198,8 +204,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the sixth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the sixth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -214,8 +221,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the seventh planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the seventh planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -230,8 +238,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the eighth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the eighth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -246,8 +255,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the ninth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the ninth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -262,8 +272,9 @@ public class SpaceStationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks if the player has enough fuel to travel to the tenth planet. If player has enough fuel,
-     * then he or she will travel to the selected planet and the view will switch to the home screen activity.
+     * Checks if the player has enough fuel to travel to the tenth planet. If player has enough
+     * fuel, then he or she will travel to the selected planet and the view will switch to the home
+     * screen activity.
      * If player does not have enough fuel, then nothing will happen.
      *
      * @param view the view
@@ -300,7 +311,8 @@ public class SpaceStationActivity extends AppCompatActivity {
      * a planet that he or she selects
      */
     private void displayToast() {
-        Toast notEnoughFuel = Toast.makeText(getApplicationContext(), "Sorry, you do not have enough fuel to "
+        Toast notEnoughFuel = Toast.makeText(getApplicationContext(),
+                "Sorry, you do not have enough fuel to "
                 + "travel there", Toast.LENGTH_LONG);
         notEnoughFuel.show();
     }
@@ -310,7 +322,8 @@ public class SpaceStationActivity extends AppCompatActivity {
      */
     private void displayEventToast() {
         if (myGame.showEventMessage().length() >= 1) {
-            Toast eventHappened = Toast.makeText(getApplicationContext(), myGame.showEventMessage(), Toast.LENGTH_LONG);
+            Toast eventHappened = Toast.makeText(getApplicationContext(),
+                    myGame.showEventMessage(), Toast.LENGTH_LONG);
             eventHappened.show();
         }
     }

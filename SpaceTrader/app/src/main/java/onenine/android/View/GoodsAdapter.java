@@ -111,11 +111,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             goods.put(currentGood, goods.get(currentGood) + 1);
                             player.changeCredits(-currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() + 1);
-                            numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
+                            numberHave.setText(String.valueOf(
+                                    goods.get(goodsList[getAdapterPosition()])));
                             activity.updateCreditsAvailable();
                             activity.updateCargoSpaceAvailable();
                         } else if (!ship.cargoSpaceAvailable()) {
-                            Toast.makeText(itemView.getContext(), "There is no more cargo space",
+                            Toast.makeText(itemView.getContext(),
+                                    "There is no more cargo space",
                                     Toast.LENGTH_LONG).show();
                         } else if (player.getCredits() < currentGood.getPrice()) {
                             Toast.makeText(itemView.getContext(), "Not enough credits to " +
@@ -137,15 +139,18 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHol
                             goods.put(currentGood, goods.get(currentGood) - 1);
                             player.changeCredits(currentGood.getPrice());
                             ship.setCargoUsed(ship.getCargoUsed() - 1);
-                            numberHave.setText(String.valueOf(goods.get(goodsList[getAdapterPosition()])));
+                            numberHave.setText(String.valueOf(
+                                    goods.get(goodsList[getAdapterPosition()])));
                             activity.updateCreditsAvailable();
                             activity.updateCargoSpaceAvailable();
                         } else {
-                            Toast.makeText(itemView.getContext(), "There is no '" + currentGood.getName()
+                            Toast.makeText(itemView.getContext(),
+                                    "There is no '" + currentGood.getName()
                             + "' on the ship", Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        Toast.makeText(itemView.getContext(), "this good is not used on the " +
+                        Toast.makeText(itemView.getContext(),
+                                "this good is not used on the " +
                                 "current planet", Toast.LENGTH_LONG).show();
                     }
                 }

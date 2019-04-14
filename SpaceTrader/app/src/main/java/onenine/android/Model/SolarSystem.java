@@ -42,8 +42,10 @@ public class SolarSystem implements Serializable {
             int y = getRandomY();
             String randomPlanet = getRandomPlanet();
             String tempCoordinates = Integer.toString(x) + Integer.toString(y);
-            if (!planetNames.contains(randomPlanet) && !coordinateStrings.contains(tempCoordinates)) {
-                planets.add(new Planet(randomPlanet, getRandomTechLevel(), getRandomResource(), getRandomX(), getRandomY()));
+            if (!planetNames.contains(randomPlanet) &&
+                    !coordinateStrings.contains(tempCoordinates)) {
+                planets.add(new Planet(randomPlanet, getRandomTechLevel(), getRandomResource(),
+                        getRandomX(), getRandomY()));
                 planetNames.add(randomPlanet);
                 coordinateStrings.add(tempCoordinates);
                 counter += 1;

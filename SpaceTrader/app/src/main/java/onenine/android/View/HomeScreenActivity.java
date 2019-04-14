@@ -33,7 +33,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         //link vm to home screen view model
-        HomeScreenActivityViewModel vm = ViewModelProviders.of(this).get(HomeScreenActivityViewModel.class);
+        HomeScreenActivityViewModel vm = ViewModelProviders.of(
+                this).get(HomeScreenActivityViewModel.class);
         planet = vm.getCurrentPlanet();
 
         //get current player
@@ -111,7 +112,8 @@ public class HomeScreenActivity extends AppCompatActivity {
      */
     public void onShipYardButtonPressed(View view) {
         if (planet.getTechLevelNum() < 2) {
-            Toast.makeText(this, "This planet is too small and poor to have a shipyard!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "This planet is too small and poor to " +
+                    "have a shipyard!", Toast.LENGTH_LONG).show();
         } else {
             Intent shipYard = new Intent(this, ShipYardActivity.class);
             startActivity(shipYard);

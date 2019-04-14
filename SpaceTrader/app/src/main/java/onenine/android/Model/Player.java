@@ -64,7 +64,8 @@ public class Player implements Serializable {
      * @param engineerPoints the player's engineer points
      * @param credits amount of credit
      */
-    public Player(String name, int pilotPoints, int fighterPoints, int traderPoints, int engineerPoints, int credits) {
+    public Player(String name, int pilotPoints, int fighterPoints, int traderPoints,
+                  int engineerPoints, int credits) {
         this.name = name;
         this.pilotPoints = pilotPoints;
         this.fighterPoints = fighterPoints;

@@ -118,7 +118,8 @@ public class Planet implements Serializable {
             goodsProduced = new StringBuilder("None");
         }
         if (goodsProduced.charAt(goodsProduced.length() - 2) == ',') {
-            goodsProduced = new StringBuilder(goodsProduced.substring(0, goodsProduced.length() - 2));
+            goodsProduced = new StringBuilder(goodsProduced.substring(
+                    0, goodsProduced.length() - 2));
         }
         return goodsProduced.toString();
     }

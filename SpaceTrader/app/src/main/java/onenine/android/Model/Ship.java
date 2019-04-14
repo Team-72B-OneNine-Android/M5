@@ -107,7 +107,8 @@ public class Ship implements Serializable {
         StringBuilder currentGoods = new StringBuilder();
         for (Goods goods : tradeGoods.keySet()) {
             if (tradeGoods.get(goods) != 0) {
-                currentGoods.append(goods.getName()).append(" = ").append(tradeGoods.get(goods)).append(", ");
+                currentGoods.append(goods.getName()).append(" = ").append(
+                        tradeGoods.get(goods)).append(", ");
             }
         }
         if (currentGoods.length() <= 0) {
