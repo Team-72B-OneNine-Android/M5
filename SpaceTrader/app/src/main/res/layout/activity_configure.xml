@@ -12,10 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginStart="110dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/enterInfo"
@@ -23,10 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="97dp"
+        android:layout_marginStart="97dp"
         android:layout_below="@id/welcome"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/onceFinished"
@@ -34,10 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="65dp"
+        android:layout_marginStart="65dp"
         android:layout_below="@id/enterInfo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/playerNameStatic"
@@ -46,9 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/onceFinished"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="17dp"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/enterNameHere"
@@ -56,8 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/playerNameStatic"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="Enter Name Here" />
 
@@ -69,19 +64,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/enterNameHere"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="10dp"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/spinnerDifficulty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/enterNameHere"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@+id/skillPoints" />
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/skillPoints" />
 
     <TextView
         android:id="@+id/totalSkillPoints"
@@ -89,10 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterNameHere"
-        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="270dp"
-        android:layout_toRightOf='@+id/skillPoints'
+        android:layout_marginEnd="270dp"
+        android:layout_toEndOf='@+id/skillPoints'
         android:background="@null"
         android:ems="10"
         android:inputType="number"
@@ -105,9 +99,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/skillPoints"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="8dp"
+        android:layout_alignParentStart="true" />
     <TextView
         android:id="@+id/pilotStatic"
         android:text="Pilot:"
@@ -116,9 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/skillPointsMustTotal"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="17dp"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/pilotMinus"
@@ -126,9 +118,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillPointsMustTotal"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/pilotStatic"
+        android:layout_toEndOf="@+id/pilotStatic"
         android:onClick="onPilotDecrementPressed"
         android:text="-"
         android:textSize="25sp" />
@@ -139,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillPointsMustTotal"
-        android:layout_toRightOf="@+id/pilotMinus"
+        android:layout_toEndOf="@+id/pilotMinus"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
@@ -152,9 +144,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillPointsMustTotal"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/pilotMinus"
+        android:layout_toEndOf="@+id/pilotMinus"
         android:background="@android:color/holo_green_light"
         android:onClick="onPilotIncrementPressed"
         android:text="+"
@@ -168,9 +160,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pilotStatic"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="17dp"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/fighterMinus"
@@ -178,9 +169,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotMinus"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/pilotStatic"
+        android:layout_toEndOf="@+id/pilotStatic"
         android:onClick="onFighterDecrementPressed"
         android:text="-"
         android:textSize="25sp" />
@@ -191,7 +182,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotSkill"
-        android:layout_toRightOf="@+id/fighterMinus"
+        android:layout_toEndOf="@+id/fighterMinus"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
@@ -204,9 +195,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilotPlus"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/fighterMinus"
+        android:layout_toEndOf="@+id/fighterMinus"
         android:background="@android:color/holo_green_light"
         android:onClick="onFighterIncrementPressed"
         android:text="+"
@@ -220,9 +211,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fighterStatic"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="17dp"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/traderMinus"
@@ -230,9 +220,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterMinus"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/traderStatic"
+        android:layout_toEndOf="@+id/traderStatic"
         android:onClick="onTraderDecrementPressed"
         android:text="-"
         android:textSize="25sp" />
@@ -243,7 +233,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterSkill"
-        android:layout_toRightOf="@+id/traderMinus"
+        android:layout_toEndOf="@+id/traderMinus"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
@@ -256,9 +246,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fighterPlus"
-        android:layout_marginLeft="71dp"
+        android:layout_marginStart="71dp"
         android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/traderMinus"
+        android:layout_toEndOf="@+id/traderMinus"
         android:background="@android:color/holo_green_light"
         android:onClick="onTraderIncrementPressed"
         android:text="+"
@@ -271,9 +261,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/traderStatic"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="17dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginStart="17dp"
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:id="@+id/engineerMinus"
@@ -281,9 +270,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderMinus"
-        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/engineerStatic"
+        android:layout_toEndOf="@+id/engineerStatic"
         android:onClick="onEngineerDecrementPressed"
         android:text="-"
         android:textSize="25sp" />
@@ -294,7 +283,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderSkill"
-        android:layout_toRightOf="@+id/traderMinus"
+        android:layout_toEndOf="@+id/traderMinus"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
@@ -307,9 +296,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/traderPlus"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="18dp"
-        android:layout_toRightOf="@+id/engineerMinus"
+        android:layout_toEndOf="@+id/engineerMinus"
         android:background="@android:color/holo_green_light"
         android:onClick="onEngineerIncrementPressed"
         android:text="+"
@@ -320,7 +309,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/engineerMinus"
-        android:layout_marginLeft="180dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="13dp"
         android:onClick="onPlayPressed"
         android:text="PLAY" />

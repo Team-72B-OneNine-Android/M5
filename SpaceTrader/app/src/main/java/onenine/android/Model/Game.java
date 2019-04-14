@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-    private final int TWO_HUNDRED = 200;
+//    private final int TWO_HUNDRED = 200;
     private final GameDifficulty difficulty;
     private final Player player;
     private Planet currentPlanet;
@@ -116,6 +116,7 @@ public class Game implements Serializable {
      * @return whether the player can travel to a specific planet
      */
     public boolean travel(Planet p) {
+        final int TWO_HUNDRED = 200;
         if (this.playerCanTravel(p)) {
             if (this.fuelCostForPlanet(p) != 0) {
                 randomEvent = Events.checkForEvent();

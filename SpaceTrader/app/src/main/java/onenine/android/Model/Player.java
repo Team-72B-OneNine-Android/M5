@@ -7,8 +7,8 @@ import java.io.Serializable;
  */
 public class Player implements Serializable {
 
-    private final int GOOD_TRADER = 55;
-    private final int GOOD_PILOT = 55;
+//    private final int GOOD_TRADER = 55;
+//    private final int GOOD_PILOT = 55;
     private final String name;
     private int pilotPoints;
     private int fighterPoints;
@@ -81,6 +81,7 @@ public class Player implements Serializable {
      * @return whether player is a good trader
      */
     public boolean isGoodTrader() {
+        final int GOOD_TRADER = 55;
         return ((traderPoints * 100) / totalPoints) > GOOD_TRADER;
     }
 
@@ -90,6 +91,7 @@ public class Player implements Serializable {
      * @return whether player is a good pilot
      */
     public boolean isGoodPilot() {
+        final int GOOD_PILOT = 55;
         return ((pilotPoints * 100) / totalPoints) > GOOD_PILOT;
     }
 
